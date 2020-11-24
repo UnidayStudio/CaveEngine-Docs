@@ -107,6 +107,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="../eventNames/">Event Names</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Examples</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Examples/python/">Python API</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -153,6 +158,9 @@
 </code></pre>
 <pre><code class="language-python">rotation : engine.Vector3
 </code></pre>
+<pre><code class="language-python">matrix : engine.Matrix4x4
+quaternion : engine.Quaternion
+</code></pre>
 <h5 id="methods">Methods</h5>
 <pre><code class="language-python">rotateVector(vec : engine.Vector3) -&gt; engine.Vector3
 </code></pre>
@@ -165,12 +173,6 @@
 <pre><code class="language-python">rotateOnPitch(angle : float)
 rotateOnYaw(angle : float)
 rotateOnRoll(angle : float)
-</code></pre>
-<pre><code class="language-python">getMatrix() -&gt; engine.Matrix4x4
-setMatrix(mat : engine.Matrix4x4)
-</code></pre>
-<pre><code class="language-python">getQuaternion() -&gt; engine.Quaternion
-setQuaternion(mat : engine.Quaternion)
 </code></pre>
 <pre><code class="language-python">applyLocalMovement(x : float, y : float, z : float)
 </code></pre>
@@ -208,6 +210,10 @@ getUpVector() -&gt; engine.Vector3
 <h5 id="variables_2">Variables</h5>
 <pre><code class="language-python">alwaysActive : bool
 </code></pre>
+<pre><code class="language-python">linearVelocity : engine.Vector3
+angularVelocity : engine.Vector3
+angularFactor : engine.Vector3
+</code></pre>
 <h5 id="methods_3">Methods</h5>
 <pre><code class="language-python">getCollisions() -&gt; list(engine.Entity)
 </code></pre>
@@ -216,15 +222,6 @@ getUpVector() -&gt; engine.Vector3
 <pre><code class="language-python">applyTorque(x : float, y : float, z : float)
 </code></pre>
 <pre><code class="language-python">applyForce(x : float, y : float, z : float, location : engine.Vector3)
-</code></pre>
-<pre><code class="language-python">getLinearVelocity() -&gt; engine.Vector3
-setLinearVelocity(x : float, y : float, z : float)
-</code></pre>
-<pre><code class="language-python">getAngularVelocity() -&gt; engine.Vector3
-setAngularVelocity(x : float, y : float, z : float)
-</code></pre>
-<pre><code class="language-python">getAngularFactor() -&gt; engine.Vector3
-setAngularFactor(x : float, y : float, z : float)
 </code></pre>
 <pre><code class="language-python">isDynamic() -&gt; bool
 </code></pre>

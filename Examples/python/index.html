@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Roadmap - Uniday Engine</title>
+  <title>Python API - Uniday Engine</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Roadmap";
-    var mkdocs_page_input_path = "Docs\\roadmap.md";
+    var mkdocs_page_name = "Python API";
+    var mkdocs_page_input_path = "Examples\\python.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -52,22 +52,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Notes</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Docs/releases/">Release Notes</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Roadmap</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#uniday-engine-alpha-current">Uniday Engine Alpha (Current)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#uniday-engine-10">Uniday Engine 1.0</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#uniday-engine-20">Uniday Engine 2.0</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Docs/roadmap/">Roadmap</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../eula/">License (EULA)</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Docs/eula/">License (EULA)</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions (FAQ)</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Docs/faq/">Frequently Asked Questions (FAQ)</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Python API</span></p>
@@ -84,8 +76,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Examples</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Examples/python/">Python API</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Python API</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -109,11 +103,11 @@
     
       
         
-          <li>Notes &raquo;</li>
+          <li>Examples &raquo;</li>
         
       
     
-    <li>Roadmap</li>
+    <li>Python API</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -124,30 +118,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="roadmap">Roadmap</h1>
-<h2 id="uniday-engine-alpha-current">Uniday Engine Alpha (Current)</h2>
-<p>During this iteration the focus is to make <strong>Uniday Engine</strong> as <strong>simple, usable, stable, solid</strong> and <strong>feature complete</strong> as possible.</p>
-<p>In other word, we need to make sure that everyone will be able to jump in and start making their games with the least amount of problems or difficults as possible.</p>
-<p>Here the focus will be on providing <strong>documentation, tutorials, bug fixes, build a community around it</strong> and also change and <strong>improve the UI and UX</strong> as much as we feel like it's necessary to make it as <strong>user friendly</strong> as possible.</p>
-<p>Again, from the ground up this engine needs to be friendly, easy to use and of course powerful enough to support your biggest dreams. So if something is missing to make that dream come true, here is the right time to add it!</p>
-<h2 id="uniday-engine-10">Uniday Engine 1.0</h2>
-<p>Here the engine should be already stable enough and with a bunch of cool games made with it. Now it's time to keep cultivating so it can grow more and more! The attention to the usability and bug fixing still keeps the same (and this will never change), but now we have some cool new features in mind as wel..</p>
-<ul>
-<li><strong>Alpha Blending</strong></li>
-<li><strong>Particle System</strong></li>
-<li>
-<p><strong>Viewport Gizmos and Tools</strong></p>
-</li>
-<li>
-<p><strong>Visual Scripting</strong></p>
-</li>
-</ul>
-<h2 id="uniday-engine-20">Uniday Engine 2.0</h2>
-<ul>
-<li><strong>Visual Shader Editing</strong></li>
-<li><strong>Timelines, a Cutscene Editor</strong></li>
-<li><strong>Terrain and Vegetation</strong></li>
-</ul>
+                <h1 id="ray-cast">Ray Cast</h1>
+<pre><code class="language-python"># Just getting the entity, transform and scene
+entity = self.getEntity()
+transform = entity.getTransform()
+scene = entity.getScene()
+
+# Ray Cast needs two parameters: origin and target.
+# It's basically where the ray starts and where it ends.
+# For this example, let's make the ray start at the player
+# position and go to its forward direction by 10 meters
+origin = transform.getPosition()
+target = origin + transform.getForwardVector() * 10
+
+# The actual ray cast. Will return an engine.RayCastOut instance
+# that contains 4 variables: hit (bool), position (Vector3), 
+# normal (Vector3), entity (engine.Entity or None)
+rOut = scene.rayCast(origin, target)
+
+if rOut.hit:
+    hitEntity = rOut.entity
+    print(&quot;Raycast hit with = &quot;, hitEntity.name)
+    point = rOut.position
+    print(&quot;At this point = &quot;, point.x, point.y, point.z)
+    normal = rOut.normal
+    print(&quot;Facing this Direction = &quot;, normal.x, normal.y, normal.z)
+</code></pre>
               
             </div>
           </div>
@@ -155,10 +151,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../eula/" class="btn btn-neutral float-right" title="License (EULA)">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../releases/" class="btn btn-neutral" title="Release Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../PythonAPI/eventNames/" class="btn btn-neutral" title="Event Names"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -184,10 +178,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../releases/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../PythonAPI/eventNames/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../eula/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

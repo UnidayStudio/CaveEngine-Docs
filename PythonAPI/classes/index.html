@@ -108,6 +108,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#enginecomponent">engine.Component</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#variables_3">Variables</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#methods_4">Methods</a>
     </li>
         </ul>
@@ -119,6 +121,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="../math/">Math</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../eventNames/">Event Names</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Examples</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Examples/python/">Python API</a>
                     </li>
                 </ul>
       </div>
@@ -195,6 +202,8 @@ if events.released(&quot;MOUSE_LEFT&quot;):
 </code></pre>
 <pre><code class="language-python">getAll(component : str) -&gt; list(engine.Component)
 </code></pre>
+<pre><code class="language-python">getScene() -&gt; engine.Scene
+</code></pre>
 <pre><code class="language-python">getParent() -&gt; engine.Entity
 </code></pre>
 <pre><code class="language-python">getChildren() -&gt; list(engine.Entity)
@@ -223,7 +232,7 @@ if events.released(&quot;MOUSE_LEFT&quot;):
 </code></pre>
 <pre><code class="language-python">rayCast(origin : engine.Vector3, target : engine.Vector3) -&gt; engine.RayCastOut
 </code></pre>
-<pre><code class="language-python">getSunLight() -&gt; engine.Sun
+<pre><code class="language-python">getSun() -&gt; engine.Sun
 </code></pre>
 <hr />
 <h2 id="enginesun">engine.Sun</h2>
@@ -246,15 +255,15 @@ set(value : float)
 </code></pre>
 <hr />
 <h2 id="enginecomponent">engine.Component</h2>
+<h5 id="variables_3">Variables</h5>
+<pre><code class="language-python">entity : engine.Entity
+</code></pre>
 <h5 id="methods_4">Methods</h5>
 <pre><code class="language-python">start(scene : engine.Scene)
 </code></pre>
 <pre><code class="language-python">update()
 </code></pre>
 <pre><code class="language-python">end(scene : engine.Scene)
-</code></pre>
-<pre><code class="language-python">getEntity() -&gt; engine.Entity
-setEntity(entity : engine.Entity) # Warning: Internal!
 </code></pre>
               
             </div>
