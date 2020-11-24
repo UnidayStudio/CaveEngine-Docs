@@ -144,6 +144,54 @@ if rOut.hit:
     normal = rOut.normal
     print(&quot;Facing this Direction = &quot;, normal.x, normal.y, normal.z)
 </code></pre>
+<h1 id="mouselook">Mouselook</h1>
+<p>Add this script to a Camera. It's recommended that you parent the camera to an object to represent the player.</p>
+<pre><code class="language-py">import engine
+
+class Mouselook(engine.Component):
+    def __init__(self):
+        self.mLastPos = None
+        self.sensibility = 0.005
+
+    def start(self, scene):
+        pass
+
+    def mouselook(self):
+        mPos = engine.getMousePosition(False)
+
+        center = engine.getWindowSize() * 0.5
+        center = engine.Vector2(int(center.x), int(center.y))
+
+        if self.mLastPos:
+            disp = center - mPos
+            disp *= self.sensibility
+
+            transform = self.entity.getTransform()
+            transform.rotateOnPitch(disp.y)
+
+            parent = self.entity.getParent()
+            if parent:
+                parentTransform = parent.getTransform()
+                parentTransform.rotateOnRoll(disp.x)
+            else:
+                transform.rotateOnRoll(disp.x)
+
+
+        engine.setMousePosition(int(center.x), int(center.y))
+
+        self.mLastPos = engine.Vector2(mPos.x, mPos.y)
+
+    def update(self):
+        events = engine.getEvents()
+
+        if events.pressed(&quot;ESCAPE&quot;):
+            engine.quitGame()
+
+        self.mouselook()
+
+    def end(self, scene):
+        pass
+</code></pre>
               
             </div>
           </div>
