@@ -79,6 +79,10 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Python API</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ray-cast">Ray Cast</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mouselook">Mouselook</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -118,7 +122,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ray-cast">Ray Cast</h1>
+                <h1 id="python-examples">Python Examples</h1>
+<h2 id="ray-cast">Ray Cast</h2>
 <pre><code class="language-python"># Just getting the entity, transform and scene
 entity = self.getEntity()
 transform = entity.getTransform()
@@ -144,7 +149,7 @@ if rOut.hit:
     normal = rOut.normal
     print(&quot;Facing this Direction = &quot;, normal.x, normal.y, normal.z)
 </code></pre>
-<h1 id="mouselook">Mouselook</h1>
+<h2 id="mouselook">Mouselook</h2>
 <p>Add this script to a Camera. It's recommended that you parent the camera to an object to represent the player.</p>
 <pre><code class="language-py">import engine
 
