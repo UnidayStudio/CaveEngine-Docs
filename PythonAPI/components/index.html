@@ -84,9 +84,15 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#engineuielementcomponent">engine.UIElementComponent</a>
+    <li class="toctree-l2"><a class="reference internal" href="#enginelightcomponent">engine.LightComponent</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_1">Variables</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#engineuielementcomponent">engine.UIElementComponent</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#variables_2">Variables</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#methods_2">Methods</a>
     </li>
@@ -94,7 +100,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#enginerigidbodycomponent">engine.RigidBodyComponent</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#variables_2">Variables</a>
+    <li class="toctree-l3"><a class="reference internal" href="#variables_3">Variables</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#methods_3">Methods</a>
     </li>
@@ -156,17 +162,41 @@
 </code></pre>
 <pre><code class="language-python">scale : engine.Vector3
 </code></pre>
-<pre><code class="language-python">rotation : engine.Vector3
+<p>Note that you can't get/set the rotation using regular variables as you can with the <code>position</code> and <code>scale</code>. That's due to the way the engine works internally. So use the getters and setters for <code>euler</code> angles or <code>quaternions</code> to rotate as you need to. You can see the details bellow. Sample code (as it would be in the update method of a Component):</p>
+<pre><code class="language-python">[...]
+def update(self):
+    transform = self.entity.getTransform()
+
+    # Modifying the current euler angles by adding 0.1 on the Y axis:
+    euler = transform.getEuler()
+    euler.y += 0.1
+    transform.setEuler(euler)
+
+    # or you can use this to ROTATE the object:
+    # (will produce the same result as the approach above)
+    transform.rotate(0, 0.1, 0)
 </code></pre>
-<pre><code class="language-python">matrix : engine.Matrix4x4
-quaternion : engine.Quaternion
+<pre><code class="language-python">[...]
+    # Last but no least, you can also do this to SET the euler:
+    # (note that this approach will not produce the same result
+    # as the two others presented above. This one wil SET the
+    # rotation to [0, 0, 0])
+    transform.setEuler(0, 0, 0)
 </code></pre>
 <h5 id="methods">Methods</h5>
-<pre><code class="language-python">rotateVector(vec : engine.Vector3) -&gt; engine.Vector3
+<pre><code class="language-python">getEuler() -&gt; engine.Vector3
+setEuler(euler : engine.Vector3)
+setEuler(x : float, y : float, z : float)
+
+getQuaternion() -&gt; engine.Quaternion
+setQuaternion(quaternion : engine.Quaternion)
+setQuaternion(x : float, y : float, z : float, w: float)
 </code></pre>
-<pre><code class="language-python">transformVector(vec : engine.Vector3) -&gt; engine.Vector3
+<pre><code class="language-python">getMatrix() -&gt; engine.Matrix4
+setMatrix(mat : engine.Matrix4)
 </code></pre>
 <pre><code class="language-python">rotate(x : float, y : float, z : float)
+move(x : float, y : float, z : float, local = True)
 </code></pre>
 <pre><code class="language-python">rotateOnAxis(angle : float, axis : engine.Vector3)
 </code></pre>
@@ -184,7 +214,11 @@ getRoll() -&gt; float
 getRightVector() -&gt; engine.Vector3
 getUpVector() -&gt; engine.Vector3
 </code></pre>
-<pre><code class="language-python">lookAt(direction : engine.Vector3, up : engine.Vector3)
+<pre><code class="language-python">lookAt(direction : engine.Vector3, up = engine.Vector3(0, 1, 0))
+</code></pre>
+<pre><code class="language-python">rotateVector(vec : engine.Vector3) -&gt; engine.Vector3
+</code></pre>
+<pre><code class="language-python">transformVector(vec : engine.Vector3) -&gt; engine.Vector3
 </code></pre>
 <hr />
 <h2 id="enginemeshcomponent">engine.MeshComponent</h2>
@@ -192,8 +226,50 @@ getUpVector() -&gt; engine.Vector3
 <pre><code class="language-python">setAnimation(animation : string)
 </code></pre>
 <hr />
-<h2 id="engineuielementcomponent">engine.UIElementComponent</h2>
+<h2 id="enginelightcomponent">engine.LightComponent</h2>
+<p>You can adjust various light parameters. Here is a sample code that makes the light color pulse using some timers and the python native math.sin() function:</p>
+<pre><code class="language-python">import engine
+import math
+import random
+
+class PulsingLight(engine.Component):
+    def start(self, scene):
+        self.speed = 2.0
+
+        # Creating some timers with a random value to sample from
+        self.colorX = engine.Timer(random.random())
+        self.colorY = engine.Timer(random.random())
+        self.colorZ = engine.Timer(random.random())
+
+    def compute(self, value):
+        # Maps the timer into a sin curve ranged [0 - 1]
+        return (math.sin(value * self.speed) + 1) / 2
+
+    def update(self):       
+        light = self.entity.get(&quot;Light Component&quot;)
+
+        light.color.x = self.compute(self.colorX.get())
+        light.color.y = self.compute(self.colorY.get())
+        light.color.z = self.compute(self.colorZ.get())
+
+        print(light.color.x, light.color.y, light.color.z)
+
+        # Don't forget to reload the light, otherwise it will not be updated:
+        light.reload()
+
+
+    def end(self, scene):
+        pass
+</code></pre>
 <h5 id="variables_1">Variables</h5>
+<p><strong>NOTE:</strong> Lights are pre cached so the changes you made in the following parameters will not be effective (applied to the light) until you call the <code>reload()</code> method.</p>
+<pre><code class="language-python">color : engine.Vector3
+radius : float
+intensity : float
+</code></pre>
+<hr />
+<h2 id="engineuielementcomponent">engine.UIElementComponent</h2>
+<h5 id="variables_2">Variables</h5>
 <pre><code class="language-python">text : str
 </code></pre>
 <pre><code class="language-python">position : engine.UIVector
@@ -207,7 +283,7 @@ getUpVector() -&gt; engine.Vector3
 </code></pre>
 <hr />
 <h2 id="enginerigidbodycomponent">engine.RigidBodyComponent</h2>
-<h5 id="variables_2">Variables</h5>
+<h5 id="variables_3">Variables</h5>
 <pre><code class="language-python">alwaysActive : bool
 </code></pre>
 <pre><code class="language-python">linearVelocity : engine.Vector3

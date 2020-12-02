@@ -128,6 +128,9 @@
 <h2 id="functions">Functions</h2>
 <pre><code class="language-python">getEvents() -&gt; engine.Events
 </code></pre>
+<pre><code class="language-python">getDeltaTime() -&gt; float
+</code></pre>
+<p>You can use the deltaTime to multiply your variables before moving or rotating an entity, so the action will be consistent independently of the current FPS the game is running on.</p>
 <pre><code class="language-python">getMousePosition() -&gt; engine.Vector2
 </code></pre>
 <pre><code class="language-python">setMousePosition(int x, int y)

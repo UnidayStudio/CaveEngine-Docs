@@ -197,18 +197,17 @@ if events.released(&quot;MOUSE_LEFT&quot;):
 <pre><code class="language-python">hasTag(tag : str) -&gt; bool
 </code></pre>
 <pre><code class="language-python">add(component : engine.Component)
-</code></pre>
-<pre><code class="language-python">get(component : str) -&gt; engine.Component
-</code></pre>
-<pre><code class="language-python">getAll(component : str) -&gt; list(engine.Component)
+get(component : str) -&gt; engine.Component
+getAll(component : str) -&gt; list(engine.Component)
 </code></pre>
 <pre><code class="language-python">getScene() -&gt; engine.Scene
 </code></pre>
 <pre><code class="language-python">getParent() -&gt; engine.Entity
-</code></pre>
-<pre><code class="language-python">getChildren() -&gt; list(engine.Entity)
+getChildren() -&gt; list(engine.Entity)
 </code></pre>
 <pre><code class="language-python">getTransform() -&gt; engine.TransformComponent
+</code></pre>
+<pre><code class="language-python">getID() -&gt; int
 </code></pre>
 <hr />
 <h2 id="engineraycastout">engine.RayCastOut</h2>
@@ -227,13 +226,19 @@ if events.released(&quot;MOUSE_LEFT&quot;):
 <pre><code class="language-python">newEntity() -&gt; engine.Entity
 </code></pre>
 <pre><code class="language-python">add(entity : engine.Entity) -&gt; engine.Entity
+addFromTemplate(templateName : str, overrideTransform=True) -&gt; engine.Entity
 </code></pre>
+<p>The <code>scene.add(entity)</code> method is used to add an entity you manually build by yourself in the code. Most of the times it's not exactly what you want. That's why there is a <code>scene.addFromTemplate(name)</code> alternative: Given an Entity Template name, the engine will construct a new entity for you followying that template. Both methods returns the added entity for convenience.</p>
 <pre><code class="language-python">remove(entity : engine.Entity)
 </code></pre>
 <pre><code class="language-python">rayCast(origin : engine.Vector3, target : engine.Vector3) -&gt; engine.RayCastOut
 </code></pre>
 <pre><code class="language-python">getSun() -&gt; engine.Sun
 </code></pre>
+<pre><code class="language-python">getEntity(id : int) -&gt; engine.Entity
+getEntity(name : str) -&gt; engine.Entity
+</code></pre>
+<p><strong>Note:</strong> Time complexity of getting an Entity by name (string) is <code>O(n)</code> and by ID is <code>O(1)</code>. In other words: get by name is way slower than by ID so it's recommended to store the entity ID and use it as much as you can. Also, when you have multiple entities with the same name in the scene, it will always return the first entity found (and this result may be non deterministic - in other words the result may vary).</p>
 <hr />
 <h2 id="enginesun">engine.Sun</h2>
 <h5 id="variables_2">Variables</h5>
@@ -265,6 +270,9 @@ set(value : float)
 </code></pre>
 <pre><code class="language-python">end(scene : engine.Scene)
 </code></pre>
+<pre><code class="language-python">reload()
+</code></pre>
+<p>The reload() method will end() the component and then start() it again. It's useful because some components like the Mesh and the Light, for optimization purposes, pre cache the data and only changes it during the start.</p>
               
             </div>
           </div>
