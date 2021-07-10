@@ -70,7 +70,7 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Components</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#enginetransformcomponent">engine.TransformComponent</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavetransformcomponent">cave.TransformComponent</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a>
     </li>
@@ -78,19 +78,19 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginemeshcomponent">engine.MeshComponent</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavemeshcomponent">cave.MeshComponent</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#methods_1">Methods</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginelightcomponent">engine.LightComponent</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavelightcomponent">cave.LightComponent</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_1">Variables</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#engineuielementcomponent">engine.UIElementComponent</a>
+    <li class="toctree-l2"><a class="reference internal" href="#caveuielementcomponent">cave.UIElementComponent</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_2">Variables</a>
     </li>
@@ -98,7 +98,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginerigidbodycomponent">engine.RigidBodyComponent</a>
+    <li class="toctree-l2"><a class="reference internal" href="#caverigidbodycomponent">cave.RigidBodyComponent</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_3">Variables</a>
     </li>
@@ -156,11 +156,11 @@
               
                 <h1 id="components">Components</h1>
 <hr />
-<h2 id="enginetransformcomponent">engine.TransformComponent</h2>
+<h2 id="cavetransformcomponent">cave.TransformComponent</h2>
 <h5 id="variables">Variables</h5>
-<pre><code class="language-python">position : engine.Vector3
+<pre><code class="language-python">position : cave.Vector3
 </code></pre>
-<pre><code class="language-python">scale : engine.Vector3
+<pre><code class="language-python">scale : cave.Vector3
 </code></pre>
 <p>Note that you can't get/set the rotation using regular variables as you can with the <code>position</code> and <code>scale</code>. That's due to the way the engine works internally. So use the getters and setters for <code>euler</code> angles or <code>quaternions</code> to rotate as you need to. You can see the details bellow. Sample code (as it would be in the update method of a Component):</p>
 <pre><code class="language-python">[...]
@@ -184,21 +184,21 @@ def update(self):
     transform.setEuler(0, 0, 0)
 </code></pre>
 <h5 id="methods">Methods</h5>
-<pre><code class="language-python">getEuler() -&gt; engine.Vector3
-setEuler(euler : engine.Vector3)
+<pre><code class="language-python">getEuler() -&gt; cave.Vector3
+setEuler(euler : cave.Vector3)
 setEuler(x : float, y : float, z : float)
 
-getQuaternion() -&gt; engine.Quaternion
-setQuaternion(quaternion : engine.Quaternion)
+getQuaternion() -&gt; cave.Quaternion
+setQuaternion(quaternion : cave.Quaternion)
 setQuaternion(x : float, y : float, z : float, w: float)
 </code></pre>
-<pre><code class="language-python">getMatrix() -&gt; engine.Matrix4
-setMatrix(mat : engine.Matrix4)
+<pre><code class="language-python">getMatrix() -&gt; cave.Matrix4
+setMatrix(mat : cave.Matrix4)
 </code></pre>
 <pre><code class="language-python">rotate(x : float, y : float, z : float)
 move(x : float, y : float, z : float, local = True)
 </code></pre>
-<pre><code class="language-python">rotateOnAxis(angle : float, axis : engine.Vector3)
+<pre><code class="language-python">rotateOnAxis(angle : float, axis : cave.Vector3)
 </code></pre>
 <pre><code class="language-python">rotateOnPitch(angle : float)
 rotateOnYaw(angle : float)
@@ -210,36 +210,36 @@ rotateOnRoll(angle : float)
 getYaw() -&gt; float
 getRoll() -&gt; float
 </code></pre>
-<pre><code class="language-python">getForwardVector() -&gt; engine.Vector3
-getRightVector() -&gt; engine.Vector3
-getUpVector() -&gt; engine.Vector3
+<pre><code class="language-python">getForwardVector() -&gt; cave.Vector3
+getRightVector() -&gt; cave.Vector3
+getUpVector() -&gt; cave.Vector3
 </code></pre>
-<pre><code class="language-python">lookAt(direction : engine.Vector3, up = engine.Vector3(0, 1, 0))
+<pre><code class="language-python">lookAt(direction : cave.Vector3, up = cave.Vector3(0, 1, 0))
 </code></pre>
-<pre><code class="language-python">rotateVector(vec : engine.Vector3) -&gt; engine.Vector3
+<pre><code class="language-python">rotateVector(vec : cave.Vector3) -&gt; cave.Vector3
 </code></pre>
-<pre><code class="language-python">transformVector(vec : engine.Vector3) -&gt; engine.Vector3
+<pre><code class="language-python">transformVector(vec : cave.Vector3) -&gt; cave.Vector3
 </code></pre>
 <hr />
-<h2 id="enginemeshcomponent">engine.MeshComponent</h2>
+<h2 id="cavemeshcomponent">cave.MeshComponent</h2>
 <h5 id="methods_1">Methods</h5>
 <pre><code class="language-python">setAnimation(animation : string)
 </code></pre>
 <hr />
-<h2 id="enginelightcomponent">engine.LightComponent</h2>
+<h2 id="cavelightcomponent">cave.LightComponent</h2>
 <p>You can adjust various light parameters. Here is a sample code that makes the light color pulse using some timers and the python native math.sin() function:</p>
-<pre><code class="language-python">import engine
+<pre><code class="language-python">import cave
 import math
 import random
 
-class PulsingLight(engine.Component):
+class PulsingLight(cave.Component):
     def start(self, scene):
         self.speed = 2.0
 
         # Creating some timers with a random value to sample from
-        self.colorX = engine.Timer(random.random())
-        self.colorY = engine.Timer(random.random())
-        self.colorZ = engine.Timer(random.random())
+        self.colorX = cave.Timer(random.random())
+        self.colorY = cave.Timer(random.random())
+        self.colorZ = cave.Timer(random.random())
 
     def compute(self, value):
         # Maps the timer into a sin curve ranged [0 - 1]
@@ -263,18 +263,18 @@ class PulsingLight(engine.Component):
 </code></pre>
 <h5 id="variables_1">Variables</h5>
 <p><strong>NOTE:</strong> Lights are pre cached so the changes you made in the following parameters will not be effective (applied to the light) until you call the <code>reload()</code> method.</p>
-<pre><code class="language-python">color : engine.Vector3
+<pre><code class="language-python">color : cave.Vector3
 radius : float
 intensity : float
 </code></pre>
 <hr />
-<h2 id="engineuielementcomponent">engine.UIElementComponent</h2>
+<h2 id="caveuielementcomponent">cave.UIElementComponent</h2>
 <h5 id="variables_2">Variables</h5>
 <pre><code class="language-python">text : str
 </code></pre>
-<pre><code class="language-python">position : engine.UIVector
+<pre><code class="language-python">position : cave.UIVector
 </code></pre>
-<pre><code class="language-python">scale : engine.UIVector
+<pre><code class="language-python">scale : cave.UIVector
 </code></pre>
 <pre><code class="language-python">text : str
 </code></pre>
@@ -282,22 +282,22 @@ intensity : float
 <pre><code class="language-python">isHovered() -&gt; bool
 </code></pre>
 <hr />
-<h2 id="enginerigidbodycomponent">engine.RigidBodyComponent</h2>
+<h2 id="caverigidbodycomponent">cave.RigidBodyComponent</h2>
 <h5 id="variables_3">Variables</h5>
 <pre><code class="language-python">alwaysActive : bool
 </code></pre>
-<pre><code class="language-python">linearVelocity : engine.Vector3
-angularVelocity : engine.Vector3
-angularFactor : engine.Vector3
+<pre><code class="language-python">linearVelocity : cave.Vector3
+angularVelocity : cave.Vector3
+angularFactor : cave.Vector3
 </code></pre>
 <h5 id="methods_3">Methods</h5>
-<pre><code class="language-python">getCollisions() -&gt; list(engine.Entity)
+<pre><code class="language-python">getCollisions() -&gt; list(cave.Entity)
 </code></pre>
 <pre><code class="language-python">collidedWith(tag : string) -&gt; bool
 </code></pre>
 <pre><code class="language-python">applyTorque(x : float, y : float, z : float)
 </code></pre>
-<pre><code class="language-python">applyForce(x : float, y : float, z : float, location : engine.Vector3)
+<pre><code class="language-python">applyForce(x : float, y : float, z : float, location : cave.Vector3)
 </code></pre>
 <pre><code class="language-python">isDynamic() -&gt; bool
 </code></pre>

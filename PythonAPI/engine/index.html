@@ -122,25 +122,27 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="engine-module">Engine Module</h1>
+                <h1 id="cave-module">Cave Module</h1>
 <p>General game engine related functions and global variables.</p>
 <h2 id="globals">Globals</h2>
 <h2 id="functions">Functions</h2>
-<pre><code class="language-python">getEvents() -&gt; engine.Events
+<pre><code class="language-python">getEvents() -&gt; cave.Events
 </code></pre>
 <pre><code class="language-python">getDeltaTime() -&gt; float
 </code></pre>
 <p>You can use the deltaTime to multiply your variables before moving or rotating an entity, so the action will be consistent independently of the current FPS the game is running on.</p>
-<pre><code class="language-python">getMousePosition() -&gt; engine.Vector2
+<pre><code class="language-python">getMousePosition() -&gt; cave.Vector2
 </code></pre>
 <pre><code class="language-python">setMousePosition(int x, int y)
 </code></pre>
-<pre><code class="language-python">getWindowSize() -&gt; engine.Vector2
+<pre><code class="language-python">getWindowSize() -&gt; cave.Vector2
 </code></pre>
 <pre><code class="language-python">quitGame() -&gt; None
 </code></pre>
-<pre><code class="language-python">setCurrentScene() -&gt; engine.Scene
+<pre><code class="language-python">getCurrentScene() -&gt; cave.Scene
 setScene(sceneName : str) -&gt; None
+
+restartCurrentScene() -&gt; None
 </code></pre>
               
             </div>

@@ -72,7 +72,7 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Math</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#engine">engine</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cave">cave</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a>
     </li>
@@ -86,31 +86,31 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginevector2">engine.Vector2</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavevector2">cave.Vector2</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginevector3">engine.Vector3</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavevector3">cave.Vector3</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_1">Variables</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginevector4">engine.Vector4</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavevector4">cave.Vector4</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_2">Variables</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enginequaternion">engine.Quaternion</a>
+    <li class="toctree-l2"><a class="reference internal" href="#cavequaternion">cave.Quaternion</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_3">Variables</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#engineuivector">engine.UIVector</a>
+    <li class="toctree-l2"><a class="reference internal" href="#caveuivector">cave.UIVector</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#variables_4">Variables</a>
     </li>
@@ -165,28 +165,28 @@
             <div class="section">
               
                 <h1 id="math">Math</h1>
-<h2 id="engine">engine</h2>
+<h2 id="cave">cave</h2>
 <h5 id="functions">Functions</h5>
-<pre><code class="language-python">normalized(vec : engine.Vector3) -&gt; engine.Vector3
+<pre><code class="language-python">normalized(vec : cave.Vector3) -&gt; cave.Vector3
 </code></pre>
-<pre><code class="language-python">length(vec : engine.Vector3) -&gt; float
+<pre><code class="language-python">length(vec : cave.Vector3) -&gt; float
 </code></pre>
 <hr />
 <h2 id="vector-classes">Vector Classes</h2>
-<p><strong>Uniday Engine</strong> provides wrappers to low level C++ vector classes and operations. </p>
+<p><strong>Cave Engine</strong> provides wrappers to low level C++ vector classes and operations. </p>
 <h5 id="initialization-example">Initialization Example</h5>
 <p>Here is an initialization example to get started:</p>
 <pre><code class="language-python"># Default constructor:
-vec = engine.Vector() 
+vec = cave.Vector() 
 
 # Intialize the vector with (0, 0):
-myVec1 = engine.Vector2(0)
+myVec1 = cave.Vector2(0)
 
 # Regular (x, y) constructor for the 2D Vector:
-myVec2 = engine.Vector2(0, 1) 
+myVec2 = cave.Vector2(0, 1) 
 
 # Copy the vector:
-myVec3 = engine.Vector3(myVec2) 
+myVec3 = cave.Vector3(myVec2) 
 </code></pre>
 <h5 id="supported-vector-operations">Supported Vector Operations</h5>
 <p>You can do all sorts of operations using vectors:</p>
@@ -232,7 +232,7 @@ myVec3 = engine.Vector3(myVec2)
 </tr>
 </tbody>
 </table>
-<p>Including operations between a <code>engine.Vector3</code> and an <code>engine.Quaternion</code>:</p>
+<p>Including operations between a <code>cave.Vector3</code> and an <code>cave.Quaternion</code>:</p>
 <table>
 <thead>
 <tr>
@@ -256,14 +256,14 @@ myVec3 = engine.Vector3(myVec2)
 </tbody>
 </table>
 <hr />
-<h2 id="enginevector2">engine.Vector2</h2>
+<h2 id="cavevector2">cave.Vector2</h2>
 <h5 id="variables">Variables</h5>
 <pre><code class="language-python">x : float
 y : float
 </code></pre>
 <p><strong>Note:</strong> You can also access the <code>x, y</code> parameters by using <code>s, t</code> or <code>u, v</code>.</p>
 <hr />
-<h2 id="enginevector3">engine.Vector3</h2>
+<h2 id="cavevector3">cave.Vector3</h2>
 <h5 id="variables_1">Variables</h5>
 <pre><code class="language-python">x : float
 y : float
@@ -271,7 +271,7 @@ z : float
 </code></pre>
 <p><strong>Note:</strong> You can also access the <code>x, y, z</code> parameters by using <code>r, g, b</code> as an acronym for the color channels <code>Red</code>, <code>Green</code> and <code>Blue</code>.</p>
 <hr />
-<h2 id="enginevector4">engine.Vector4</h2>
+<h2 id="cavevector4">cave.Vector4</h2>
 <h5 id="variables_2">Variables</h5>
 <pre><code class="language-python">x : float
 y : float
@@ -280,7 +280,7 @@ w : float
 </code></pre>
 <p><strong>Note:</strong> You can also access the <code>x, y, z, w</code> parameters by using <code>r, g, b, a</code> as an acronym for the color channels <code>Red</code>, <code>Green</code>, <code>Blue</code> and <code>Alpha</code>.</p>
 <hr />
-<h2 id="enginequaternion">engine.Quaternion</h2>
+<h2 id="cavequaternion">cave.Quaternion</h2>
 <p>Quaternions, just like the vectors, are low level implementations that supports all sorts of operations (<code>==, +, +=, -, -=, *, *=</code>).</p>
 <h5 id="variables_3">Variables</h5>
 <pre><code class="language-python">x : float
@@ -289,8 +289,8 @@ z : float
 w : float
 </code></pre>
 <hr />
-<h2 id="engineuivector">engine.UIVector</h2>
-<p>The <strong>engine.UIVector</strong> is a different vector, used specifically for the in Game User Interface (Game UI). It needs to be a different type of vector because it also takes into account the anchoring and if the element is relative (or not) to it's parent.</p>
+<h2 id="caveuivector">cave.UIVector</h2>
+<p>The <strong>cave.UIVector</strong> is a different vector, used specifically for the in Game User Interface (Game UI). It needs to be a different type of vector because it also takes into account the anchoring and if the element is relative (or not) to it's parent.</p>
 <p>If the vector is relative, the <code>X, Y</code> values will be represented with a <code>[0-1]</code> ranged <code>float</code> number (percentage). If not, it will be represented by two <code>ints</code> for the pixels.</p>
 <h5 id="variables_4">Variables</h5>
 <pre><code class="language-python">anchoringX : int
