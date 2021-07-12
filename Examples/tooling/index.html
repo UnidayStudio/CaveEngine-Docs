@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Roadmap - Cave Engine Docs</title>
+        <title>Writting your own Tools - Cave Engine Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,24 +36,24 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../releases/" class="dropdown-item">Release Notes</a>
+    <a href="../../Docs/releases/" class="dropdown-item">Release Notes</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Roadmap</a>
+    <a href="../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
 </li>
                                     
 <li>
-    <a href="../eula/" class="dropdown-item">License (EULA)</a>
+    <a href="../../Docs/eula/" class="dropdown-item">License (EULA)</a>
 </li>
                                     
 <li>
-    <a href="../faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+    <a href="../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
 </li>
                                 </ul>
                             </li>
@@ -78,16 +78,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Examples/python/" class="dropdown-item">Python Scripting</a>
+    <a href="../python/" class="dropdown-item">Python Scripting</a>
 </li>
                                     
 <li>
-    <a href="../../Examples/tooling/" class="dropdown-item">Writting your own Tools</a>
+    <a href="./" class="dropdown-item active">Writting your own Tools</a>
 </li>
                                 </ul>
                             </li>
@@ -100,12 +100,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../releases/" class="nav-link">
+                                <a rel="prev" href="../python/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../eula/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -127,17 +127,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#roadmap" class="nav-link">Roadmap</a>
+            <li class="nav-item" data-level="1"><a href="#writting-your-own-tools" class="nav-link">Writting your own Tools</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#uniday-engine-alpha-current" class="nav-link">Uniday Engine Alpha (Current)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#uniday-engine-10" class="nav-link">Uniday Engine 1.0</a>
+            <li class="nav-item" data-level="2"><a href="#run-your-first-tool" class="nav-link">Run your first Tool</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#uniday-engine-20" class="nav-link">Uniday Engine 2.0</a>
+            <li class="nav-item" data-level="2"><a href="#create-a-tab-and-interface-for-your-tool" class="nav-link">Create a Tab and Interface for your Tool</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -148,30 +144,45 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="roadmap">Roadmap</h1>
-<h2 id="uniday-engine-alpha-current">Uniday Engine Alpha (Current)</h2>
-<p>During this iteration the focus is to make <strong>Uniday Engine</strong> as <strong>simple, usable, stable, solid</strong> and <strong>feature complete</strong> as possible.</p>
-<p>In other word, we need to make sure that everyone will be able to jump in and start making their games with the least amount of problems or difficults as possible.</p>
-<p>Here the focus will be on providing <strong>documentation, tutorials, bug fixes, build a community around it</strong> and also change and <strong>improve the UI and UX</strong> as much as we feel like it's necessary to make it as <strong>user friendly</strong> as possible.</p>
-<p>Again, from the ground up this engine needs to be friendly, easy to use and of course powerful enough to support your biggest dreams. So if something is missing to make that dream come true, here is the right time to add it!</p>
-<h2 id="uniday-engine-10">Uniday Engine 1.0</h2>
-<p>Here the engine should be already stable enough and with a bunch of cool games made with it. Now it's time to keep cultivating so it can grow more and more! The attention to the usability and bug fixing still keeps the same (and this will never change), but now we have some cool new features in mind as wel..</p>
-<ul>
-<li><strong>Alpha Blending</strong></li>
-<li><strong>Particle System</strong></li>
-<li>
-<p><strong>Viewport Gizmos and Tools</strong></p>
-</li>
-<li>
-<p><strong>Visual Scripting</strong></p>
-</li>
-</ul>
-<h2 id="uniday-engine-20">Uniday Engine 2.0</h2>
-<ul>
-<li><strong>Visual Shader Editing</strong></li>
-<li><strong>Timelines, a Cutscene Editor</strong></li>
-<li><strong>Terrain and Vegetation</strong></li>
-</ul></div>
+<h1 id="writting-your-own-tools">Writting your own Tools</h1>
+<p>In the Cave Engine you can write your own tools using python. They can be as simple as just executing a text to do something for you or more complex and well made tools, with a proper interface that contains buttons, sliders and whatever you want in a Tab format, that you can dock to the Editor's ui.</p>
+<p>To start writting your tools, create a new Python Script in the asset browser, open it in the text editor (double click) and delete the current startup code.</p>
+<h2 id="run-your-first-tool">Run your first Tool</h2>
+<p>Let's start with a simple tool that just sets some Sun light settings:</p>
+<pre><code class="language-python">import cave
+
+# You can write the code you want to using the cave API:
+scene = cave.getCurrentScene()
+sun = scene.getSun()
+
+sun.hour = 6.15
+sun.intensity = 5.0
+sun.color = cave.Vector3(1.0, 0.8, 0.8)
+</code></pre>
+<p>In order to run this code, simply go to "Editor Tools.." and then "Run Script":</p>
+<p><img alt="" src="https://cdn.discordapp.com/attachments/741720339616235623/864113916611133440/unknown.png" /></p>
+<p>It will run and change the sun settings, as expected. Note that you can use <code>print(...)</code> here to debug your stuff as well. </p>
+<p>Have fun!</p>
+<h2 id="create-a-tab-and-interface-for-your-tool">Create a Tab and Interface for your Tool</h2>
+<p>Now that you already know how to run simple scripts like that, it's time to understand how to do some a bit more advanced ones. So let's start talking about a tool with its own Tab docked in the editor, with a proper interface with buttons, sliders and so on. Here is a screenshot showing that in action. The code in the left generated the tab highlighted in red:</p>
+<p><img alt="" src="https://cdn.discordapp.com/attachments/773572810173972571/854820116139343932/unknown.png" /></p>
+<p>Here is a simple code that produces a similar result and can be used as a starting point for your own tools:</p>
+<pre><code class="language-python">import cave
+import caveui as ui
+
+class Example(ui.DebugTab):
+    def __init__(self):
+        super().__init__()
+        self.counter = 0
+
+    def draw(self):
+        ui.text(&quot;Hello, world!&quot;)
+        ui.separator()
+        self.counter = ui.prop(&quot;Counter&quot;, self.counter)
+        if ui.button(&quot;Increase counter (+1)&quot;):
+            self.counter += 1
+</code></pre>
+<p>In order to run that and register the Tab to the ui, go to the "Editor Tools..." option and open the "Register Tab..." sub menu. It will automatically identify all the classes in the code that inherits from the base class <code>caveui.DebugTab</code> and show there. Simply click in the one you want to in order to register it.</p></div>
             </div>
         </div>
 
