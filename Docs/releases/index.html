@@ -140,14 +140,364 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="1"><a href="#cave-engine-097-alpha-release-notes" class="nav-link">Cave Engine 0.9.7 (alpha) Release Notes!</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#new-renderer" class="nav-link">New Renderer!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-editors-console" class="nav-link">New Editor's Console</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#animations" class="nav-link">Animations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#audio" class="nav-link">Audio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#entity-templates-working-like-a-charm" class="nav-link">Entity Templates: Working like a charm!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#editor-tools" class="nav-link">Editor Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#python-api" class="nav-link">Python API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mouselook-component" class="nav-link">Mouselook Component</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#documentation" class="nav-link">Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-entity-ui-tag-ui" class="nav-link">New Entity UI + tag UI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-quit-editor-popup-menu" class="nav-link">New "Quit Editor" popup menu</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#git-control" class="nav-link">Git control</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#usability-uiux" class="nav-link">Usability (UI/UX):</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-manager-improvements" class="nav-link">Project Manager improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#export-game" class="nav-link">Export Game:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fixes" class="nav-link">Fixes:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#internal-stuff" class="nav-link">Internal stuff:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
 <h1 id="development-logs">Development logs</h1>
-<p>Please check the itch io page to see the release notes (under the Development log area):</p>
-<p><a href="https://unidaystudio.itch.io/cave-engine">Cave Engine on itch io</a></p></div>
+<p>Welcome to the engine's development logs. If you want, also check the itch io page to see the release notes (under the Development log area): <a href="https://unidaystudio.itch.io/cave-engine">Cave Engine on itch io</a></p>
+<h1 id="cave-engine-097-alpha-release-notes">Cave Engine 0.9.7 (alpha) Release Notes!</h1>
+<p>Say hello to the <strong>Cave Engine version 0.9.7</strong> (alpha)! It took a while, but it's finally here.
+<img alt="" src="https://media.discordapp.net/attachments/741720339616235623/876891246034055178/unknown.png" /></p>
+<p>I'm very happy about how it turned out and that's thanks to you and the amazing on growth community being built around it. Talking about community, I do have some exciting news: We finally have <strong>The World's first Cave Game!</strong> Yes, this is the first game ever made and exported with Cave Engine (version 0.9.6 - alpha). It was made in about 72 hours by <strong>@renatoaruffo</strong> for a Game Jam (#UnidayJam2021).
+<img alt="" src="https://img.itch.zone/aW1nLzY0OTM2OTUucG5n/original/3oGYh1.png" />
+The game is inspired by Little Nightmares and Hansel and Gretel. The player is lost in a forest, on a heavy rainy night, full of delicious treat, trying to find her brother. You can download and play the game here if you want to: <a href="https://renatoaruffo.itch.io/sweet-shelter">Sweet Shelter on itch io</a>.</p>
+<p>Of course, this one was made using the previous version (0.9.6), but Renato actually teamed up with two more people (Bruno and Murilo) and they made a second game, using a closed version of 0.9.7 (that <a href="https://bit.ly/patreon-uniday">I've released earlier to my Patrons</a>) and I'll probably do a video on it soon.</p>
+<p><a href="https://twitter.com/BitmapImpact/status/1427339553858277384">Ralph</a> is also doing some amazing work using the engine:
+<img alt="" src="https://media.discordapp.net/attachments/741720339616235623/876910307598041088/E87q-1aWEAQYj4d.gif" /></p>
+<p>Thank you everyone using the engine and involved somehow, the community is amazing!</p>
+<p>I'm excited and I really hope y'all like it as I do. So let's jump to the release notes!</p>
+<h2 id="new-renderer">New Renderer!</h2>
+<p>Let's start with the big features! The entire renderer was rewritten from scratch. Why? Because now it is much more PBR accurate, easy to use and adjust and the best part: more lightweight!
+<img alt="" src="https://media.discordapp.net/attachments/741720339616235623/876890556796649532/unknown.png" />
+But that's not everything... besides all that, there is a bunch of new exciting features on it:</p>
+<ul>
+<li><strong>ALPHA BLENDING is here!</strong></li>
+</ul>
+<p>If you've used the engine before, you know that there was zero alpha blend support (only alpha clip). Now you can prepare your <code>.png</code> files, because it is working like a charm! Even with particles... so say hello to your smoke.</p>
+<ul>
+<li>Added Mist!</li>
+</ul>
+<p>The good and old mist. I use to say with some friends that mist is that magical button you press to instantly make the game looks better and now you have it in Cave. Awesome!</p>
+<ul>
+<li>Added an Aperture variable to the camera</li>
+</ul>
+<p>Soon we'll have HDR, but for now, you can manually adjust the camera aperture to support higher color ranges in your scene.</p>
+<ul>
+<li>Old Renderer removed!</li>
+</ul>
+<p>Well, I'm pretty sure that with the new one, no one will gonna mist that, but it's worth mentioning. The last thing I want it to have a bunch of different and non compatible renderers in the engine at the same time (as some other GEs are doing) so I decided to remove the old one. But don't worry: it means that I'll have more time to work in the new renderer and make it even more exciting and feature complete!</p>
+<h2 id="new-editors-console">New Editor's Console</h2>
+<p>I know, I know... the Editor already had a Console before. But now it is 100% of what it was intended to be:</p>
+<ul>
+<li>Python prints and errors are displayed in the Editor's Console</li>
+<li>System console is now hidden by default
+That means no awkward black console window floating around when you're using the engine. Everything you need will be displayed in the editor's console. But if you're really that kind of person who likes random windows floating around your monitors, you can still enable back the console in the top menu. Just keep in mind that it will probably remain empty.</li>
+</ul>
+<h2 id="animations">Animations</h2>
+<p>Animations are way cooler now. Let's start by the fact that I've fixed <a href="https://youtu.be/soeidkEu0D0">THIS</a> (it took me a while, but it's working!). And...</p>
+<ul>
+<li>Now it's possible to blend two different animations when changing the current one.</li>
+<li>Animations now have independent frames and always starts from the beginning (cheerz!)</li>
+<li>Improved the Animation Importer:
+Previously it was not considering more than 4 bone weights. Well, it still doesn't, but now it sorts the weights in order to get the higher influences and also renormalizes it to avoid glitches.</li>
+</ul>
+<h2 id="audio">Audio</h2>
+<p>YES! Audio finally received some love. Now there is 3D sound support and you can access the audio instance being executed and do a lot of fun stuff with it:</p>
+<pre><code class="language-python">class AddSoundTest(cave.Component):
+    def start(self, scene):    
+        # kw arguments = volume=1, fadeIn=0, loop=0
+        self.sound = cave.playSound(&quot;testSound&quot;, fadeIn=2.0)
+        self.timer = cave.Timer()
+
+    def update(self):
+        self.sound.volume = math.sin(self.timer.get()) * 0.5 + 0.5
+
+        events = cave.getEvents()
+        if events.pressed(&quot;W&quot;):
+            self.sound.pause()
+        elif events.pressed(&quot;S&quot;):
+            self.sound.resume()
+
+    def end(self, scene):
+        pass
+</code></pre>
+<p>Including 3D audio. But if you're not into code, you can use the native new <strong>Audio Component</strong> as well!</p>
+<h2 id="entity-templates-working-like-a-charm">Entity Templates: Working like a charm!</h2>
+<p>Entity Templates are something very special and important in the game engine. Let's say that you are making a platform game with multiple levels and a lot of enemies spread across the maps. How would you make the same player have an instance on every level? Or even more: How to use the same enemy, without a bunch of duplicates (that makes you project hard to maintain) all across the map?</p>
+<p>That's why we have entity templates: 
+<img alt="" src="https://media.discordapp.net/attachments/741720339616235623/876898422047784990/unknown.png" /></p>
+<p>You can create a new template by right clicking in the asset browser and then assign a selected object (in the 3D view) to it. It will store the entity structure and make it amvailable to you to use anywhere you want to. So it will be just a matter of adding an empty where you want to spawn the template and select it in the entity's Settings menu. </p>
+<p>Previously it was not working as intended but now it is! Expect (<strong>a lot</strong>) more on it later.</p>
+<h2 id="editor-tools">Editor Tools</h2>
+<p>Previously I've said that I was planning to improve the Tooling support. And I did it! I've added default Editor Tools and you can make your own if you want to! Let me explain: Now it's possible to paste python scripts inside the Editor/Tools/ folder to automatically register them into the editor. So every time you open the engine, the custom made tools will be there, ready to use.</p>
+<p>Well, which tools? Various, including the community tools! But someone had to be the first one to write a tool for it, right? Right. So I decided to start this: <strong>The world's first official Cave tool is a built in Python API!</strong> And why that's good? I'm glad you asked. The tool uses the cave module itself to retrieve the data, so it will be always up to date to your current version. So if you want to check if there is a bleeding edge but yet not documented feature in the api, this is your place! This tool if far from complete yet, but the good news is that it's source open and everyone can go to <code>"Editor/Tools/"</code> and edit it. Enjoy!</p>
+<h2 id="python-api">Python API</h2>
+<p>If you want to create some advanced logic for you game, you can use Python scripts for it (visual scripting is coming). So it's very important to provide a smooth and easy experience for you to make everything you want. That's why version 0.9.7 is full of new exciting python features!</p>
+<p>Let's start with some usability improvements: You often want to access other custom made components inside your code. Previously, there was no garantee that all the python components in your entity where initialized when running the start method, so that could lead to <code>self.entity.get("YourComponent")</code> returning <code>None</code>. Now all the components are initialized first and then the start method is called. </p>
+<p>So if you have <code>Foo</code> and <code>Bar</code> attached to your entity, you can always access each other:</p>
+<pre><code class="language-py">class Foo(cave.Component):
+    def start(self, scene):
+        cmp = self.entity.get(&quot;Bar&quot;)
+        print(&quot;Bar = &quot;, cmp)
+
+    def end(self, scene):
+        pass
+
+class Bar(cave.Component):
+    def start(self, scene):
+        cmp = self.entity.get(&quot;Foo&quot;)
+        print(&quot;Foo = &quot;, cmp)
+
+    def end(self, scene):
+        pass
+</code></pre>
+<p>But that could be not enough. Sometimes you actually want to wait until certain component initialize properly before accessing it. That's why we now have the optional method <code>firstUpdate()</code>. As the name suggest, it will be called once after all <code>start(s)</code> method run and before the regular <code>update()</code>.</p>
+<pre><code class="language-py">class Bar(cave.Component):
+    def start(self, scene):
+        print(&quot;Start method...&quot;)
+
+    def firstUpdate(self):
+        print(&quot;FirstUpdate method...&quot;)
+
+    def update(self):
+        # Called every frame!
+        print(&quot;Update method...&quot;)
+
+    def end(self, scene):
+        print(&quot;End method...&quot;)
+</code></pre>
+<p>To be honest, I can talk FOREVER about the python api improvements. Now you can grab the <code>Mesh Component</code>, get, set or modify its current mesh, material, animation and more! You can select the mesh, copy it to make it unique to a specific object and change as you want to.</p>
+<pre><code class="language-py">cmp = self.entity.get(&quot;Mesh&quot;) # MeshComponent
+
+mesh = cmp.getMesh()
+mesh = mesh.getCopy()
+cmp.setMesh(mesh)
+
+# Do whatever you want with the mesh here!
+for vertex in mesh.vertices:
+    mesh.position += cave.Vector(0, random.random(), 0)
+
+for index in mesh.indices: 
+    # For every 3 indices, we have a triangle
+    print(index)
+
+mesh.reload()
+</code></pre>
+<p>For instance, the code bellow will duplicate the material from the <code>MeshComponent</code> (to make it unique to that specific object) and make it pulse a random glow value, in realtime.
+<a href="https://www.youtube.com/watch?v=QmMlkHgJdiQ">Watch the Showcase Video</a>:</p>
+<pre><code class="language-py">import cave
+import random
+import math
+
+class Emissive(cave.Component):
+    def start(self, scene):
+        self.timer = cave.Timer(random.random()*6)
+
+        cmp = self.entity.get(&quot;Mesh&quot;)        
+        self.mat = cmp.getMaterial()
+        self.mat = self.mat.getCopy()
+        cmp.setMaterial(self.mat)
+
+    def update(self):
+        c = (math.sin(self.timer.get()) + 1) / 2
+        self.mat.emission.set(c, c, c)
+
+    def end(self, scene):
+        pass
+</code></pre>
+<p>And there is much more!</p>
+<ul>
+<li>Transform: lerp, untransform, unrotate</li>
+<li>Now it's possible to get python made components from python<code>cmp = self.entity.get("YourOwnComponent")</code>.</li>
+<li>Exposed a <code>transform.[get/set]WorldPosition()</code> method to the Python API</li>
+<li>Exposed the <code>CharacterComponent</code> fields to the Python API</li>
+<li>Added a <code>RigidBodyComponent.applyImpulse(...)</code> method</li>
+<li>Added a <code>MeshComponent.getAnimationLoops()</code> method</li>
+<li>Added the <code>MeshComponent.getAnimationProgress()</code> method</li>
+<li>Exposed the <code>DecalComponent</code> to python</li>
+</ul>
+<h2 id="mouselook-component">Mouselook Component</h2>
+<p>This one deserves his own section: Now there is a new default component called "Mouselook". It allows you to use the mouse movement to apply some specific rotation to an object. You can use it to, well, do a mouselook, but for a lot more, such as that badass "item preview" from Skyrim, that rotates with the mouse.</p>
+<h2 id="documentation">Documentation</h2>
+<p>The engine's documentation is still not 100% up to date (at least not by the time I'm writting this release notes), but I did a lot of improvements on it. By the way, check the previous "Tooling" category to see why you should not be worried about the Python API documentation anymore! Anyways, here is some changed I've made:</p>
+<ul>
+<li>Renamed "engine" to "cave"</li>
+<li>New homepage + theme</li>
+<li>Added Tooling examples</li>
+<li>Added a Showcase tab</li>
+</ul>
+<h2 id="new-entity-ui-tag-ui">New Entity UI + tag UI</h2>
+<p>Now the entity tab (properties) are more organized, divided into sub tabs: Components, Settings and Tags. Tag UI was redesigned as well.
+<img alt="" src="https://media.discordapp.net/attachments/741720339616235623/876896173758226492/unknown.png" /></p>
+<h2 id="new-quit-editor-popup-menu">New "Quit Editor" popup menu</h2>
+<p>The "quit editor" window was redesigned to use the engine's UI instead of the OS message dialogues and now displays a "Cancel" button.
+<img alt="" src="https://media.discordapp.net/attachments/741720339616235623/876895847827275816/unknown.png" /></p>
+<h2 id="git-control">Git control</h2>
+<p>When people started working with <strong>Cave</strong> for real, they sent me some messages regarding the "git friendless". In other words, it was necessary to make the engine work with git so multiple people could work in the same project at the same time. So I've made some changed to allow this:</p>
+<ul>
+<li>Option to expose the scripts externally, in a Scripts/ folder</li>
+<li>Exposed the Asset names in the Project Files (previously it was just the unique ID, aka a weird and huge number)
+I'm planning to do more things related to that, but it was a great start!</li>
+</ul>
+<h2 id="usability-uiux">Usability (UI/UX):</h2>
+<p>Want to see a lot of miscellaneous improvements regarding the engine usability? Here you go!</p>
+<ul>
+<li>UI Text Renderer rewritten from scratch</li>
+</ul>
+<p>The previous UI Text was very sketchy and was not working at all in a lot of cases. Now it was completely rewritted and it's working like a charm.</p>
+<ul>
+<li>Highlight active asset in the Asset Browser</li>
+<li>Added a debug grid to the viewport</li>
+<li>Changed the color of the selected text (it was not visible before)</li>
+<li>Reduced the color of the tab arrow (text editor)</li>
+<li>Mesh Entity are now added with a rigid body component by default</li>
+<li>Do not change the window focus while simulating the game!</li>
+</ul>
+<p>Addressing the report: "The Shift + Space makes the screen in Full mode. The problem is that when I run+jump with the character controller it keeps scaling up/down"</p>
+<ul>
+<li>Removed the Delete and Duplicate icon from the Scene Graph items:</li>
+</ul>
+<p>The user could easily accidentally click on them. I've added a dropdown menu instead. Those options are still available using the keyboard shortcuts.</p>
+<ul>
+<li>Added bulk actions for the Animation Asset</li>
+<li>Increased the Sun bias range in the editor</li>
+</ul>
+<h2 id="project-manager-improvements">Project Manager improvements</h2>
+<p>Project manager is the first window you see when you open the engine. Keep in mind that there is a bunch of other things I'm planning to make on it. Soon!</p>
+<ul>
+<li>Show a message when there is no projects</li>
+<li>Improve the "new project" layout</li>
+</ul>
+<h2 id="export-game">Export Game:</h2>
+<p>I did a bunch of things related to the game exporting:</p>
+<ul>
+<li>Fix: The engine was not copying the the folders inside the "Lib/" directory, causing the game to not run as a standalone (exported version).</li>
+<li>Renamed the executable to the project name (previously it was always "Game.exe")</li>
+<li>Removed the Python STDOUT from the runtime + hide terminal</li>
+<li>Don't allow the user to export the game without a default scene selected!
+I've also improved the Settings UI by adding tabs to organize the content on it.</li>
+</ul>
+<h2 id="fixes">Fixes:</h2>
+<p>Something very important happened recently: We started to have actual <strong>Games</strong> being made using <strong>Cave Engine</strong>. And because of that, I had to make sure that the engine was stable enough and "bug free". So that's why we have so many bug fixes. Good news: it's working very well now!</p>
+<ul>
+<li>Fix: Crash when trying to display a nullptr image (ui)</li>
+<li>Fix: Light Gizmo was not world space (when parented)</li>
+<li>Fix: Camera with 0 scale was resulting in NaN values</li>
+<li>Fix: Overlapping text when hovering some dropdowns</li>
+<li>Fix: Editor Icons + use a custom file extension</li>
+<li>Fix: Camera view not working most of the times:</li>
+</ul>
+<p>The camera view was a bit sketchy, most of the times, it would simply not work at all and keep using the free camera of the viewport. Specially in the runtime. Now it works just fine.</p>
+<ul>
+<li>Fix: Deleting an Entity Tag was crashing the engine</li>
+<li>Fix: Tools getting invalid when you stop the game</li>
+<li>Fix: glDrawElements access violation (crash)</li>
+<li>Fix: Problem when displaying multiple ColorSampler UIs in the editor</li>
+<li>Fix a typo in the PropRange UI element</li>
+<li>Fix: ColorSampler loading issue</li>
+<li>Fix: Crash when adding physics to a Folder:</li>
+</ul>
+<p>Personal Developer note: Yes, someone had to try to add rigid body physics to.. wel... A FOLDER! You guys are amazing finding all sorts of corner cases and I LOVE IT! Cheerz. lol</p>
+<ul>
+<li>Fix: View Gizmo was being activated when moving a tab around (over it):</li>
+</ul>
+<p>Two actions at the same time when You're moving tab + You forgot to not move cursor over 3D View Cube at the same time... <a href="https://www.youtube.com/watch?v=avlGnDZ_T8E">Thank you Ralph for the report.</a></p>
+<ul>
+<li>Fix: Character sliding </li>
+<li>Fix: It was not possible to set a character's position</li>
+<li>Fix: Some python components where not showing in the UI</li>
+<li>Fix: It was not possible to edit two PyComponents at the same time</li>
+<li>Fix: Making it possible to always have multiple components of the same type in an entity</li>
+<li>Fix: Dropdown filter was not working</li>
+<li>Fix: Crash when you run a python script with no start method</li>
+<li>Fix: I've Hidden the Jump Height because it is not used by bullet at all:</li>
+</ul>
+<p>There was a character physics option called "Jump Height". But after a close inspection in the bullet's source code, I relized that the jump Height was not used at all... lol (that's not my fault). <a href="https://github.com/bulletphysics/bullet3/blob/master/src/BulletDynamics/Character/btKinematicCharacterController.cpp">Bullet code - for the Nerds</a></p>
+<ul>
+<li>Fix: PythonComponent was not being properly copied when duplicated</li>
+<li>Fix: Animation issues:</li>
+</ul>
+<p>This one is huge... remember <a href="https://youtu.be/soeidkEu0D0">This Video</a> I made sometime ago? Well... it turns out that it was my fault as well (thanks to quaternions not being normalized). But now it's fixed! No more weird rotation behaviours.</p>
+<ul>
+<li>Fix: Activating the RigidBody when you set something</li>
+<li>Fix: Removed the shader error exception throw</li>
+<li>Fix: Some EntityTemplate crashes</li>
+<li>Fix: Crash when iterating the childrens</li>
+<li>Fix: Entity mem leaks and mem violations</li>
+<li>Fix: Shadows disappearing when the camera is far away from the world's center</li>
+<li>Fix: It was not possible to add components in realtime (python)</li>
+<li>Fix: Ensure that the Python Components are all constructed when calling the start</li>
+<li>Fix: Crash when modifying the entity component list (during iteration)</li>
+<li>Fix: Unicode characters was not working in the game UI:</li>
+</ul>
+<p>For the brazilian people out there (and maybe the russians and others): Say hello to special characters in your games! Words like "AÇÃO!" and "PAÇOCA" will be displayed properly in the game UI.</p>
+<h2 id="internal-stuff">Internal stuff:</h2>
+<p>I've ommited all the fixes and improvements that are internal (only noticeable inside the engine's codebase), but it's worth mentioning that... well, I've removed A BUNCH of unnecessary core, redundant stuff and fixed a lot of things. Huge refactors behind this big set of updates. I really liked the way it turned out.</p></div>
             </div>
         </div>
 
