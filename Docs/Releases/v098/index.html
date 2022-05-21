@@ -258,14 +258,14 @@ Please check <a href="http://bit.ly/discord-uniday-us">our discord server</a> fo
 <img alt="" src="https://img.itch.zone/aW1nLzg1ODg2NzcucG5n/original/Az%2Bf1R.png" />
 The Looper's Bug is a game made in 72 hours for the Game Jam <strong>Ludum Dare 50</strong> where you control Looper, a robot that loses his energy (in a shape of energy orbs) as you walk. When it runs out of energy, it explodes! The good news is that looper does have clones to help you walk throught the levels and their clones will recover energy from your past lost orbs. It's a puzzle game <a href="https://unidaystudio.itch.io/the-loopers-bug">available for you to Play on Itch io</a>.</p>
 <hr />
-<p>After this game, <strong>Cave Engine</strong> finally got past a stage that I'd like to call <strong>"The battlefield test"</strong>. In other words, it was used in production to an actual released game (that's not just a test project without a start and an end), testes "in battle" with lots of people playing it everywhere.</p>
+<p>After this game, <strong>Cave Engine</strong> finally got past a stage that I'd like to call <strong>"The battlefield test"</strong>. In other words, it was used in production to an actual released game (that's not just a test project without a start and an end), tests "in battle" with lots of people playing it everywhere.</p>
 <p>So there is no doubts that the engine is now perfectly capable (and stable enough) to make a full game using it.</p>
 <p>It's also worth mentioning that this was <strong>not</strong> the first complete game made using cave. Back in the 0.9.6 release, @renatoaruffo made the game <strong>Sweet Shelter</strong>. </p>
 <hr />
 <h1 id="a-personal-note-from-the-dev">A Personal note from the Dev</h1>
 <p>Hi, it's Guilherme and thank you a lot for being here. It's been almost an year since the last engine's release (aug 17, 2021) and in the meanwhile, a lot of things happened! I got a Senior job in the Game Industry, as a Game Engine Dev, working with huge in house game engines (way bigger than Cave or anything I've worked before) and porting giant commercial games to consoles (such as Xbox One). I got hundreds of new students into my paid courses, made some new games and last, but not least, worked A TON in Cave!</p>
 <p>It was a great time. I had an opportunity to meet many cool devs across the world and learn a lot in such a small period of time. Having this senior game engine dev role in the industry really made a lot of difference as well. During this past year I've also realized how I love to make game and tools (such as engines) and help people to get started in game development. </p>
-<p>I'm very excited about this new release. As you saw, it's the first time ever I've used the engine to make a complete and released game. As a result, the engine received a lot of polish and fixed, which is awesome! To be honest, it would be a new dream becoming reality if I was able to work full time on Cave Engine some day. And with your help, that could be possible!</p>
+<p>I'm very excited about this new release. As you saw, it's the first time ever I've used the engine to make a complete and released game. As a result, the engine received a lot of polish and fixes, which is awesome! To be honest, it would be a new dream becoming reality if I was able to work full time on Cave Engine some day. And with your help, that could be possible!</p>
 <p>The engine is currently free and <strong>it is my Gift for you to help you making your amazing games!</strong> </p>
 <p>But if you want to give something back by supporting Cave and future projects, <a href="https://bit.ly/patreon-uniday">I've setup a <strong>Patreon</strong></a> for you to help me get going with the project. I've setup 3 tier levels: starting at $3, you can be a general supporter. At $10, you'll have early access to future releases of <strong>Cave Engine</strong> and Dynami Engine, when they come out. Meaning that you'll not have to wait much to start using all the new features. Last, but not least, at $20 you'll get access to <strong>Cave PRO</strong> when it comes out (that's basically Cave, but with steroids). So don't forget to check the page and see if it is for you.</p>
 <p>In any case, thank you a lot for the support and for the presence here. </p>
@@ -336,7 +336,7 @@ You can't start the game while editing a template.</p>
 <p>Entity now have a "properties" field (python dict) as well (just like the scenes)</p>
 </li>
 <li>
-<p>CharacterComponent can now dettect collision</p>
+<p>CharacterComponent can now detect collision</p>
 </li>
 </ul>
 <p>You can use the methods <code>getCollisions</code> and <code>collidedWith</code> in order to get collisions from the CharacterComponent.</p>
@@ -409,7 +409,7 @@ out = cave.math.mapRange(value, 0.0, 1.0, 60.0, 35.0)
 <h2 id="the-new-python-code-component">The New Python Code Component</h2>
 <p>Some times you want to write some Python code, but it's not as important or big to justify creating an entire new Python Component...</p>
 <p><img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975812120807608380/unknown.png?width=306&amp;height=220" /></p>
-<p>Well, now that's no longer a concern: you can simply create a Python Code Component an inline all that code directly into the component's UI. It's a very handy feature to make small python procedures. </p>
+<p>Well, now that's no longer a concern: you can simply create a Python Code Component and inline all that code directly into the component's UI. It's a very handy feature to make small python procedures. </p>
 <h1 id="uiux">UI/UX:</h1>
 <p>I'll not gonna lie: the engine is looking good now. Check this screenshot:
 <img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975811314842746910/unknown.png?width=716&amp;height=428" /></p>
@@ -553,7 +553,7 @@ out = cave.math.mapRange(value, 0.0, 1.0, 60.0, 35.0)
 <h2 id="initial-network-layer-not-available-yet">Initial Network layer (not available yet)</h2>
 <p>In the future, Cave will have native methods to make online games. </p>
 <h2 id="logic-bricks-visual-scripting-not-available-yet">Logic Bricks: Visual Scripting (not available yet)</h2>
-<p>It already allows me to create new nodes, logic bricks, attach them to a component, run and so on. Serialization is also 100% working as well. What's left is to write the front end (the node UIs) so the use will be able to create their own logic bricks trees as they want to. I'm almost there! :)</p>
+<p>It already allows me to create new nodes, logic bricks, attach them to a component, run and so on. Serialization is also 100% working as well. What's left is to write the front end (the node UIs) so the user will be able to create their own logic bricks trees as they want to. I'm almost there! :)</p>
 <h2 id="animation-system-not-available-yet">Animation System (not available yet)</h2>
 <p>As I said, I'm working on a versatile animation system for the engine to make your life way easier. I'm still not sure how it will be released, since I'm also working on <strong>Cave Engine PRO</strong> (paid, for the ones who want to support the engine and also use some extra features). Here is the plan so far:</p>
 <ul>
@@ -571,7 +571,7 @@ out = cave.math.mapRange(value, 0.0, 1.0, 60.0, 35.0)
 </ul>
 </li>
 <li>4-directional animation (plus idle in the middle)</li>
-<li>8-directional anumation (plus idle in the middle)</li>
+<li>8-directional animation (plus idle in the middle)</li>
 <li>Animation Blender (to blend anims):<ul>
 <li>Allows you to have a base IAnimation and multiple layers on top.</li>
 <li>For each layer:<ul>
