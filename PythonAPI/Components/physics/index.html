@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Physics Components - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../graphics/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../interface/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#physics-related-components" class="nav-link">Physics Related Components</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#character-physics" class="nav-link">Character Physics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavecharactercomponent" class="nav-link">cave.CharacterComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#rigid-body-physics" class="nav-link">Rigid Body Physics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#caverigidbodycomponent" class="nav-link">cave.RigidBodyComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vehicle-physics" class="nav-link">Vehicle Physics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavevehiclecomponent" class="nav-link">cave.VehicleComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavevehicleengineconfig" class="nav-link">cave.VehicleEngineConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavevehiclesteeringconfig" class="nav-link">cave.VehicleSteeringConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#wheel-physics" class="nav-link">Wheel Physics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavewheelcomponent" class="nav-link">cave.WheelComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavewheeltuningconfig" class="nav-link">cave.WheelTuningConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavewheelcontrolsconfig" class="nav-link">cave.WheelControlsConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vehicle-controller" class="nav-link">Vehicle Controller</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavevehiclecontrollercomponent" class="nav-link">cave.VehicleControllerComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="physics-related-components">Physics Related Components</h1>
+<p>In this Page you'll find all the Physics related Components that Cave provides to your.</p>
+<h1 id="character-physics">Character Physics</h1>
+<p>Starting with a very important one: the <code>cave.CharacterComponent</code>. If you're creating a regular character for your game, you'll probably use this one.</p>
+<h2 id="cavecharactercomponent">cave.CharacterComponent</h2>
+<h5 id="variables">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">fallSpeed</td>
+<td>The max fall speed of the character.</td>
+</tr>
+<tr>
+<td align="left">gravity</td>
+<td>The gravity that will be applied to the character. It is different from the physics world's gravity because you may want to control this separately for your characters.</td>
+</tr>
+<tr>
+<td align="left">jumpSpeed</td>
+<td>As the name suggests, the jump speed. The higher this number is, the higher the character will jump.</td>
+</tr>
+<tr>
+<td align="left">maxSlope</td>
+<td>The max slope angle that the character can climb.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">fallSpeed : float
+gravity   : float
+jumpSpeed : float
+maxSlope  : float
+</code></pre>
+<h5 id="methods">Methods</h5>
+<p>If you want the character to jump, just call this:</p>
+<pre><code class="language-python">jump()
+</code></pre>
+<p>In order to detect collisions, you ca use one of those methods below. Check the Scene's <code>cave.CollisionInfo</code> Documentation for more information regarding it.</p>
+<pre><code class="language-python">getCollisions() -&gt; list of cave.CollisionInfo
+getCollisionsWith(tag: str) -&gt; list of cave.CollisionInfo
+collidedWith(tag: str) -&gt; bool
+</code></pre>
+<p>The Character needs to walk, right? In order to do it, you ccan use those methods below.</p>
+<pre><code class="language-python">setWalkDirection(x: float, y: float, z: float, local=True)
+setWalkDirection(dir: cave.Vector3, local=True)
+getWalkDirection(ignoreDeltaTime=False) -&gt; cave.Vector3
+</code></pre>
+<p>Last but not least, here is some useful methods for you to get certain data from the Character Physics:</p>
+<pre><code class="language-python">getMoveSpeed(ignoreDeltaTime=False) -&gt; float
+isMoving()  -&gt; bool
+isFalling() -&gt; bool
+onGround()  -&gt; bool
+</code></pre>
+<hr />
+<h1 id="rigid-body-physics">Rigid Body Physics</h1>
+<p>Rigid bodies are useful in pretty much every situation where you need to add a Physics shape to an object. It could be Dynamic, like a Box, or Static, like your scenary props.</p>
+<h2 id="caverigidbodycomponent">cave.RigidBodyComponent</h2>
+<h5 id="variables_1">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">alwaysActive</td>
+<td>If <code>True</code>, the Physics Engine will never let this body sleep, meaning that it will always calculate its physics condition. Having the physics shape to sleep is an optimization that you might want to have, but in some cases, like an object that really needs to be taken into account in your game like the ball of a soccer game or a flying bullet, the <code>alwaysActive</code> option could be a good option to have enabled.</td>
+</tr>
+<tr>
+<td align="left">linearVelocity</td>
+<td>The Entity's linear Velocity.</td>
+</tr>
+<tr>
+<td align="left">angularVelocity</td>
+<td>The Entity's angular Velocity.</td>
+</tr>
+<tr>
+<td align="left">angularFactor</td>
+<td>The Entity's angular Factor.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">alwaysActive    : bool
+linearVelocity  : cave.Vector3
+angularVelocity : cave.Vector3
+angularFactor   : cave.Vector3
+</code></pre>
+<h5 id="methods_1">Methods</h5>
+<p>In order to detect collisions, you ca use one of those methods below. Check the Scene's <code>cave.CollisionInfo</code> Documentation for more information regarding it.</p>
+<pre><code class="language-python">getCollisions() -&gt; list of cave.CollisionInfo
+getCollisionsWith(tag: str) -&gt; list of cave.CollisionInfo
+collidedWith(tag: str) -&gt; bool
+</code></pre>
+<p>As you might know, Physics are all about forces! That's why you can apply various forces to your Rigid Body by calling one of those method below.</p>
+<pre><code class="language-python">applyTorque( x : float, y : float, z : float)
+applyForce(  x : float, y : float, z : float, location : cave.Vector3)
+applyImpulse(x : float, y : float, z : float, location : cave.Vector3)
+</code></pre>
+<p>If the Rigid Body is <strong>Dynamic</strong>, it means that it will fall with gravity and reach to other bodies colliding with it.</p>
+<pre><code class="language-python">isDynamic() -&gt; bool
+</code></pre>
+<p>If you set the Rigid Body's mass to ZERO, it will make the body <strong>Static</strong> (a.k.a. "not dynamic").</p>
+<pre><code class="language-python">setMass(value : float)
+</code></pre>
+<hr />
+<h1 id="vehicle-physics">Vehicle Physics</h1>
+<p>If you want to make a car or any wheeled vehicle using Cave, you can use the prodived Vehicle and Wheel physics components. <strong>Note:</strong> In order to make the <code>VehicleComponent</code> work, the Entity must also have a <code>RigidBody</code> attached to it.</p>
+<h2 id="cavevehiclecomponent">cave.VehicleComponent</h2>
+<h5 id="variables_2">Variables</h5>
+<p>The vehicle component have two important variables, both defined by their own class types. You can see their specifications and settings later in this page. Here is the Python API for Reference:</p>
+<pre><code class="language-python">engineForce : cave.VehicleEngineConfig
+steering    : cave.VehicleSteeringConfig
+</code></pre>
+<h5 id="methods_2">Methods</h5>
+<p>To control the <code>VehicleComponent</code> yourself, you'll be doing it all by calling one of the provided methods. Meaning that you'll find useful functions here to <strong>accelerate, reverse, brake, turn and so on</strong>. You may notice that some methods have an optional <code>scale</code> parameter. This parameter will be used as a multiplier to the provided engine forces (variable <code>engineForce</code>), useful to add local boosts to your vehicles (like nitrous or power ups). Check the API reference below:</p>
+<pre><code class="language-python">accelerate(scale=1.0)
+reverse(scale=1.0)
+
+# You need to call this if you're not accelerating or reversing!
+idle()
+</code></pre>
+<p>If you want to brake, you can use the <code>brake</code> method. But they have an important note: If do to brake, you need to make sure to release it later (by calling <code>brakeRelease</code>), otherwise the wheels will keep locked.</p>
+<pre><code class="language-python">brake(scale=1.0)
+brakeRelease()
+</code></pre>
+<p>Most of the times, you don't want to use the <code>applyForce</code> method directly, sinde the acc/rev/idle methods will internally handle it. But if you want, you can! Here you go:</p>
+<pre><code class="language-python">applyForce(force)
+</code></pre>
+<p>Last but not least, the following methods will allow you to turn the vehicle (steering). The steer amount is defined by the Vehicle's <code>steering</code> variable. Just like the acc/rev, you also need to call <code>turnStraight</code> when you don't want othe car to turn.</p>
+<pre><code class="language-python">turnLeft()
+turnRight()
+turnStraight()
+</code></pre>
+<h2 id="cavevehicleengineconfig">cave.VehicleEngineConfig</h2>
+<p>This class is intended to allow you to controll the Vehicle's Engine settings.</p>
+<h5 id="variables_3">Variables</h5>
+<p>The following variables lets you control the engine forces. Here is the Python API for Reference:</p>
+<pre><code class="language-python">acceleration : float
+reverse      : float
+brake        : float
+</code></pre>
+<h2 id="cavevehiclesteeringconfig">cave.VehicleSteeringConfig</h2>
+<p>This class is a data storage to adjust the Vehicle's Wheel settings for the ones who have <strong>steering</strong> (can turn with the steering wheel).</p>
+<h5 id="variables_4">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">clamp</td>
+<td>Set the clamp to the max angle that you'll allow this wheel to turn.</td>
+</tr>
+<tr>
+<td align="left">increment</td>
+<td>A higher increment mean that the wheel will turn faster.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">clamp     : float
+increment : float
+</code></pre>
+<hr />
+<h1 id="wheel-physics">Wheel Physics</h1>
+<p>The vehicle alone is not a vehicle without their wheels! That's why you'll also find Wheel related components. <strong>Note:</strong> The Wheels must be direct children of an Entity witl a <code>VehicleComponent</code>, otherwise they will not work.</p>
+<p><strong>Tip:</strong> You can add the Wheel Component to an empty Entity and then create a child Mesh Entity to represent its visual shape. That way you can have more control over how it looks and its rotation. </p>
+<h2 id="cavewheelcomponent">cave.WheelComponent</h2>
+<h5 id="variables_5">Variables</h5>
+<p>You'll be able to adjust the wheel tuning (and suspension) as well as its controls by using one of those two class storage variables. You can find their documentation in this page.</p>
+<pre><code class="language-python">tuning       : cave.WheelTuningConfig
+control      : cave.WheelControlsConfig
+</code></pre>
+<p>The variables below ranges from <code>[0 to 5]</code>, mapping: <code>[X, Y, Z, -X, -Y, -Z]</code></p>
+<pre><code class="language-python"># default is -Y (4)
+dirAxis      : int 
+
+# default is +X (0)
+axleAxis     : int 
+</code></pre>
+<p>Here you can adjust the suspension rest length and also the wheel radius:</p>
+<pre><code class="language-python">suspensionRestLength : float
+radius : float
+</code></pre>
+<p>You can specify if the wheel is a front or back wheel here. Keep in mind that this name ("front wheel") is only for the ease to understand, but their practical functionality is that only wheels marked as "front wheel" will have steering! So you can mark any wheel you want to steer as a front wheel.</p>
+<pre><code class="language-python">isFrontWheel : bool
+</code></pre>
+<h5 id="methods_3">Methods</h5>
+<pre><code class="language-python">getDirection() -&gt; cave.Vector3
+getAxle() -&gt; cave.Vector3
+</code></pre>
+<h2 id="cavewheeltuningconfig">cave.WheelTuningConfig</h2>
+<p>This class container will help you to specify all the wheel's suspension settings.</p>
+<h5 id="variables_6">Variables</h5>
+<pre><code class="language-python">suspensionStiffness   : float
+suspensionCompression : float
+suspensionDamping     : float
+suspensionTravelCmMax : float
+suspensionForceMax    : float
+frictionSlip          : float
+</code></pre>
+<h2 id="cavewheelcontrolsconfig">cave.WheelControlsConfig</h2>
+<p>This class container will help you to specify wheel control settings.</p>
+<h5 id="variables_7">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hasTraction</td>
+<td>If <code>True</code>, the wheel will rotate when the <code>VehicleComponent</code> applies some forces (such as accelerating or reversing).</td>
+</tr>
+<tr>
+<td align="left">hasBrake</td>
+<td>If <code>True</code>, the wheel will brake when the <code>VehicleComponent</code> requests.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">hasTraction : bool
+hasBrake    : bool
+</code></pre>
+<hr />
+<h1 id="vehicle-controller">Vehicle Controller</h1>
+<p>Just like we have a <code>PlayerComponent</code> to control the <code>CharacterComponent</code> physics, we also have this <code>VehicleControllerComponent</code> to control the <code>VehicleComponent</code>. You're not obbligated to use it since you can write your own controller by using the Vehicle's methods. But having it here definitely helps!</p>
+<h5 id="methods_4">Methods</h5>
+<h2 id="cavevehiclecontrollercomponent">cave.VehicleControllerComponent</h2>
+<h5 id="variables_8">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">active</td>
+<td>The <code>VehicleControllerComponent</code> will only run if this is set to <code>True</code> (as it is by default). You can use this do temporarely disable the Vehicle Controller.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">active: bool
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

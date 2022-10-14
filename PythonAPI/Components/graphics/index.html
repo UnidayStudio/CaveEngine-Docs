@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Graphics Components - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../gameplay/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../physics/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#graphics-related-components" class="nav-link">Graphics Related Components</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavemeshcomponent" class="nav-link">cave.MeshComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-working-with-animations" class="nav-link">- Working with Animations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#caveanimationhandler" class="nav-link">cave.AnimationHandler</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#particles" class="nav-link">Particles</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#caveparticlecomponent" class="nav-link">cave.ParticleComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#caveparticleinstancedescriptor" class="nav-link">cave.ParticleInstanceDescriptor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#others" class="nav-link">Others</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavedecalcomponent" class="nav-link">cave.DecalComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavelightcomponent" class="nav-link">cave.LightComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="graphics-related-components">Graphics Related Components</h1>
+<p>In this page you'll find all the 3D Graphics related Components and their Python API documentation.</p>
+<h2 id="cavemeshcomponent">cave.MeshComponent</h2>
+<h5 id="variables">Variables</h5>
+<p>The <code>MeshComponent</code> only have one variable: the <code>tint</code> color. All the others parameters must be manipulated using their getters and setters. The <code>tint</code> is the color you want to tint the mesh to. Defaults to white (meaning no tint). Reference:</p>
+<pre><code class="language-python">tint : cave.Vector4
+</code></pre>
+<h5 id="methods">Methods</h5>
+<p>The first thing that you may want to do is manipulate the <strong>Mesh</strong> used by this component (please read the <code>cave.Mesh</code> documentation for details). You can do it so by calling one of the following methods:</p>
+<pre><code class="language-python">getMesh() -&gt; cave.Mesh
+setMesh(meshName: str)
+setMesh(mesh: cave.Mesh)
+</code></pre>
+<p>Then you may want to manipulate the <strong>Material</strong>, that works in the same way. (Please read the <code>cave.Material</code> documentation for details). Reference:</p>
+<pre><code class="language-python">getMaterial() -&gt; cave.Material
+setMaterial(matName: str)
+setMaterial(mat: cave.Material)
+</code></pre>
+<p>You can also change the <strong>Armature</strong> used by the Mesh Component. Note that this one does not have a Python API yet, so you can only get and set it using its name (as a string). As you can see here:</p>
+<pre><code class="language-python"># Will return the name of the armature!
+getArmature() -&gt; str
+setArmature(armatureName: str)
+</code></pre>
+<h2 id="-working-with-animations">- Working with Animations</h2>
+<p>Cave's animation system is simple but versatile: Every <code>MeshComponent</code> have an Animation Stack, that is a list of animations currently being played. The purpose of this list is to allow you to blend different animations together or even play multiple ones at the same time. The Stack stores what we call <code>cave.AnimationHandler</code> (more on that later in this page). At the moment, you can't fully manipulate this stack via Python API, but you can do it so by using one of Cave's <strong>Animators assets</strong>.</p>
+<p>Still, there are some very useful things already possible to do via Python. The reason why it was important to explain the existance of this stack is because there is an important different between the animation at the top of the animation stack and the animation assigned to the <code>MeshComponent</code> itself. Let's use the <strong><code>RandomAnimator</code></strong> Asset for example. It is an animation type that you can actually set to the Mesh Component. But it's not a "raw" animation that the engine can directly execute for the Armature. But the <code>RandomAnimator</code> may have raw animations inside of it. The animations in the Animation Stack will most likely to be raw animations (that can be internally player directly by the Armature) and the animation in the <code>MeshComponent</code> itself can be anything, including a higher level one (such as the <code>RandomAnimator</code>).</p>
+<p>For instance, that's why you can't fully manipulate the animation stack via Python: most of the times, the engine itself will internally decide what to do with it based on the actual animation asset you've added to the <code>MeshComponent</code>. But as you'll see below, it's useful for you to know the existence of the stack and even get the <code>cave.AnimationHandler</code> on top of it.</p>
+<p>So let's get started!</p>
+<p>First of all, if you want to change the actual <strong>Animation Asset</strong> of the <code>MeshComponent</code>, you can do it so by using their getter and setter. Notice that the animation asset does not have a Python representation yet, so you'll be manipulating them using their names (as they appear in the Asset Browser).</p>
+<pre><code class="language-python">getAnimation() -&gt; str
+
+# If the blendTime is greated than zero, it will blend in the new animation!
+setAnimation(animation: str, blendTime=0.0)
+</code></pre>
+<p>If you want to know the exact "raw" animation being executed or some of its current playing status (such as its execution progress or how many times it looped), you can use one of those APIs:</p>
+<pre><code class="language-python"># Will return the Animation name on top of the stack
+getAnimationFromStack() -&gt; str
+
+# Returns how many times the current animation (top of the stack) looped the execution
+getAnimationLoops() -&gt; int
+
+# Returns the animation progress, from [0 to 1]
+getAnimationProgress() -&gt; float
+</code></pre>
+<p>Or if you want even more information (<strong>and control</strong>) of the animation, you can consider getting its <code>cave.AnimationHandler</code> directly. <em><strong>IMPORTANT:</strong> Do NOT store this handler into a variable for more than a frame, because it may be freed internally by the engine, causing your game to "explode"! (crash)</em></p>
+<pre><code class="language-python">getAnimationHandler() -&gt; cave.AnimationHandler
+</code></pre>
+<p>Check the <code>cave.AnimationHandler</code> class reference below for more information on it.</p>
+<hr />
+<h2 id="caveanimationhandler">cave.AnimationHandler</h2>
+<p>As explained, this Handler will give you information and control over the currently played animation (by the <code>MeshComponent</code>). Do NOT store this handler into a variable for more than a frame, because it may be freed internally by the engine, causing your game to "explode"! (crash)</p>
+<p>The handler will give you a lot of freedom and options when manipulating the Animations, so enjoy it!</p>
+<h5 id="variables_1">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">frame</td>
+<td>The scurrent Animation Frame.</td>
+</tr>
+<tr>
+<td align="left">speed</td>
+<td>The animation execution Speed. <code>1.0</code> means normal speed.</td>
+</tr>
+<tr>
+<td align="left">influence</td>
+<td>Influence ranges from <code>[0.0 to 1.0]</code> and determines how much this animation will influence the final Armature Pose. If the animation stack have multiple animations, this will also determine the blend between them (and it is used by the engine to blend in/out animations). <strong>Note:</strong> If you <strong>set</strong> the influence, it will also cancel any existing blend.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">frame : float
+speed : float
+influence : float
+</code></pre>
+<h5 id="methods_1">Methods</h5>
+<p>Another way to set/set the animation <code>frame</code>, <code>speed</code> and <code>influence</code> (other than by their variables), is to call their getters and setters:</p>
+<pre><code class="language-python">getCurrentFrame() -&gt; float
+setCurrentFrame(frame: float)
+
+getSpeed() -&gt; float
+setSpeed(speed: float)
+
+getInfluence() -&gt; float
+# Note: If you set the influence, it will also cancel any existing blend
+setInfluence(influence: float)
+</code></pre>
+<p>The methods below will provide you additional information regarding the execution progress.</p>
+<pre><code class="language-python"># Returns how many times the animation looped:
+getLoops() -&gt; int
+
+# Range [0 to 1], the animation's execution progress:
+getProgress() -&gt; float
+
+# True if the animation is Paused:
+isPaused() -&gt; bool
+
+# Returns true if, for some reason, the animation is finished.
+# For example: if the user asked to play it only once or a blendOut()
+isFinished() -&gt; bool
+</code></pre>
+<p><strong>Tip:</strong> If you want to see if the animation "finished" its execution without the <code>isFinished</code>(that may not work in all situations), a good and easy option is to see if the <code>getLoops()</code> value is greated than zero.</p>
+<p>To control the animation execution, you can use one of those methods:</p>
+<pre><code class="language-python">pause()
+resume()
+
+# Freezes the animation on a specific frame:
+freeze(frame: float)
+</code></pre>
+<p>And last but not least, you can blend in or out an animation any time you want by calling:</p>
+<pre><code class="language-python">blendIn(durationInSeconds= 1.0, resetInfluence=True)
+blendOut(durationInSeconds= 1.0)
+</code></pre>
+<hr />
+<h1 id="particles">Particles</h1>
+<h2 id="caveparticlecomponent">cave.ParticleComponent</h2>
+<p>The <code>ParticleComponent</code> actually **inherits from <code>MeshComponent</code>, meaning that everything that you've already learned at the Mesh Component's documentation will actually work here (and I'll not explain it twice). The only different is those two extra variables:</p>
+<h5 id="variables_2">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">instance</td>
+<td>Stores all the details on how the Particles will behave. See <code>cave.ParticleInstanceDescriptor</code>'s documentation below for more details on it.</td>
+</tr>
+<tr>
+<td align="left">duration</td>
+<td>The current duration time of the particle. Used to determine its behavior.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">instance : cave.ParticleInstanceDescriptor
+duration : cave.SceneTimer
+</code></pre>
+<h2 id="caveparticleinstancedescriptor">cave.ParticleInstanceDescriptor</h2>
+<p>As you saw above, the <code>cave.ParticleInstanceDescriptor</code> is a storage class containing all the information on how the Particles will behave in the <code>ParticleComponent</code>.</p>
+<h5 id="variables_3">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">count</td>
+<td>The amount of particles spawned by the component. Keep in mind that a lot of particles costs performance.</td>
+</tr>
+<tr>
+<td align="left">spawnArea</td>
+<td>The boxed area that the particles should spawn at.</td>
+</tr>
+</tbody>
+</table>
+<p>Regarding the Spawn, you can specify a minimum and maximum range for the particle's <code>scale</code>and <code>rotation</code> by using the <code>scaleMin/Max</code> and <code>rotationMin/Max</code> variables.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">isDynamic</td>
+<td>Dynamic particles basically means that they will be updated every frame. You want this to be True for all the Particle Systems that <strong>moves</strong> in your scene. If you're using the Particle System to add static elements such as Stars or Trees, <strong>then they should not be Dynamic</strong>. Dynamic particles are slower.</td>
+</tr>
+<tr>
+<td align="left">useParent</td>
+<td>If tru<code>True</code>, the particles will be parented to the Entity and move with it.</td>
+</tr>
+<tr>
+<td align="left">life</td>
+<td>The particle's Lifetime (in seconds). ZERO means it will life forever.</td>
+</tr>
+<tr>
+<td align="left">respawn</td>
+<td>Respawn window of the particles. In other words, for for many time (in seconds) should the ParticleComponent keep respawning particles. ZERO means forever.</td>
+</tr>
+</tbody>
+</table>
+<p>Other than controlling the Particle's Spawn settings, you can also control its lifetime behavior using those variables below:
+| Variable   | Description             |
+|:-----------|-------------------------|
+| gravity    | Gravity applied to the Particles. <strong>Tip:</strong> If you want to make smoke, you can apply a negative gravity, so they will fly to the air! |</p>
+<p>In order to <strong>move</strong> the particles, you can rely on the <strong>linear and angular forces</strong>, that will affect the particle's <strong>position and rotation</strong>, respectively. For each force, you'll be prompted with a <strong>Velocity</strong> variable (<code>linearVelocity</code> and <code>angularVelocity</code>) and a <strong>Friction</strong> (<code>linearFriction</code> and <code>angularFriction</code>), that represents the resistance that the particle will find regarding that specific force.</p>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">count : int
+
+spawnArea   : cave.Vector3 
+scaleMin    : cave.Vector3
+scaleMax    : cave.Vector3
+rotationMin : cave.Vector3
+rotationMax : cave.Vector3
+
+isDynamic : bool
+useParent : bool
+life      : float
+respawn   : float
+
+gravity         : cave.Vector3
+linearVelocity  : cave.Vector3
+linearFriction  : cave.Vector3
+angularVelocity : cave.Vector3
+angularFriction : cave.Vector3
+</code></pre>
+<hr />
+<h1 id="others">Others</h1>
+<h2 id="cavedecalcomponent">cave.DecalComponent</h2>
+<h5 id="variables_4">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">material</td>
+<td>The <code>cave.Material</code> used by the Decal.</td>
+</tr>
+<tr>
+<td align="left">opacity</td>
+<td>Decal opacity, ranging from <code>[0 to 1]</code>.</td>
+</tr>
+<tr>
+<td align="left">layer</td>
+<td>Used to sort the decals.</td>
+</tr>
+<tr>
+<td align="left">angleFade</td>
+<td>If <code>True</code>, it will fade out according to the angle.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">material  : cave.Material
+opacity   : float
+layer     : int
+angleFade : bool
+</code></pre>
+<hr />
+<h2 id="cavelightcomponent">cave.LightComponent</h2>
+<p>You can adjust various light parameters. Here is a sample code that makes the light color pulse using some timers and the python native math.sin() function:</p>
+<pre><code class="language-python">import cave
+import math
+import random
+
+class PulsingLight(cave.Component):
+    def start(self, scene):
+        self.speed = 2.0
+
+        # Creating some timers with a random value to sample from
+        self.colorX = cave.SceneTimer(random.random())
+        self.colorY = cave.SceneTimer(random.random())
+        self.colorZ = cave.SceneTimer(random.random())
+
+    def compute(self, value):
+        # Maps the timer into a sin curve ranged [0 - 1]
+        return (math.sin(value * self.speed) + 1) / 2
+
+    def update(self):       
+        light = self.entity.get(&quot;Light Component&quot;)
+
+        light.color.x = self.compute(self.colorX.get())
+        light.color.y = self.compute(self.colorY.get())
+        light.color.z = self.compute(self.colorZ.get())
+
+        print(light.color.x, light.color.y, light.color.z)
+
+        # Don't forget to reload the light, otherwise it will not be updated:
+        light.reload()
+
+    def end(self, scene):
+        pass
+</code></pre>
+<p><strong>NOTE:</strong> Lights are pre cached so the changes you made in the following parameters will not be effective (applied to the light) until you call the <code>reload()</code> method.</p>
+<h5 id="variables_5">Variables</h5>
+<pre><code class="language-python">color     : cave.Vector3
+radius    : float
+intensity : float
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

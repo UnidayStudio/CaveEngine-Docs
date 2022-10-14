@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Transform Component - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Core/component/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../gameplay/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#transform-component" class="nav-link">Transform Component</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavetransformcomponent" class="nav-link">cave.TransformComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-rotating-a-transform" class="nav-link">- Rotating a Transform</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-moving-a-transform" class="nav-link">- Moving a Transform</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-useful-methods" class="nav-link">- Useful Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-transforming-a-vector" class="nav-link">- Transforming a Vector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-matrix-operations" class="nav-link">- Matrix Operations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="transform-component">Transform Component</h1>
+<h2 id="cavetransformcomponent">cave.TransformComponent</h2>
+<h5 id="variables">Variables</h5>
+<pre><code class="language-python">position : cave.Vector3
+scale    : cave.Vector3
+</code></pre>
+<p>Note that you can't get/set the rotation using regular variables as you can with the <code>position</code> and <code>scale</code>. That's due to the way the engine works internally. So use the getters and setters for <code>euler</code> angles or <code>quaternions</code> to rotate as you need to. You can see the details bellow. Sample code (as it would be in the update method of a Component):</p>
+<pre><code class="language-python">transform = self.entity.getTransform()
+
+# Modifying the current euler angles by adding 0.1 on the Y axis:
+euler = transform.getEuler()
+euler.y += 0.1
+transform.setEuler(euler)
+
+# or you can use this to ROTATE the object:
+# (will produce the same result as the approach above)
+transform.rotate(0, 0.1, 0)
+</code></pre>
+<p>Last but no least, you can also do this variant below to Set the euler. Note that this approach will not produce the same result as the two others presented above. This one wil SET the rotation to [0, 0, 0]:</p>
+<pre><code class="language-python">transform.setEuler(0, 0, 0)
+</code></pre>
+<hr />
+<h5 id="methods">Methods</h5>
+<p>As explained above, the rotation can be handled by using the getters and setters for the <code>Euler angles</code> or <code>Quaternion</code>. Here is the API for reference:</p>
+<pre><code class="language-python"># Euler Angles:
+getEuler() -&gt; cave.Vector3
+setEuler(euler : cave.Vector3)
+setEuler(x : float, y : float, z : float)
+
+# Quaternions:
+getQuaternion() -&gt; cave.Quaternion
+setQuaternion(quaternion : cave.Quaternion)
+setQuaternion(x : float, y : float, z : float, w: float)
+</code></pre>
+<h2 id="-rotating-a-transform">- Rotating a Transform</h2>
+<p>In order to Rotate a Transform, other than getting and setting the <code>euler</code> or <code>quaternion</code> by hand, Cave provides a lot of different Transform methods to make your life easier. Starting with the <code>rotate</code> and <code>rotateEuler</code>. </p>
+<p>The different between them is that the first one expects the values in <strong>radians</strong> and the second, in <strong>degrees</strong>:</p>
+<pre><code class="language-python">rotate(x : float, y : float, z : float)
+rotateEuler(x : float, y : float, z : float)
+</code></pre>
+<p>If you want to rotate the Transform around a specific axis, you can also use the <code>rotateOnAxis</code> method, that expects an angle (in radians) and the axis to rotate the Transform in.</p>
+<pre><code class="language-python">rotateOnAxis(angle : float, axis : cave.Vector3)
+</code></pre>
+<p>Alternatively, you can rotate it around the Pitch, Yaw and Roll axis. If you don't know what is this, I strongly recommend you to <a href="https://en.wikipedia.org/wiki/Aircraft_principal_axes">read this article first</a>.</p>
+<pre><code class="language-python">rotateOnPitch(angle : float)
+rotateOnYaw(angle : float)
+rotateOnRoll(angle : float)
+</code></pre>
+<p>Talking about Roll, Pitch and Yaw, Cave Engine makes it very easy for you to retrieve those values from a Transform as well:</p>
+<pre><code class="language-python">getPitch() -&gt; float
+getYaw() -&gt; float
+getRoll() -&gt; float
+</code></pre>
+<h2 id="-moving-a-transform">- Moving a Transform</h2>
+<p>Just like rotating, you can either manually get and set the Transform's position, this time using the <code>position</code> variable, or you can count on the various Cave methods provided to make your life easier.</p>
+<p>Starting with the basic <code>move</code> method, it will add the provided <code>x, y, z</code> values to the transform's position. But what makes this special is the <code>local</code> parameter. If <code>True</code> (as it is by default), it will first transform those <code>x, y, z</code> values to align to the Transform's orientation. Meaning that, for example, <code>Z</code> will always face the Transform's Forward instead of the world's +Z axis.</p>
+<pre><code class="language-python">move(x : float, y : float, z : float, local = True)
+</code></pre>
+<p>Alternatively, if you want to apply the movement locally, you can also call this method directly:</p>
+<pre><code class="language-python">applyLocalMovement(x : float, y : float, z : float)
+applyLocalMovement(movement: cave.Vector3)
+</code></pre>
+<p>If you read the <strong>Entity's Parent Documentation</strong>, you may have noticed the following sentence: <strong>Entities with a parent will have their Transforms local to their parent's Transform</strong>. In other words, the <code>position</code> variable will always be local to the Transform's Entity's parent. If you want to get or set it globally (what we call "world"), you can do it so by using this two methods:</p>
+<pre><code class="language-python">getWorldPosition() -&gt; cave.Vector3
+setWorldPosition(pos: cave.Vector3)
+</code></pre>
+<h2 id="-useful-methods">- Useful Methods</h2>
+<p>Sometimes you want to do more than simply moving or rotating a Transform. For example, you may want to also lerp it with something else or even make it look at certain direction. Cave Engine's API got you covered in all those cases!</p>
+<p>But let's start small with some other useful methods first: If you need to know what is the forward, right (and consequently left) or up direction that a Transform is pointing at, you can use those methods to easily get them:</p>
+<pre><code class="language-python">getForwardVector() -&gt; cave.Vector3
+getRightVector() -&gt; cave.Vector3
+getUpVector() -&gt; cave.Vector3
+</code></pre>
+<p>Now, starting to get interesting, Cave provides some built in methods to make a Transform look at certain direction. Imagine that you're <strong>making a tower defense game</strong> and you want the turret to aim at the nearest enemy. This is probably what you'll be using to achieve that. Same case to make the enemy look at the player.</p>
+<p>Cave provides two different methods: <code>lookAt</code> and <code>lookAtSmooth</code>. The difference between them is that the first one will immediatly set the Transform to the final orientation and the last one will let you choose a lerp factor, giving you more options to smooth this movement.</p>
+<pre><code class="language-python">lookAt(direction : cave.Vector3, up = cave.Vector3(0, 1, 0))
+lookAtSmooth(direction : cave.Vector3, lerp = 0.5, up = cave.Vector3(0, 1, 0))
+</code></pre>
+<p>It's also good to know that the <code>lookAtSmooth</code> internally uses Quaternion's sLerp functionalities to get the best possible result. If you don't know what's that, I recommend you <a href="https://en.wikipedia.org/wiki/Slerp">reading this Article</a>.</p>
+<p>Talking about lerp... you can lerp the Transform's quaternions with another directly by using this method:</p>
+<pre><code class="language-python">slerpQuaternion(target : cave.Quaternion, value=0.5)
+</code></pre>
+<p>And if that's not enough for you, it's possible to lerp the entire Transform with another by calling this:</p>
+<pre><code class="language-python">lerp(target : cave.TransformComponent, value=0.5)
+</code></pre>
+<p>It also uses <code>slerp</code> internally. This method is very useful if you want to smoothly make a Entity go to a specific place in the world. Let's say that you're about to execute a live action cutscene animation and you want the player to be in a specific spot. Instead of drastically setting the player's position, rotation and scale to that spot, causing it to "teleport" right in front of who is playing your game, you can lerp the Transform to the final and desired one. Good!</p>
+<h2 id="-transforming-a-vector">- Transforming a Vector</h2>
+<p>Sometimes you want to work with Vector math but also take into account the Entity's Transform, meaning that you may want to do some operations to make the vector's transform or rotation local or global and so on. Cave Engine provides some specific methods to help you with that. If you know Vector, Quaternion and Matrices math, you'll probably understand out of the box what those methods are, but I'll try to explain them in details.</p>
+<p>The first set of helpful methods are to <code>rotate</code> or <code>unrotate</code> a Vector by the Transform's rotation. As an example, if you rotate the vector <code>(0, 0, 1)</code>, it will endup looking at the Transform's forward direction. </p>
+<p><em>(If you know the math behind it, those functions basicaly means <code>quat * vec</code> and <code>inverse(quat) * vec</code>, respectively).</em></p>
+<pre><code class="language-python">rotateVector(vec : cave.Vector3) -&gt; cave.Vector3
+unrotateVector(vec : cave.Vector3) -&gt; cave.Vector3
+</code></pre>
+<p>The second set of helpful methods are to <code>transform</code> or <code>untransform</code> a Vector by the Transform. They work in the same way as the <code>rotate</code> ones, except that now it will take the Transform's scale and position into account. </p>
+<p><em>(If you know the math behind it, those functions basicaly means <code>mat * vec</code> and <code>inverse(mat) * vec</code>, respectively).</em></p>
+<pre><code class="language-python">transformVector(vec : cave.Vector3) -&gt; cave.Vector3
+untransformVector(vec : cave.Vector3) -&gt; cave.Vector3
+</code></pre>
+<h2 id="-matrix-operations">- Matrix Operations</h2>
+<p>If you understand how Transform Matrices works, you can also use those two methods to get/set its matrix directly:</p>
+<pre><code class="language-python">getMatrix() -&gt; cave.Matrix4
+setMatrix(mat : cave.Matrix4)
+</code></pre>
+<p>If you don't understand or even if you do, most of the times it's better to use the other functions instead of this because they are easier to work with. :)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

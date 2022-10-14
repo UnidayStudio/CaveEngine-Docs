@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Components - Cave Engine Docs</title>
+        <title>Introduction - Cave Engine Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -58,7 +58,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8 (latest)</a>
+    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
 </li>
                                     
 <li>
@@ -71,33 +75,116 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../cave_module/" class="dropdown-item">Cave Module</a>
+    <a href="./" class="dropdown-item active">Introduction</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="./" class="dropdown-item active">Components</a>
+    <a href="../Core/scene/" class="dropdown-item">Scene</a>
 </li>
+            
+<li>
+    <a href="../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
                                     
 <li>
     <a href="../math/" class="dropdown-item">Math</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../eventNames/" class="dropdown-item">Event Names</a>
+    <a href="../engineUtils/" class="dropdown-item">Utilities</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+            
+<li>
+    <a href="../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/python/" class="dropdown-item">Python Scripting</a>
+    <a href="../Assets/materials/" class="dropdown-item">Material Manipulation</a>
 </li>
+            
+<li>
+    <a href="../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/tooling/" class="dropdown-item">Writting your own Tools</a>
+    <a href="../Events/events/" class="dropdown-item">Handling Events</a>
 </li>
+            
+<li>
+    <a href="../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -118,12 +205,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../cave_module/" class="nav-link">
+                                <a rel="prev" href="../../Docs/Releases/v097/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../math/" class="nav-link">
+                                <a rel="next" href="../Core/scene/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -145,25 +232,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#components" class="nav-link">Components</a>
+            <li class="nav-item" data-level="1"><a href="#welcome-to-cave-engines-python-api" class="nav-link">Welcome to Cave Engine's Python API!</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavetransformcomponent" class="nav-link">cave.TransformComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavemeshcomponent" class="nav-link">cave.MeshComponent</a>
+            <li class="nav-item" data-level="2"><a href="#how-to-read-the-api" class="nav-link">How to read the API?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#cavelightcomponent" class="nav-link">cave.LightComponent</a>
+            <li class="nav-item" data-level="2"><a href="#do-i-need-to-install-python-or-anything" class="nav-link">Do I need to install Python or anything?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#caveuielementcomponent" class="nav-link">cave.UIElementComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#caverigidbodycomponent" class="nav-link">cave.RigidBodyComponent</a>
+            <li class="nav-item" data-level="2"><a href="#do-you-have-any-questions" class="nav-link">Do you have any questions?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -174,155 +253,21 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="components">Components</h1>
-<hr />
-<h2 id="cavetransformcomponent">cave.TransformComponent</h2>
-<h5 id="variables">Variables</h5>
-<pre><code class="language-python">position : cave.Vector3
-</code></pre>
-<pre><code class="language-python">scale : cave.Vector3
-</code></pre>
-<p>Note that you can't get/set the rotation using regular variables as you can with the <code>position</code> and <code>scale</code>. That's due to the way the engine works internally. So use the getters and setters for <code>euler</code> angles or <code>quaternions</code> to rotate as you need to. You can see the details bellow. Sample code (as it would be in the update method of a Component):</p>
-<pre><code class="language-python">[...]
-def update(self):
-    transform = self.entity.getTransform()
-
-    # Modifying the current euler angles by adding 0.1 on the Y axis:
-    euler = transform.getEuler()
-    euler.y += 0.1
-    transform.setEuler(euler)
-
-    # or you can use this to ROTATE the object:
-    # (will produce the same result as the approach above)
-    transform.rotate(0, 0.1, 0)
-</code></pre>
-<pre><code class="language-python">[...]
-    # Last but no least, you can also do this to SET the euler:
-    # (note that this approach will not produce the same result
-    # as the two others presented above. This one wil SET the
-    # rotation to [0, 0, 0])
-    transform.setEuler(0, 0, 0)
-</code></pre>
-<h5 id="methods">Methods</h5>
-<pre><code class="language-python">getEuler() -&gt; cave.Vector3
-setEuler(euler : cave.Vector3)
-setEuler(x : float, y : float, z : float)
-
-getQuaternion() -&gt; cave.Quaternion
-setQuaternion(quaternion : cave.Quaternion)
-setQuaternion(x : float, y : float, z : float, w: float)
-</code></pre>
-<pre><code class="language-python">getMatrix() -&gt; cave.Matrix4
-setMatrix(mat : cave.Matrix4)
-</code></pre>
-<pre><code class="language-python">rotate(x : float, y : float, z : float)
-move(x : float, y : float, z : float, local = True)
-</code></pre>
-<pre><code class="language-python">rotateOnAxis(angle : float, axis : cave.Vector3)
-</code></pre>
-<pre><code class="language-python">rotateOnPitch(angle : float)
-rotateOnYaw(angle : float)
-rotateOnRoll(angle : float)
-</code></pre>
-<pre><code class="language-python">applyLocalMovement(x : float, y : float, z : float)
-</code></pre>
-<pre><code class="language-python">getPitch() -&gt; float
-getYaw() -&gt; float
-getRoll() -&gt; float
-</code></pre>
-<pre><code class="language-python">getForwardVector() -&gt; cave.Vector3
-getRightVector() -&gt; cave.Vector3
-getUpVector() -&gt; cave.Vector3
-</code></pre>
-<pre><code class="language-python">lookAt(direction : cave.Vector3, up = cave.Vector3(0, 1, 0))
-</code></pre>
-<pre><code class="language-python">rotateVector(vec : cave.Vector3) -&gt; cave.Vector3
-</code></pre>
-<pre><code class="language-python">transformVector(vec : cave.Vector3) -&gt; cave.Vector3
-</code></pre>
-<hr />
-<h2 id="cavemeshcomponent">cave.MeshComponent</h2>
-<h5 id="methods_1">Methods</h5>
-<pre><code class="language-python">setAnimation(animation : string)
-</code></pre>
-<hr />
-<h2 id="cavelightcomponent">cave.LightComponent</h2>
-<p>You can adjust various light parameters. Here is a sample code that makes the light color pulse using some timers and the python native math.sin() function:</p>
-<pre><code class="language-python">import cave
-import math
-import random
-
-class PulsingLight(cave.Component):
-    def start(self, scene):
-        self.speed = 2.0
-
-        # Creating some timers with a random value to sample from
-        self.colorX = cave.Timer(random.random())
-        self.colorY = cave.Timer(random.random())
-        self.colorZ = cave.Timer(random.random())
-
-    def compute(self, value):
-        # Maps the timer into a sin curve ranged [0 - 1]
-        return (math.sin(value * self.speed) + 1) / 2
-
-    def update(self):       
-        light = self.entity.get(&quot;Light Component&quot;)
-
-        light.color.x = self.compute(self.colorX.get())
-        light.color.y = self.compute(self.colorY.get())
-        light.color.z = self.compute(self.colorZ.get())
-
-        print(light.color.x, light.color.y, light.color.z)
-
-        # Don't forget to reload the light, otherwise it will not be updated:
-        light.reload()
-
-
-    def end(self, scene):
-        pass
-</code></pre>
-<h5 id="variables_1">Variables</h5>
-<p><strong>NOTE:</strong> Lights are pre cached so the changes you made in the following parameters will not be effective (applied to the light) until you call the <code>reload()</code> method.</p>
-<pre><code class="language-python">color : cave.Vector3
-radius : float
-intensity : float
-</code></pre>
-<hr />
-<h2 id="caveuielementcomponent">cave.UIElementComponent</h2>
-<h5 id="variables_2">Variables</h5>
-<pre><code class="language-python">text : str
-</code></pre>
-<pre><code class="language-python">position : cave.UIVector
-</code></pre>
-<pre><code class="language-python">scale : cave.UIVector
-</code></pre>
-<pre><code class="language-python">text : str
-</code></pre>
-<h5 id="methods_2">Methods</h5>
-<pre><code class="language-python">isHovered() -&gt; bool
-</code></pre>
-<hr />
-<h2 id="caverigidbodycomponent">cave.RigidBodyComponent</h2>
-<h5 id="variables_3">Variables</h5>
-<pre><code class="language-python">alwaysActive : bool
-</code></pre>
-<pre><code class="language-python">linearVelocity : cave.Vector3
-angularVelocity : cave.Vector3
-angularFactor : cave.Vector3
-</code></pre>
-<h5 id="methods_3">Methods</h5>
-<pre><code class="language-python">getCollisions() -&gt; list(cave.Entity)
-</code></pre>
-<pre><code class="language-python">collidedWith(tag : string) -&gt; bool
-</code></pre>
-<pre><code class="language-python">applyTorque(x : float, y : float, z : float)
-</code></pre>
-<pre><code class="language-python">applyForce(x : float, y : float, z : float, location : cave.Vector3)
-</code></pre>
-<pre><code class="language-python">isDynamic() -&gt; bool
-</code></pre>
-<pre><code class="language-python">setMass(value : float)
-</code></pre></div>
+<h1 id="welcome-to-cave-engines-python-api">Welcome to Cave Engine's Python API!</h1>
+<p><em>(Note: This API is up to date with <strong>Cave Engine v0.9.8 - PRO</strong>)</em></p>
+<p>Welcome to the official <strong>Cave Engine</strong> API, written to give you a good overview of how python scripting works in Cave and also serve as a Reference for you to write your own custom code.</p>
+<p>It was designed with readability in mind, so <strong>it's strongly recommended that you to take some time and read thought the entire API to better understand everything</strong>. It is full of code samples, tips and insights on how you can use those functions, classes and variables to get the best out of the engine. It also shares some cool and good to know secrets on how Cave works internally, so you can better use and understand it.</p>
+<p>Keep in mind that <strong>this API is not a Python (language) tutorial</strong> and we expect that you have a basic understanding on how this programming language works and how to write code using it, as well as some Object Oriented Programming (OOP) knowledge. If you don't know Python, <a href="https://docs.python.org/3/tutorial/">check this to get started</a>.</p>
+<h2 id="how-to-read-the-api">How to read the API?</h2>
+<p>You can start reading it in order, as it appears in the <strong>Python API</strong> top menu, starting with the Core elements (Scene, Entity, Component) and then exploring all the others. Remember that you can always go back later and use this API as a reference while writting your own codes.</p>
+<h2 id="do-i-need-to-install-python-or-anything">Do I need to install Python or anything?</h2>
+<p><strong>No!</strong> Cave Engine comes with python embedded by default and all the <code>cave</code> modules and submodules are within the engine. Meaning that there is no need to install python by hand on your machine and you also <strong>don't</strong> need to install any <code>cave</code> modules yourself. In fact, it's not even possible to install it yourself since they only work inside Cave Engine.</p>
+<h2 id="do-you-have-any-questions">Do you have any questions?</h2>
+<p>If you have any questions, suggestions or comments, feel free to Join one of our discord servers and ask there:</p>
+<ul>
+<li><a href="http://bit.ly/discord-uniday-us">Our Discord - <strong>In English</strong></a></li>
+<li><a href="http://bit.ly/discord-uniday">Our Discord - <strong>In Portuguese (Brazil)</strong></a></li>
+</ul></div>
             </div>
         </div>
 

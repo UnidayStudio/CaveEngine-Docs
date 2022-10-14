@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Entity - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Entity</a>
+</li>
+            
+<li>
+    <a href="../component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../scene/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../component/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#entity" class="nav-link">Entity</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#caveentity" class="nav-link">cave.Entity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-working-with-components" class="nav-link">- Working with Components</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-parenting-system" class="nav-link">- Parenting System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-activating-an-entity" class="nav-link">- Activating an Entity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-duplicating-an-entity" class="nav-link">- Duplicating an Entity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="entity">Entity</h1>
+<p>After the <code>cave.Scene</code>, <code>cave.Entity</code> if the main thing in Cave. Because this class is the one that you'll be using to build your scenes, characters, enemies, interfaces and much more. That's why it's essential that you have a solid understanding of how it works. So let's jump to it!</p>
+<h2 id="caveentity">cave.Entity</h2>
+<h5 id="variables">Variables</h5>
+<p>Cave's Entity only have those two variables. But they all serve a specific purpose, as you can see below.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">name</td>
+<td>The entity name.</td>
+</tr>
+<tr>
+<td align="left">properties</td>
+<td>This is a python dictionary that you can use to store everything related to your entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">name        : str
+properties  : dict
+</code></pre>
+<h5 id="methods">Methods</h5>
+<p>To kill an entity, you can either do it immediately or schedule it to be done in the future, as you can see below. If you schedule a kill, you'll need to pass a time, in seconds, that the engine will start counting to delete the Entity. That's very useful if you want to drop an item that will dissapear after some time or create an UI element for a tutorial that will least on screen for 10 seconds, as an example.</p>
+<pre><code class="language-python">kill()
+scheduleKill(timeInSeconds: float)
+</code></pre>
+<p>Keep in mind that <strong>killing an Entity is an action that only gets done by the end of the Engine's frame</strong>. So when you call the Entity's <code>kill()</code> method or even the <code>scene.remove(entity)</code>, it will be scheduled to be done at the end of the current frame. That's why the following function, <code>isAlive</code>, is very important: most of the times, it will return <code>True</code>, but when the Entity gets marked for deletion in the end of the frame, it will return <code>False</code>.</p>
+<p>A good use case of this method os when you are handling damage and deleting the objects that take damage, adding it to the player's score. As you saw in the <strong>Scene's Documentation</strong> (read the <strong>CollisionInfo</strong> notes), a collision hit may happen multiple times for the same entities. So if you're iterating over all the entities to perform this damage and kill action and don't check to see if each entity is still alive, you may count the same kill twice!</p>
+<p><em><strong>Important:</strong> If you schedule a Kill using <code>scheduleKill</code>, the entity will still be alive until its last frame, when it will actually be deleted.</em></p>
+<p>There is the method API for reference:</p>
+<pre><code class="language-python">isAlive() -&gt; bool
+</code></pre>
+<p>If you need to see if the entity has a specific <strong>Tag</strong> or <strong>Property</strong>, use one of those methods:</p>
+<pre><code class="language-python">hasTag(tag: str) -&gt; bool
+hasProperty(property: str) -&gt; bool
+</code></pre>
+<p>If you want to get the Entity's ID, you can call the <code>getID</code> method:</p>
+<pre><code class="language-python">getID() -&gt; int
+</code></pre>
+<p>It's a good idea to store the entity ID if you constantly wants to query the scene to retrieve the entity back, since it's faster to get the entity by its ID than it is by its name. <strong>And why not storing the Entity directly?</strong> Because if the entity gets deleted, you may cause a big problem if you still have it in your code. During a single frame, it's not a problem to store entities in a variable because as you already saw, the Engine will not immediately delete any entity while there is still code being running for the frame.</p>
+<p>If you want to get the Entity's scene, use this:</p>
+<pre><code class="language-python">getScene() -&gt; cave.Scene
+</code></pre>
+<h2 id="-working-with-components">- Working with Components</h2>
+<p>As you already know, Cave Engine lets you customize your Entities by adding and manipulating components in it. When working with components using the <strong>Python API</strong>, you'll always refer to them by typing their names as strings. Adding the "Component" sufix is not mandatory, meaning that if you want to get the Entity's <code>RigidBodyComponent</code> for example, you can call it: <code>"RigidBodyComponent"</code> or just <code>"RigidBody"</code>. </p>
+<p>The Entity supports having multiple components of the same Type. In this case, getting it (with <code>get</code>) will return the first hit. That's why you can also use <code>getAll</code> to return all of them (same type). Here is the full API:</p>
+<pre><code class="language-python"># Adds a new component:
+add(componentName: str) -&gt; cave.Component
+
+# Returns a specific component:
+get(componentName: str) -&gt; cave.Component
+
+# Returns all the components with this same type:
+getAll(componentName: str) -&gt; list of cave.Component
+</code></pre>
+<p>There is one component type that you'll likely to use a lot, which is the <strong>Transform Component</strong>. That's why Cave provides this method below for you to get them more easily. Keep in mind that an Entity may not have a transform (and it will return None).</p>
+<pre><code class="language-python">getTransform() -&gt; cave.TransformComponent
+</code></pre>
+<h2 id="-parenting-system">- Parenting System</h2>
+<p>As explained in the <strong>Scene</strong> documentation, Cave Engine organizes the scene into a <strong>Tree structure</strong>, where entities can be child of other entities. With that in mind, it's important that you know how to use and manipulate the parenting system.</p>
+<p>To get the parent and children, you can use one of those methods below:</p>
+<pre><code class="language-python">getParent() -&gt; cave.Entity
+
+# Get a Specific Child, by name
+getChild(name: str, recursive=True) -&gt; cave.Entity
+
+# Gets all the children:
+getChildren() -&gt; list of cave.Entity
+
+# Gets all the children recursively, meaning that all the
+# children of the Entity's children will be included (and so on):
+getChildrenRecursive() -&gt; list of cave.Entity
+</code></pre>
+<p>In order to make a new parent, you can use one of those methods below. They will return <code>True</code> of the parenting attempt was sucessful. </p>
+<pre><code class="language-python">setParent(parent: cave.Entity) -&gt; bool
+setParentLocal(parent: cave.Entity) -&gt; bool
+</code></pre>
+<p>Parenting an entity with <code>None</code> will remove its parent. But in order to remove a parent, it's best to use one of those methods:</p>
+<pre><code class="language-python">removeParent()
+removeParentLocal()
+</code></pre>
+<p>Regarding the parenting system, there is some common questions that we'll address here:</p>
+<ul>
+<li>
+<p><strong>What if I want to make an entity a child of another?</strong> You may have noticed that we don't have a <code>setChild</code> or <code>makeChildOf</code> method, only <code>setParent</code>. If you want the entity <strong>A</strong> to be a child of the entity <strong>B</strong>, then what you actually want is <strong>B</strong> to be the parent of <strong>A</strong>. So instead of thinking of it as <code>B.makeChildOf(A)</code>, think about <code>A.setParent(B)</code>.</p>
+</li>
+<li>
+<p><strong>What is this "local" thing?</strong> You also may have noticed that some methods have a "local" variant. If you set or remove a Parent using the "local" variants, it will try to preserv the entity's Transform, meaning that you'll not see it changing position, rotation or scale during this operation. <strong>Most of the time, this is what you want.</strong></p>
+</li>
+<li>
+<p><strong>Will the Children move with their parent?</strong> Yes! When you create a parenting system, moving, rotating or scaling the parent will also affect their children. For reference, <strong>Entities with a parent will have their Transforms local to their parent's Transform</strong>. Unless the parent don't have a transform, of course. :)</p>
+</li>
+<li>
+<p><strong>If I delete or disable the parent, will it affect the children?</strong> Yes! :)</p>
+</li>
+</ul>
+<h2 id="-activating-an-entity">- Activating an Entity</h2>
+<p>You might want to disable (deactivate) an entity for some occasions. All the entities are activated by default, meaning that they will be rendered, execute logic and be taken into account in the Physics World. But some times, you just need to disable them for some time or until something happens, then re enable. </p>
+<p>This is useful, for example, to create UI. Think about a pause menu. Instead of having to create an Entity Template for the menu and adding and removing it to the scene every time, you could just make the menu always there and just deactivate it when the game is running, activating it back if the player hits pause.</p>
+<p><em><strong>NOTE:</strong> Setting an entity to active or not will also recursively change this to all its children.</em></p>
+<p>To see if the entity is Activated or Deactivated, you can use one of those methods:</p>
+<pre><code class="language-python">isActive() -&gt; bool
+getActive() -&gt; bool
+</code></pre>
+<p>In order to change this, you can also use the method provided below. But there is something important to know here: When you disable an Entity, it will call its <strong>end</strong> method (that will call the Component ones) and the same thing applies for activating them back (but with the <strong>start</strong> method). And due to how the engine works internally, those methods requires the scene you're in in order to work. So to activate or deactivate an entity, you'll need to pass the scene as an argument. You can simply get it using <code>cave.getCurrentScene()</code> and it will work just fine.</p>
+<pre><code class="language-python"># Activates the entity:
+activate(scene: cave.Scene)
+
+# Deactivates the entity:
+deactivate(scene: cave.Scene)
+
+# You can use this one if you want to set it with a boolean variable:
+setActive(value: bool, scene: cave.Scene)
+</code></pre>
+<h2 id="-duplicating-an-entity">- Duplicating an Entity</h2>
+<p>You can create a copy of the entity and add it to the scene by doing this:</p>
+<pre><code class="language-python">scene = cave.getCurrentScene()
+
+# Creating a copy of the current entity...
+entityCopy = cave.Entity(self.entity)
+
+# Manually adding it to the scene:
+scene.add(entityCopy)
+</code></pre>
+<p>You can also create a new one from scratch and add it to the scene like this:</p>
+<pre><code class="language-python">newEntity = cave.Entity()
+scene.add(newEntity)
+</code></pre>
+<p>But we strongly recommend, for the ease of use, that you build a new one by using the <strong>Entity Template</strong> system. Check the Scene's documentation for more details on how to do it.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

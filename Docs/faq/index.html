@@ -58,7 +58,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Releases/v098/" class="dropdown-item">Cave 0.9.8 (latest)</a>
+    <a href="../Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
 </li>
                                     
 <li>
@@ -71,33 +75,116 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../PythonAPI/cave_module/" class="dropdown-item">Cave Module</a>
+    <a href="../../PythonAPI/introduction/" class="dropdown-item">Introduction</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../PythonAPI/components/" class="dropdown-item">Components</a>
+    <a href="../../PythonAPI/Core/scene/" class="dropdown-item">Scene</a>
 </li>
+            
+<li>
+    <a href="../../PythonAPI/Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../PythonAPI/Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
                                     
 <li>
     <a href="../../PythonAPI/math/" class="dropdown-item">Math</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../PythonAPI/eventNames/" class="dropdown-item">Event Names</a>
+    <a href="../../PythonAPI/engineUtils/" class="dropdown-item">Utilities</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../PythonAPI/engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/python/" class="dropdown-item">Python Scripting</a>
+    <a href="../../PythonAPI/Assets/materials/" class="dropdown-item">Material Manipulation</a>
 </li>
+            
+<li>
+    <a href="../../PythonAPI/Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/tooling/" class="dropdown-item">Writting your own Tools</a>
+    <a href="../../PythonAPI/Events/events/" class="dropdown-item">Handling Events</a>
 </li>
+            
+<li>
+    <a href="../../PythonAPI/Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../PythonAPI/EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../PythonAPI/EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -163,7 +250,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#there-are-plans-to-support-2d-games" class="nav-link">There are plans to support 2D games?</a>
+            <li class="nav-item" data-level="2"><a href="#are-there-plans-to-support-2d-games" class="nav-link">Are there plans to support 2D Games?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -193,22 +280,22 @@
 <h1 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h1>
 <h2 id="what-is-the-point-of-cave-engine">What is the Point of Cave Engine?</h2>
 <p>In a nutshell: Cave Engine is focusing 100% on the <strong>usability</strong> and your experience using it. <strong>Keep it as simple as possible</strong> so even someone with zero experience with game development will be able to use it, but at the same time,<strong> keep it powerful enough to support your biggest dreams</strong>.</p>
-<p><strong>And how we are managing to do that?</strong>
+<p><strong>And how are we managing to do that?</strong>
 We are a company called Uniday Studio that develops and teaches game dev since many years ago. We had te opportunity to reach more than two million people across the world on YouTube, teaching game dev, and we have hundreds and hundreds of students in our courses. </p>
 <p>After so many years, students and answering literally dozens of thousands of questions about the topic, we realized that a lot of people don't make their games because they found too hard to get started or use the software. We reched a conclusion that, just like a joke, if a game engine needs an explanation on how to use it, then this engine may not be that good.</p>
 <p>And that's our main principle now. Of course, some things inside a game engine may need a few tips to figure out how to use, but hours and hours of tutorials only to get started? That's not an option for us.</p>
 <p><strong>Cave Engine is focused in provide the smallest path between you and your dream games.</strong></p>
 <h2 id="is-cave-engine-free">Is Cave Engine free?</h2>
-<p>Yes.</p>
-<h2 id="can-i-sell-or-redistribute-my-game-made-using-cave-engine">Can I sell or Redistribute my <strong>Game</strong> made using Cave Engine?</h2>
+<p>At this point, you can either wait for the <strong>Free Releases</strong> or you can get <strong>Cave Engine PRO</strong>, that will grant you early access to it and some exclusive features.</p>
+<h2 id="can-i-sell-or-redistribute-my-game-made-using-cave-engine"><strong>Can I sell</strong> or Redistribute my <strong>Game</strong> made using Cave Engine?</h2>
 <p><strong>Yes!</strong> Under <strong>attribution</strong> to the Cave Engine - by Uniday Studio. That's it!</p>
 <h2 id="can-i-sell-or-redistribute-the-cave-engine-editor">Can I sell or Redistribute the Cave Engine Editor?</h2>
 <p><strong>No!</strong> The Cave Engine Editor is an intellectual property of <strong>Uniday Studio</strong> and you don't have permission to sell or redistribute it. If you want/need to share the engine with someone, please use the links provided by Uniday Studio.</p>
 <hr />
-<h2 id="there-are-plans-to-support-2d-games">There are plans to support 2D games?</h2>
+<h2 id="are-there-plans-to-support-2d-games">Are there plans to support <strong>2D Games</strong>?</h2>
 <p>No, there is no plans to add 2D game specific features. Cave Engine is 100% focused on 3D game development. But also note that nothing avoids you to use an ortographic camera and create a 2D game using it.</p>
 <h2 id="how-can-i-create-my-logics-using-cave-engine">How can I create my Logics using Cave Engine?</h2>
-<p>You can do it using <strong>Python Scripts</strong>. And be aware: There are plans to  include a Visual Programming alternative.</p>
+<p>You can do it using <strong>Python Scripts</strong>. A Visual Scripting alternative is work in progress, soon it will be out.</p>
 <h2 id="was-the-entire-engine-written-in-python">Was the entire engine written in Python?</h2>
 <p>Absolutely no! All the Engine and Editor was written in C/C++ and GLSL. We just provide Python Scripting as a front end for you to easily create the logic of your games.</p>
 <h2 id="to-which-platforms-can-i-export-my-game">To which Platforms can I export my game?</h2>

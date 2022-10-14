@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Cave Module - Cave Engine Docs</title>
+        <title>Miscellaneous - Cave Engine Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -58,7 +58,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8 (latest)</a>
+    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
 </li>
                                     
 <li>
@@ -71,33 +75,116 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Cave Module</a>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../components/" class="dropdown-item">Components</a>
+    <a href="../Core/scene/" class="dropdown-item">Scene</a>
 </li>
+            
+<li>
+    <a href="../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
                                     
 <li>
     <a href="../math/" class="dropdown-item">Math</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../eventNames/" class="dropdown-item">Event Names</a>
+    <a href="../engineUtils/" class="dropdown-item">Utilities</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/python/" class="dropdown-item">Python Scripting</a>
+    <a href="../Assets/materials/" class="dropdown-item">Material Manipulation</a>
 </li>
+            
+<li>
+    <a href="../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/tooling/" class="dropdown-item">Writting your own Tools</a>
+    <a href="../Events/events/" class="dropdown-item">Handling Events</a>
 </li>
+            
+<li>
+    <a href="../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -118,12 +205,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../Docs/Releases/v097/" class="nav-link">
+                                <a rel="prev" href="../engineUtils/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../components/" class="nav-link">
+                                <a rel="next" href="../Assets/materials/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -145,37 +232,27 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#cave-module" class="nav-link">Cave Module</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#general-functions" class="nav-link">General Functions</a>
+            <li class="nav-item" data-level="1"><a href="#engine-miscellaneous" class="nav-link">Engine Miscellaneous</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#caveevents" class="nav-link">cave.Events</a>
+            
+            <li class="nav-item" data-level="1"><a href="#counting-time" class="nav-link">Counting Time</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#caveentity" class="nav-link">cave.Entity</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#caveraycastout" class="nav-link">cave.RayCastOut</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavescene" class="nav-link">cave.Scene</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavesun" class="nav-link">cave.Sun</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#cavetimer" class="nav-link">cave.Timer</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#cavecomponent" class="nav-link">cave.Component</a>
+            <li class="nav-item" data-level="2"><a href="#cavescenetimer" class="nav-link">cave.SceneTimer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#others" class="nav-link">Others</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavebitmask" class="nav-link">cave.BitMask</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -186,135 +263,69 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="cave-module">Cave Module</h1>
-<h2 id="general-functions">General Functions</h2>
-<p>General game engine related functions and global variables.</p>
-<pre><code class="language-python">cave.getEvents() -&gt; cave.Events
-</code></pre>
-<pre><code class="language-python">cave.getDeltaTime() -&gt; float
-</code></pre>
-<p>You can use the deltaTime to multiply your variables before moving or rotating an entity, so the action will be consistent independently of the current FPS the game is running on.</p>
-<pre><code class="language-python">cave.getMousePosition() -&gt; cave.Vector2
-cave.setMousePosition(int x, int y)
-</code></pre>
-<pre><code class="language-python">cave.getWindowSize() -&gt; cave.Vector2
-</code></pre>
-<pre><code class="language-python">cave.quitGame() -&gt; None
-</code></pre>
-<pre><code class="language-python">cave.getCurrentScene() -&gt; cave.Scene
-cave.setScene(sceneName : str) -&gt; None
+<h1 id="engine-miscellaneous">Engine Miscellaneous</h1>
+<p>Here you'll find various engine classes.</p>
+<h1 id="counting-time">Counting Time</h1>
+<p>Cave Engine provides two useful classes for you to count Time: <code>Timer</code> and <code>SceneTimer</code>. They have the exact same API and the only different between them is that the latter will use the scene's elapsed time (when not paused) and the regular <code>Timer</code> will use the system time. </p>
+<p>In practice, this means that <strong>if you pause the scene</strong>, the <code>SceneTimer</code> will also pause and the <code>Timer</code> will keep counting. Most of the times, what you're looking for will be the <code>SceneTimer</code>. :)</p>
+<h2 id="cavetimer">cave.Timer</h2>
+<p>You can Initialize it in two ways:</p>
+<pre><code class="language-python"># This way it will start counting time at zero:
+timer = Timer()
 
-cave.restartCurrentScene() -&gt; None
+# And this way it will start at 10 seconds (for example):
+timer = Timer(10.0)
 </code></pre>
-<hr />
-<h2 id="caveevents">cave.Events</h2>
-<p>How to use this class:</p>
-<pre><code class="language-python">events = cave.getEvents()
-
-if events.pressed(&quot;W&quot;):
-    print(&quot;The user pressed the key W!&quot;)
-
-if events.released(&quot;MOUSE_LEFT&quot;):
-    print(&quot;The user released the left mouse button!&quot;)
-</code></pre>
-<p><strong>Note:</strong> Do <strong>not</strong> instantiate a new instance of this class, you should always use the one provided by the <code>cave.getEvents()</code> function.</p>
 <h5 id="methods">Methods</h5>
-<pre><code class="language-python">pressed(event : str) -&gt; bool
+<pre><code class="language-python"># Returns the elapsed time (in seconds):
+get() -&gt; float
+
+# Sets the counter to some initial value (in seconds):
+set(value: float)
+
+# Resets the counter to 0:
+reset()
 </code></pre>
-<p>Returns <strong>True</strong> if the user just pressed the <em>event</em> key or <strong>False</strong> if not.</p>
-<pre><code class="language-python">active(event : str) -&gt; bool
-</code></pre>
-<p>Always returns <strong>True</strong> while the user is pressing the <em>event</em> key or <strong>False</strong> if not.</p>
-<pre><code class="language-python">released(event : str) -&gt; bool
-</code></pre>
-<p>Returns <strong>True</strong> if the user just released the <em>event</em> key or <strong>False</strong> if not.</p>
-<hr />
-<h2 id="caveentity">cave.Entity</h2>
-<h5 id="variables">Variables</h5>
-<pre><code class="language-python">name : str
+<h2 id="cavescenetimer">cave.SceneTimer</h2>
+<p>You can Initialize it in two ways:</p>
+<pre><code class="language-python"># This way it will start counting time at zero:
+timer = SceneTimer()
+
+# And this way it will start at 10 seconds (for example):
+timer = SceneTimer(10.0)
 </code></pre>
 <h5 id="methods_1">Methods</h5>
-<pre><code class="language-python">kill()
-</code></pre>
-<pre><code class="language-python">hasTag(tag : str) -&gt; bool
-</code></pre>
-<pre><code class="language-python">add(component : cave.Component)
-get(component : str) -&gt; cave.Component
-getAll(component : str) -&gt; list(cave.Component)
-</code></pre>
-<pre><code class="language-python">getScene() -&gt; cave.Scene
-</code></pre>
-<pre><code class="language-python">getParent() -&gt; cave.Entity
-getChildren() -&gt; list(cave.Entity)
-</code></pre>
-<pre><code class="language-python">getTransform() -&gt; cave.TransformComponent
-</code></pre>
-<pre><code class="language-python">getID() -&gt; int
+<pre><code class="language-python"># Returns the elapsed time (in seconds):
+get() -&gt; float
+
+# Sets the counter to some initial value (in seconds):
+set(value: float)
+
+# Resets the counter to 0:
+reset()
 </code></pre>
 <hr />
-<h2 id="caveraycastout">cave.RayCastOut</h2>
-<h5 id="variables_1">Variables</h5>
-<pre><code class="language-python">hit : bool
+<h1 id="others">Others</h1>
+<h2 id="cavebitmask">cave.BitMask</h2>
+<p>The BitMask is used by cave as Masks to filter various things, such as Rendering related components or even Physics. A bitmask consists in 32 bits, mapped from <strong>[0 to 31]</strong>. Keep in mind that if you attempt to manipulate a bit that's outside this range, it may lead to undefined behaviour. </p>
+<p>A BitMask class can be instantiated by you just fine if you want:</p>
+<pre><code class="language-python">myBitMask = cave.BitMask()
+myBitMask.enable(1)
+myBitMask.disable(2)
 </code></pre>
-<pre><code class="language-python">position : cave.Vector3
-</code></pre>
-<pre><code class="language-python">normal : cave.Vector3
-</code></pre>
-<pre><code class="language-python">entity : cave.Entity
-</code></pre>
-<hr />
-<h2 id="cavescene">cave.Scene</h2>
 <h5 id="methods_2">Methods</h5>
-<pre><code class="language-python">newEntity() -&gt; cave.Entity
+<p>If you have two BitMasks and want to check if them intersect, meaning if they have some enabled bits in common, you can use this method:</p>
+<pre><code class="language-python">intersect(other: BitMask) -&gt; bool
 </code></pre>
-<pre><code class="language-python">add(entity : cave.Entity) -&gt; cave.Entity
-addFromTemplate(templateName : str, overrideTransform=True) -&gt; cave.Entity
+<p>Both functions bellow serves to check if a specific bit is enabled (True) or disabled (False).</p>
+<pre><code class="language-python">isEnabled(bit: int) -&gt; bool
+get(bit: int) -&gt; bool
 </code></pre>
-<p>The <code>scene.add(entity)</code> method is used to add an entity you manually build by yourself in the code. Most of the times it's not exactly what you want. That's why there is a <code>scene.addFromTemplate(name)</code> alternative: Given an Entity Template name, the engine will construct a new entity for you followying that template. Both methods returns the added entity for convenience.</p>
-<pre><code class="language-python">remove(entity : cave.Entity)
-</code></pre>
-<pre><code class="language-python">rayCast(origin : cave.Vector3, target : cave.Vector3) -&gt; cave.RayCastOut
-</code></pre>
-<pre><code class="language-python">getSun() -&gt; cave.Sun
-</code></pre>
-<pre><code class="language-python">getEntity(id : int) -&gt; cave.Entity
-getEntity(name : str) -&gt; cave.Entity
-</code></pre>
-<p><strong>Note:</strong> Time complexity of getting an Entity by name (string) is <code>O(n)</code> and by ID is <code>O(1)</code>. In other words: get by name is way slower than by ID so it's recommended to store the entity ID and use it as much as you can. Also, when you have multiple entities with the same name in the scene, it will always return the first entity found (and this result may be non deterministic - in other words the result may vary).</p>
-<hr />
-<h2 id="cavesun">cave.Sun</h2>
-<h5 id="variables_2">Variables</h5>
-<pre><code class="language-python">hour : float # 0.0 to 24.0
-</code></pre>
-<pre><code class="language-python">angle : float # 0.0 to 360.0
-</code></pre>
-<pre><code class="language-python">color : cave.Vector3
-</code></pre>
-<pre><code class="language-python">intensity : float
-</code></pre>
-<hr />
-<h2 id="cavetimer">cave.Timer</h2>
-<h5 id="methods_3">Methods</h5>
-<pre><code class="language-python">get() -&gt; float
-set(value : float)
-</code></pre>
-<pre><code class="language-python">reset()
-</code></pre>
-<hr />
-<h2 id="cavecomponent">cave.Component</h2>
-<h5 id="variables_3">Variables</h5>
-<pre><code class="language-python">entity : cave.Entity
-</code></pre>
-<h5 id="methods_4">Methods</h5>
-<pre><code class="language-python">start(scene : cave.Scene)
-</code></pre>
-<pre><code class="language-python">update()
-</code></pre>
-<pre><code class="language-python">end(scene : cave.Scene)
-</code></pre>
-<pre><code class="language-python">reload()
-</code></pre>
-<p>The reload() method will end() the component and then start() it again. It's useful because some components like the Mesh and the Light, for optimization purposes, pre cache the data and only changes it during the start.</p></div>
+<p>To change a bit (enabling or disabling it), you can either use the <code>set(...)</code> method or the equivalent enable/disable ones:</p>
+<pre><code class="language-python">set(bit: int, value: bool)
+enable(bit: int)
+disable(bit: int)
+</code></pre></div>
             </div>
         </div>
 

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Scene - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Scene</a>
+</li>
+            
+<li>
+    <a href="../entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../introduction/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../entity/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#scene" class="nav-link">Scene</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavescene" class="nav-link">cave.Scene</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-scene-collision-checks" class="nav-link">- Scene Collision Checks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-scene-queries" class="nav-link">- Scene Queries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#scene-related-classes" class="nav-link">Scene Related Classes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#caveraycastout" class="nav-link">cave.RayCastOut</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavecollisioninfo" class="nav-link">cave.CollisionInfo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavesun" class="nav-link">cave.Sun</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="scene">Scene</h1>
+<p>The <code>cave.Scene</code> is where all your game will happen. You can think of it as a Level where you can put all your entities in order to build your worlds, enemies and the game itself. </p>
+<p>There will always be a scene loaded (and you can get the current one by calling <code>cave.getCurrentScene()</code>), one at the time and you can change or reload it any time you want during the gameplay. Check the <code>Engine &gt; Utilities &gt; Scene</code> section for more details on it.</p>
+<p>In order to completely understand and use all the APIs provided to manipulate the Scenes, you'll also see some other important classes (in this page) that will make a lot of sense to you after reading the <code>cave.Scene</code> documentation below. So let's get started:</p>
+<h2 id="cavescene">cave.Scene</h2>
+<h5 id="variables">Variables</h5>
+<p>Cave's Scene only have those three variables. But they all serve a specific purpose, as you can see below.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">name</td>
+<td>The scene name.</td>
+</tr>
+<tr>
+<td align="left">paused</td>
+<td>You can set this to <code>True</code> or <code>False</code> to pause/unpause the scene. If True, it will no longer call the component's <code>update</code> method and will call the <code>pausedUpdate</code> instead.</td>
+</tr>
+<tr>
+<td align="left">properties</td>
+<td>This is a python dictionary that you can use to store everything related to your game's scene. Very useful for variables that needs to be accessed by various entities, such as enemy waves, time spent, remaining items to collect or scores.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">name        : str
+paused      : bool
+properties  : dict
+</code></pre>
+<h5 id="methods">Methods</h5>
+<p>In order to create new Entities, you have two options: Build them from scratch in the code or instantiate them by providing a template. To create them from scratch, you can use one of those two scene methods:</p>
+<pre><code class="language-python"># Creates a brand new entity and returns it to you:
+newEntity() -&gt; cave.Entity
+
+# If you already have an Entity and just need to add it to the scene, then use this 
+# (it will return the entity as well to make it easy for you to use the method):
+add(entity: Entity) -&gt; cave.Entity
+</code></pre>
+<p>The <code>scene.add(entity)</code> method is used to add an entity you manually build by yourself in the code. Most of the times it's not exactly what you want. That's why there is a <code>scene.addFromTemplate(name)</code> alternative: Given an Entity Template name, the engine will construct a new entity for you followying that template. Both methods returns the added entity for convenience.</p>
+<p>If you want to create a new one by providing a template (<strong>recommended</strong>), use this method:</p>
+<pre><code class="language-python"># Note that you can provide optional arguments to set a custom transform to add it to.
+addFromTemplate(
+    templateName : str, 
+    position = cave.Vector3(0, 0, 0), 
+    rotation = cave.Vector3(0, 0, 0), 
+    scale    = cave.Vector3(1, 1, 1)
+) -&gt; cave.Entity
+</code></pre>
+<p>If you need to remove an Entity from the scene, you can either kill it (calling <code>entity.kill()</code>) or just remove them directly using this method:</p>
+<pre><code class="language-python">remove(entity : cave.Entity)
+</code></pre>
+<hr />
+<p>This method will return the elapsed time, in second, since the Scene creation. This value does <strong>not</strong> include the time paused (and yes, it's the number user by the <code>SceneTimer</code> to count time).</p>
+<pre><code class="language-python">getElapsedSceneTime() -&gt; float
+</code></pre>
+<p>In Cave Engine, every Scene have its own Sun light and you can get it by calling this scene method:</p>
+<pre><code class="language-python">getSun() -&gt; cave.Sun
+</code></pre>
+<hr />
+<h2 id="-scene-collision-checks">- Scene Collision Checks</h2>
+<p>If you need to do some "in place" Collision dettection like a ray cast or check if there are objects at certain place, you can use one of those methods below. Keep in mind that all of them will rely on the physics engine to return the correct values, so make sure that the Entities that you're trying to detect have a proper Physics shape (like a Rigid Body or a Character Component). </p>
+<p>It's also good to know that the result is calculated immediately when you call those functions, so you don't need to worry about the output being delayed by a frame like some engines. It will be up to date with the current scene status. </p>
+<p>The first and most common method in this list is the <code>rayCast</code> and <code>rayCastAll</code>. The difference between them is that the first one will stop and return in the first ray hit and the second one will return a python list with all the hits. It's a good option if you want to make a gun that can shoot through walls, for example.</p>
+<pre><code class="language-python">rayCast(origin : cave.Vector3, target : cave.Vector3) -&gt; cave.RayCastOut
+rayCastAll(origin : cave.Vector3, target : cave.Vector3) -&gt; list of cave.RayCastOut
+</code></pre>
+<p>Ray casts are good, but sometimes they are not enough for what you want. That's why Cave Engine lets you check for collision within certain bounds. For now, you can use a Box or a Sphere shape for this and the usage is very simple as you can see below. Check the <code>cave.CollisionInfo</code> for additional details.</p>
+<pre><code class="language-python"># Box Shape checks:
+checkContactBox(boxTransform: cave.Transform) -&gt; list of cave.CollisionInfo
+checkContactBox(
+    boxPosition : cave.Vector3,
+    boxRotation : cave.Vector3,
+    boxScale    : cave.Vector3
+) -&gt; list of cave.CollisionInfo
+
+# Sphere Shape checks:
+checkContactSphere(position: cave.Vector3, radius: float)-&gt; list of cave.CollisionInfo
+</code></pre>
+<hr />
+<h2 id="-scene-queries">- Scene Queries</h2>
+<p>If you want to get a specific Entity in the scene, you can use one of those two methods:</p>
+<pre><code class="language-python">getEntity(id : int) -&gt; cave.Entity
+getEntity(name : str) -&gt; cave.Entity
+</code></pre>
+<p><strong>Note:</strong> Time complexity of getting an Entity by name (string) is <code>O(n)</code> and by ID is <code>O(1)</code>. In other words: get by name is way slower than by ID so it's recommended to store the entity ID and use it as much as you can. Also, when you have multiple entities with the same name in the scene, it will always return the first entity found (and this result may be non deterministic - in other words the result may vary).</p>
+<p>But that's not everything! If you need to get all the entities in the scene, you can do it so by calling:</p>
+<pre><code class="language-python">getEntities() -&gt; list of cave.Entity
+</code></pre>
+<p>And you can be a bit smarter than that and filter the Entities by something, such as by <strong>Tag</strong> or <strong>Property</strong>. Keep in mind that if you decide to filter by <strong>Tag</strong>, it will tend to be faster than it is by <strong>Property</strong>, since the Cave's tag system does not rely on python (meaning that the backends are completely written in C++) and the Properties does.</p>
+<pre><code class="language-python">getEntitiesWithTag(tag: str) -&gt; list of cave.Entity
+getEntitiesWithProperty(property: str) -&gt; list of cave.Entity
+</code></pre>
+<p>At this point, you probably already noticed that Cave Engine organizes the scene into a <strong>Tree structure</strong>, where entities can be child of other entities. All the query methods mentioned above will consider this entire hierarchy, but sometimes you may only need what we call the <strong>Root Entities</strong>. Meaning the Entities with no parents. If that's your case, you can easily retrieve them with the methods above:</p>
+<pre><code class="language-python"># This will return all the root entities in the scene:
+getRootEntities() -&gt; list of cave.Entity
+
+# The following ones will only query the root Entities:
+getRootEntitiesWithTag(tag: str) -&gt; list of cave.Entity
+getRootEntitiesWithProperty(property: str) -&gt; list of cave.Entity
+</code></pre>
+<p><strong>Good to know:</strong> If you put an entity inside a folder, it will no longer be a root entity (because it will be child of the folder entity). It's also good to know that querying Root entities can be faster than doing it with all entities, since the engine does not need to recursively iterate the root children. </p>
+<hr />
+<h1 id="scene-related-classes">Scene Related Classes</h1>
+<p>As discussed in the beginning of this page, there are some other helpful classes that are important for you to understand in order to properly manipulate the scenes in Cave. Here you'll find their documentation.</p>
+<h2 id="caveraycastout">cave.RayCastOut</h2>
+<p>This class is used as a data storage to return ray cast hit information. Returned by the scene when you do a rayCast and it finds something.</p>
+<h5 id="variables_1">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hit</td>
+<td>It's <code>True</code> if this is a valid RayCast Output. It's always good to check it first.  As an example, of the <code>scene.RayCast(...)</code> method don't find anything, it will return an invalid RayCastOut and this will be false.</td>
+</tr>
+<tr>
+<td align="left">position</td>
+<td>The exact position in world space where the ray hitted an entity. Good to use for bullet holes, as an example.</td>
+</tr>
+<tr>
+<td align="left">normal</td>
+<td>The normal that the surface hitted by the ray is pointing to. Also good for bullet holes, as an example.</td>
+</tr>
+<tr>
+<td align="left">entity</td>
+<td>The entity hit by the ray.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">hit      : bool
+position : cave.Vector3
+normal   : cave.Vector3
+entity   : cave.Entity
+</code></pre>
+<h2 id="cavecollisioninfo">cave.CollisionInfo</h2>
+<p>This class is used as a data storage to return collision hit information. This class is returned by the Scene when you call methods like <code>scene.checkContactBox(...)</code> or <code>scene.checkContactSphere(...)</code>, but it is also used anywhere else where collision information is necessary, for example when you check if a <code>Rigid Body</code> or <code>Character Component</code> collided with something.</p>
+<p>There are two important things you need to know about Collisions and the <code>CollisionInfo</code>: </p>
+<ul>
+<li>
+<p>The first thing is that when a shape collides with another, it may have <strong>one or more hits</strong>, depending on how deep the collision was and a lot of other factors such as the shape, how the collision happened and so on.</p>
+</li>
+<li>
+<p>The second is that, because of this behavior, most of the times where you expect a <code>CollisionInfo</code> from Cave, it will always return a <code>list</code> of them (even if there is only one element in it), because it may have multiple ones, as explained above. Due to that, different from the <code>cave.RayCastOut</code>, you'll not find a <code>hit</code> variable to check if the collision was valid, because the engine will never return an invalid one. If there is no collision, the list will simply be empty.</p>
+</li>
+</ul>
+<p>This is information will help you understand how to properly manipulate the Collisions in the engine. Most of the time that you need to handle them, you'll probably want to iterate over the output collisions until you find the one you want. Here is an example:</p>
+<pre><code class="language-python">scene = cave.getCurrentScene()
+playerPos = self.entity.getTransform().position
+
+for hit in scene.checkContactSphere(playerPos, 3.0): 
+    print(&quot;New Entity hit:&quot;, hit.entity.name)
+</code></pre>
+<p>In the code above, we use the scene's <code>checkContactSphere</code> method to see if there are any Entities within 3 meters from the player position (considering that it's the player that's executing this code, of course). Note that if you run this code, it may print the same entity twice, due to the reasons explained beefore. If you only want to take an entity hit into account once, you can cache them into a list, like this:</p>
+<pre><code class="language-python">alreadyHit = []
+for hit in scene.checkContactSphere(playerPos, 3.0): 
+    if hit.entity in alreadyHit:
+        # Skipping any entity that we already checked!
+        continue 
+
+    # Now we'll add the entity to the list to make sure we don't check it twice:
+    alreadyHit.append(hit.entity)
+
+    # Finally, we do what we want with the entity:
+    print(&quot;New Entity hit:&quot;, hit.entity.name)
+</code></pre>
+<p>The explanation above will help you to handle collisions in most of the situations where the engine outputs to you a list of <code>cave.CollisionInfo</code> instances.</p>
+<h5 id="variables_2">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">position</td>
+<td>The exact position in world space where the collision happened.</td>
+</tr>
+<tr>
+<td align="left">normal</td>
+<td>The direction that the collision point is pointing to.</td>
+</tr>
+<tr>
+<td align="left">entity</td>
+<td>The entity hit.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">position : cave.Vector3
+normal   : cave.Vector3
+entity   : cave.Entity
+</code></pre>
+<hr />
+<h2 id="cavesun">cave.Sun</h2>
+<p>As already explained in this page, every Scene in Cave have its own Sun light. You can get it by calling <code>scene.getSun()</code> and it will return an instance of this class. You can use it to adjust the look of it, as you can see below.</p>
+<h5 id="variables_3">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hour</td>
+<td>The hour of the day used to determine the sun position. Goes from 0 to 24 and the minutes needs to be represented by the fractional part of the value, so <code>12:30h</code> is <code>12.5</code>.</td>
+</tr>
+<tr>
+<td align="left">angle</td>
+<td>The angle represents where in the horizon the sun will rise and set. It goes from <code>0º</code> to <code>360º</code>, in degrees.</td>
+</tr>
+<tr>
+<td align="left">color</td>
+<td>The color of the sun.</td>
+</tr>
+<tr>
+<td align="left">mask</td>
+<td>The shadow mask. It will only cast shadows to Mesh Components that its shadow mask intersect with this. If you're trying to make an entity don't cast shadows, this is what you're looking for.</td>
+</tr>
+<tr>
+<td align="left">intensity</td>
+<td>The sun intensity. The more, the brighter it will be.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">hour      : float
+angle     : float
+color     : cave.Vector3
+mask      : cave.BitMask
+intensity : float
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

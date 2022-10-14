@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Python Scripting - Cave Engine Docs</title>
+        <title>Utilities - Cave Engine Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -58,7 +58,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8 (latest)</a>
+    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
 </li>
                                     
 <li>
@@ -66,38 +70,121 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../PythonAPI/cave_module/" class="dropdown-item">Cave Module</a>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../PythonAPI/components/" class="dropdown-item">Components</a>
+    <a href="../Core/scene/" class="dropdown-item">Scene</a>
 </li>
+            
+<li>
+    <a href="../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
                                     
 <li>
-    <a href="../../PythonAPI/math/" class="dropdown-item">Math</a>
+    <a href="../math/" class="dropdown-item">Math</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../PythonAPI/eventNames/" class="dropdown-item">Event Names</a>
+    <a href="./" class="dropdown-item active">Utilities</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+            
+<li>
+    <a href="../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="./" class="dropdown-item active">Python Scripting</a>
+    <a href="../Assets/materials/" class="dropdown-item">Material Manipulation</a>
 </li>
+            
+<li>
+    <a href="../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../tooling/" class="dropdown-item">Writting your own Tools</a>
+    <a href="../Events/events/" class="dropdown-item">Handling Events</a>
 </li>
+            
+<li>
+    <a href="../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -118,12 +205,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../PythonAPI/eventNames/" class="nav-link">
+                                <a rel="prev" href="../math/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../tooling/" class="nav-link">
+                                <a rel="next" href="../engineMisc/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -145,16 +232,34 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#python-examples" class="nav-link">Python Examples</a>
+            <li class="nav-item" data-level="1"><a href="#engine-utilities" class="nav-link">Engine Utilities</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#ray-cast" class="nav-link">Ray Cast</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#mouselook" class="nav-link">Mouselook</a>
+            <li class="nav-item" data-level="2"><a href="#time-related" class="nav-link">Time Related</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#general" class="nav-link">General</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#scene" class="nav-link">Scene</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#mouse" class="nav-link">Mouse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#window" class="nav-link">Window</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#audio-playing" class="nav-link">Audio Playing</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -162,80 +267,74 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="python-examples">Python Examples</h1>
-<h2 id="ray-cast">Ray Cast</h2>
-<pre><code class="language-python"># Just getting the entity, transform and scene
-entity = self.getEntity()
-transform = entity.getTransform()
-scene = entity.getScene()
-
-# Ray Cast needs two parameters: origin and target.
-# It's basically where the ray starts and where it ends.
-# For this example, let's make the ray start at the player
-# position and go to its forward direction by 10 meters
-origin = transform.getPosition()
-target = origin + transform.getForwardVector() * 10
-
-# The actual ray cast. Will return an cave.RayCastOut instance
-# that contains 4 variables: hit (bool), position (Vector3), 
-# normal (Vector3), entity (cave.Entity or None)
-rOut = scene.rayCast(origin, target)
-
-if rOut.hit:
-    hitEntity = rOut.entity
-    print(&quot;Raycast hit with = &quot;, hitEntity.name)
-    point = rOut.position
-    print(&quot;At this point = &quot;, point.x, point.y, point.z)
-    normal = rOut.normal
-    print(&quot;Facing this Direction = &quot;, normal.x, normal.y, normal.z)
+<h1 id="engine-utilities">Engine Utilities</h1>
+<p>Here you'll find some useful functions to operate the engine and your game using Cave.</p>
+<h2 id="time-related">Time Related</h2>
+<p>This is the <strong>Delta Time</strong> function. You can multiply this value by ano movement factor in your game in order to make sure that it will run at the same speed regardless of the FPS. Check <a href="https://en.wikipedia.org/wiki/Delta_timing">this link</a> to undertstand this concept a bit better. Reference:</p>
+<pre><code class="language-python">cave.getDeltaTime() -&gt; float
 </code></pre>
-<h2 id="mouselook">Mouselook</h2>
-<p>Add this script to a Camera. It's recommended that you parent the camera to an object to represent the player.</p>
-<pre><code class="language-py">import cave
-
-class Mouselook(cave.Component):
-    def __init__(self):
-        self.mLastPos = None
-        self.sensibility = 0.005
-
-    def start(self, scene):
-        pass
-
-    def mouselook(self):
-        mPos = cave.getMousePosition(False)
-
-        center = cave.getWindowSize() * 0.5
-        center = cave.Vector2(int(center.x), int(center.y))
-
-        if self.mLastPos:
-            disp = center - mPos
-            disp *= self.sensibility
-
-            transform = self.entity.getTransform()
-            transform.rotateOnPitch(disp.y)
-
-            parent = self.entity.getParent()
-            if parent:
-                parentTransform = parent.getTransform()
-                parentTransform.rotateOnRoll(disp.x)
-            else:
-                transform.rotateOnRoll(disp.x)
-
-
-        cave.setMousePosition(int(center.x), int(center.y))
-
-        self.mLastPos = cave.Vector2(mPos.x, mPos.y)
-
-    def update(self):
-        events = cave.getEvents()
-
-        if events.pressed(&quot;ESCAPE&quot;):
-            cave.quitGame()
-
-        self.mouselook()
-
-    def end(self, scene):
-        pass
+<p>You can use this function to see at how many FPS your game is running at.</p>
+<pre><code class="language-python">cave.getFPS() -&gt; float
+</code></pre>
+<hr />
+<h2 id="general">General</h2>
+<p>Use this function to Quit the game. It will <strong>close</strong> the game application. If you're editing the game and hit stop, it will just stop the game execution. Reference:</p>
+<pre><code class="language-python">cave.quitGame()
+</code></pre>
+<p>In order to handle user events (such as keyboard and mouse inputs), you need to get the Cave's event system. Use this function for the matter. Reference:</p>
+<pre><code class="language-python"># NOTE: See the documentation for **cave.Events** to get more details.
+cave.getEvents() -&gt; Events
+</code></pre>
+<h1 id="scene">Scene</h1>
+<p>In order to make your games, you'll need to be able to manipulate scenes. Here is you you handle them:</p>
+<p>Returns the current scene being played by the engine:</p>
+<pre><code class="language-python">cave.getCurrentScene() -&gt; Scene
+# Alias (same function, different name):
+cave.getScene() -&gt; Scene
+</code></pre>
+<p>Allows you to change scenes:</p>
+<pre><code class="language-python">cave.setScene(name: str)
+</code></pre>
+<p>If you want to <strong>Restart</strong> the current scene, here is what you're looking for:</p>
+<pre><code class="language-python">cave.restartCurrentScene()
+</code></pre>
+<hr />
+<h2 id="mouse">Mouse</h2>
+<p>You can use those functions to get/set the mouse position. If you pass True to <code>cave.getMousePosition</code> (normalize parameter), it will divide the mouse pos by the window size and returns the value to you, ranging from 0.0 and 1.0. Otherwise, the value will be in pixels. You can only set the mouse position in pixels. If you need to convert the normalized mouse pos back to pixels, consider multiplying it by the window size.</p>
+<pre><code class="language-py">cave.getMousePosition(normalize=False) -&gt; Vector2
+cave.setMousePosition(x: int, y: int)
+</code></pre>
+<h2 id="window">Window</h2>
+<pre><code class="language-py">cave.getWindowSize() -&gt; Vector2
+</code></pre>
+<hr />
+<h1 id="audio-playing">Audio Playing</h1>
+<p><em>NOTE: <strong> Check the <code>Assets &gt; Audio Playing</code> category for more details!</strong></em></p>
+<p>You can play any sound you want anytime by calling the <code>cave.playSound</code> function. You'll need to pass the asset name for the sound (exactly how it is written in the asset browser) and the optional parameters:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">volume</td>
+<td>How loud or quiet the sound will be. 0 means muted, 1 means max.</td>
+</tr>
+<tr>
+<td align="center">fadeIn</td>
+<td>In seconds, if greated than zero, it will slowly fade in the sound by the amount of time you pass.</td>
+</tr>
+<tr>
+<td align="center">loop</td>
+<td>How many times you want the sound to be played. -1 means that it will play forever, zero means that it will play once and 1 (or more) means that it will play and repeat by 1 (or the number you pass).</td>
+</tr>
+</tbody>
+</table>
+<p>This function returns an <code>AudioTrackInstance</code> that allows you to later change those values, pause/resume the sound and more. Reference code:</p>
+<pre><code class="language-python">cave.playSound(name: str, volume=1.0, fadeIn=0.0, loop=0) -&gt; AudioTrackInstance
 </code></pre></div>
             </div>
         </div>

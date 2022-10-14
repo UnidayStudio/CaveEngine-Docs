@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Mesh Manipulation - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../../../Docs/Releases/v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../materials/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../audio/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#mesh-related-assets" class="nav-link">Mesh Related Assets</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#how-to-get-a-mesh-instance" class="nav-link">How to get a Mesh Instance?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#documentation" class="nav-link">Documentation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavevertex" class="nav-link">cave.Vertex</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cavemesh" class="nav-link">cave.Mesh</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mesh-related-assets">Mesh Related Assets</h1>
+<p>Just like the materials, in order to manipulate Meshes, you'll need to acknowledge two main classes: <code>Vertex</code> and <code>Mesh</code>. We highly recommend that you have a basic knowledge on how Meshes works before attempting to work with the Mesh Manipulation APIs provided below. <a href="https://en.wikipedia.org/wiki/Polygon_mesh">This is a good start</a> if you don't have experience with it.</p>
+<p>Before jumping to the <strong>class Documentation</strong>, I'll explain how Cave Engine handles meshes, so you can have a better knowledge of it in order to manipulate them.</p>
+<p>The Cave meshes consists in two lists: a list with all the vertex information (for each vertice, its position, normal, uv and so on) and a list of indices to build the faces with. The indices are basically integer numbers that corresponds to a vertice in the vertex list. Every 3 consecutive indexes in the indices list corresponds to a <strong>Triangle</strong>. So if you want to create a triangle mesh, the vertex list will probably have 3 Vertex elements, one for each corner of the triangle, and the indices will likely to be: <code>[0, 1, 2]</code>. </p>
+<p>You'll see below that the <code>cave.Mesh</code> class does have python lists for both of those elements, called <code>vertices</code> and <code>indices</code>, respectively. They behave as normal python lists, supporting all the operators that you expect to it, such as append and remove. </p>
+<p><strong>IMPORTANT:</strong> Be aware that after any modification to a mesh, you need to update it in the GPU. That can be done by calling the Mesh's <code>reload()</code> method. Keep in mind that this operation is expensive and may cause performance issues if you call it every frame (for example).</p>
+<hr />
+<h2 id="how-to-get-a-mesh-instance">How to get a Mesh Instance?</h2>
+<p>The way you'll tipically get a Mesh class instance is by retrieving them from a <code>MeshComponent</code>, <strong>do NOT try to create your own instance from scratch</strong>, it will not work. Here is an example of how it's done:</p>
+<pre><code class="language-python"># Getting the mesh component:
+meshComponent = self.entity.get(&quot;Mesh&quot;)
+
+# Getting the mesh:
+mesh = meshComponent.getMesh()
+
+# If you want to change the mesh of a specific Entity, 
+# you can duplicate it and reassign to the Component:
+meshCopy = mesh.getCopy()
+meshComponent.setMesh(meshCopy)
+
+# Now you'll be able to do local changes to the *meshCopy*:
+print(meshCopy.indices)
+</code></pre>
+<hr />
+<h1 id="documentation">Documentation</h1>
+<p>Here is the full documentation:</p>
+<h2 id="cavevertex">cave.Vertex</h2>
+<p>This class describes a Vertex. You <strong>can</strong> instantiate it in your code and when you do it, all the variables will be initialized with zeros and the jointIDs will all be -1 (meaning that there is no bone influencing the vertex). Sample code:</p>
+<pre><code class="language-python">v = cave.Vertex()
+v.position = cave.Vector3(0,1,0)
+# And so on...
+</code></pre>
+<h5 id="variables">Variables</h5>
+<p>API reference:</p>
+<pre><code class="language-python">position:   Vector3
+normal:     Vector3
+tangent:    Vector3
+uv:         Vector2
+jointWeights: Vector4
+jointIDs:     Vector4
+</code></pre>
+<p>Here is the description of every variable in the Vertex class:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">position</td>
+<td>The local position of the Vertex. Keep in mind that the Entity's transform will be taken into account automatically by the GPU code, so you don't need to consider it here.</td>
+</tr>
+<tr>
+<td align="left">normal</td>
+<td>The local normal of the Vertex, that represents the direction that it is looking at. Mainly used for shading and also takes the Entity's transform into account. <a href="https://en.wikipedia.org/wiki/Vertex_normal">Read this for more details</a>.</td>
+</tr>
+<tr>
+<td align="left">tangent</td>
+<td>The local tangent of the Vertex. Same details as the normal, <a href="https://en.wikipedia.org/wiki/Tangent">read this for more details</a>.</td>
+</tr>
+<tr>
+<td align="left">uv</td>
+<td>The UV mapped coordinates of the Vertex (in 2D space). This is used to texture the Mesh and does not take (or need to) the Entity's transform into account. <a href="https://en.wikipedia.org/wiki/UV_mapping">Read this for more details</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>If the mesh was intended to be used with an <strong>Armature</strong>, it will contain bone influence data. In cave, a vertex can only be influenced by up to 4 bones. The total weight of all the influenced bones must be equal to 1.0 (otherwise you'll see some animation artefacts). For each bone, its weight needs to be set into the <code>joinWeights</code> variable and its bone ID in the <code>jointIDs</code>. If there is no bone influencing the vertex, the ID should be -1. Notice that both variables have the type Vector4. Meaning that each bone that influences the vertex (again, up to 4), will correspond to an ID of the vector (0 to 3, or <code>.x</code> to <code>.z</code>).</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">jointWeights</td>
+<td>For each dimension of the vector (up to 4), the bone weight (if any). The bone's ID is set in the variable below, if -1, the number here will be ignored.</td>
+</tr>
+<tr>
+<td align="left">jointIDs</td>
+<td>For each dimension of the vector (up to 4), the corresponding bone ID to map in the armature. If there is no bone, it should be set to -1.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cavemesh">cave.Mesh</h2>
+<p>This is the main mesh class. As explained above, here is where you can add or remove vertices and use the indices to connect them as triangles. Polygons (a face with more than 3 vertices) are not directly supported and you should convert triangulate them before adding to the indices list.</p>
+<h5 id="variables_1">Variables</h5>
+<p>Both lists below are treated as python lists, supporting all its operations.</p>
+<pre><code class="language-python">vertices    : list of Vertex
+indices     : list of ints
+</code></pre>
+<h5 id="methods">Methods</h5>
+<p>Aftet doing any change to the Mesh (such as adding or removing elements from the <code>vertices</code> and <code>indices</code> or modifying them, like changing a vertex's position), you need to reload the Mesh in order to update the GPU with the new values. It can be done by calling this function below. <strong>NOTE: it may be expensive, depending on the amount of polygons you have!</strong></p>
+<pre><code class="language-python">reload()
+</code></pre>
+<p>If you need to duplicate a mesh (in order to do local changes to a specific Entity, for example), this is what you're looking for. It will duplicate the mesh and add it to the game data!</p>
+<pre><code class="language-python">GetCopy() -&gt; Mesh
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

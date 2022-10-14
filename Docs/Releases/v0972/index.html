@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Cave 0.9.7.2 - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Release Notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Cave 0.9.7.2</a>
+</li>
+                                    
+<li>
+    <a href="../v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PythonAPI/introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../PythonAPI/math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../v098/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../v097/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#cave-engine-098-release-notes" class="nav-link">Cave Engine 0.9.8 Release Notes!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#a-personal-note-from-the-dev" class="nav-link">A Personal note from the Dev</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#new-project-manager-ui" class="nav-link">New Project Manager UI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#new-way-to-edit-entity-templates" class="nav-link">New way to Edit Entity Templates!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#rendering-features" class="nav-link">Rendering Features:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#mesh-component-tint" class="nav-link">Mesh Component Tint</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#particle-system" class="nav-link">Particle System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#logic-and-python-api" class="nav-link">Logic and Python API</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-new-python-code-component" class="nav-link">The New Python Code Component</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#uiux" class="nav-link">UI/UX:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#viewport-ui-and-editing-enhancements" class="nav-link">Viewport UI and Editing Enhancements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#general-features" class="nav-link">General Features:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#animation" class="nav-link">Animation:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#physics" class="nav-link">Physics:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exported-game-standalone" class="nav-link">Exported Game (Standalone):</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#created-the-stats-for-nerds-tab" class="nav-link">Created the Stats For Nerds Tab!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#added-a-loading-screen" class="nav-link">Added a Loading Screen:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fixes" class="nav-link">Fixes:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#still-work-in-progress" class="nav-link">Still Work in Progress</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#initial-network-layer-not-available-yet" class="nav-link">Initial Network layer (not available yet)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#logic-bricks-visual-scripting-not-available-yet" class="nav-link">Logic Bricks: Visual Scripting (not available yet)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#animation-system-not-available-yet" class="nav-link">Animation System (not available yet)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<hr />
+<p><strong>Important Note:</strong> </p>
+<p>Cave Engine 0.9.8 is not yet released publicly (it's Patreon only at the moment), but it will in the next couple of days. 
+Please check <a href="http://bit.ly/discord-uniday-us">our discord server</a> for updates. </p>
+<hr />
+<h1 id="cave-engine-098-release-notes">Cave Engine 0.9.8 Release Notes!</h1>
+<p>Welcome to <strong>the biggest Cave release yet!</strong></p>
+<p>In order to cheer this big release, let's start the notes by talking about the first official <strong>Uniday Studio game made using Cave:</strong>.
+<img alt="" src="https://img.itch.zone/aW1nLzg1ODg2NzcucG5n/original/Az%2Bf1R.png" />
+The Looper's Bug is a game made in 72 hours for the Game Jam <strong>Ludum Dare 50</strong> where you control Looper, a robot that loses his energy (in a shape of energy orbs) as you walk. When it runs out of energy, it explodes! The good news is that looper does have clones to help you walk throught the levels and their clones will recover energy from your past lost orbs. It's a puzzle game <a href="https://unidaystudio.itch.io/the-loopers-bug">available for you to Play on Itch io</a>.</p>
+<hr />
+<p>After this game, <strong>Cave Engine</strong> finally got past a stage that I'd like to call <strong>"The battlefield test"</strong>. In other words, it was used in production to an actual released game (that's not just a test project without a start and an end), testes "in battle" with lots of people playing it everywhere.</p>
+<p>So there is no doubts that the engine is now perfectly capable (and stable enough) to make a full game using it.</p>
+<p>It's also worth mentioning that this was <strong>not</strong> the first complete game made using cave. Back in the 0.9.6 release, @renatoaruffo made the game <strong>Sweet Shelter</strong>. </p>
+<hr />
+<h1 id="a-personal-note-from-the-dev">A Personal note from the Dev</h1>
+<p>Hi, it's Guilherme and thank you a lot for being here. It's been almost an year since the last engine's release (aug 17, 2021) and in the meanwhile, a lot of things happened! I got a Senior job in the Game Industry, as a Game Engine Dev, working with huge in house game engines (way bigger than Cave or anything I've worked before) and porting giant commercial games to consoles (such as Xbox One). I got hundreds of new students into my paid courses, made some new games and last, but not least, worked A TON in Cave!</p>
+<p>It was a great time. I had an opportunity to meet many cool devs across the world and learn a lot in such a small period of time. Having this senior game engine dev role in the industry really made a lot of difference as well. During this past year I've also realized how I love to make game and tools (such as engines) and help people to get started in game development. </p>
+<p>I'm very excited about this new release. As you saw, it's the first time ever I've used the engine to make a complete and released game. As a result, the engine received a lot of polish and fixed, which is awesome! To be honest, it would be a new dream becoming reality if I was able to work full time on Cave Engine some day. And with your help, that could be possible!</p>
+<p>The engine is currently free and <strong>it is my Gift for you to help you making your amazing games!</strong> </p>
+<p>But if you want to give something back by supporting Cave and future projects, <a href="https://bit.ly/patreon-uniday">I've setup a <strong>Patreon</strong></a> for you to help me get going with the project. I've setup 3 tier levels: starting at $3, you can be a general supporter. At $10, you'll have early access to future releases of <strong>Cave Engine</strong> and Dynami Engine, when they come out. Meaning that you'll not have to wait much to start using all the new features. Last, but not least, at $20 you'll get access to <strong>Cave PRO</strong> when it comes out (that's basically Cave, but with steroids). So don't forget to check the page and see if it is for you.</p>
+<p>In any case, thank you a lot for the support and for the presence here. </p>
+<p><strong>You're awesome!</strong></p>
+<p>Now that's enough introduction. Let's jump to all the release notes!</p>
+<hr />
+<p><img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975811314842746910/unknown.png" /></p>
+<h1 id="new-project-manager-ui">New Project Manager UI</h1>
+<p>Remember that ugly Project Manager that the engine used to have? </p>
+<p>Well, I don't, because here is how it looks like now:
+<img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975805675206762496/unknown.png" />
+The new Project Manager now have Project thumbnails that you can mouse over to see details (such as last write date, engine version and project location), right click (to duplicate, reveal in explorer, open or simply delete the project) and, of course, open it. I've also added an "About" tab with a bunch of useful debug hints and informations.</p>
+<p>The Project Manager now have a splash screen! The goal is to feature some amazing games made using Cave. Meaning that <strong>your game</strong> can also be highlighted over there, for the entire world to see!</p>
+<h1 id="new-way-to-edit-entity-templates">New way to Edit Entity Templates!</h1>
+<p>Entity Template is something very important for game development using Cave: it is the official way for you to create a "base object" that can be used all across your game. For example, if you'd like to create a player, enemies and collectable items that can be used several times across different levels, you'll do them by creating entity templates.
+<img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975807745041256498/unknown.png" />
+<strong>Creating a Template is simple:</strong></p>
+<p>Just right click in the Asset Browser, new asset, entity template. And now things gets interesting: you can now double click an EntityTemplate in the Asset Browser and it will open a special scene for you to edit it as you want. Changes gets applied to all entities using that template as soon as you leave its editing scene.</p>
+<p><strong>Some other smaller updates within this commit:</strong></p>
+<ul>
+<li>Added a thumbnail for the Templates</li>
+<li>Thumbnails can now have a colored footer (like UE) to help recognize the asset type. For now, Templates are green, scenes are Blue and meshes are grey.</li>
+<li>Added a green moldure in the Entity Template's Editor viewport</li>
+</ul>
+<p><strong>Note:</strong>
+You can't start the game while editing a template.</p>
+<h1 id="rendering-features">Rendering Features:</h1>
+<p>The Cave Engine rendered received a lot of love in this version as well. Here is the main highlights:</p>
+<ul>
+<li>Exposed the Alpha threshold variable for opaque materials.</li>
+<li>Reduced the default texture format size to increase performance</li>
+<li>Added a <strong>post processing pass</strong>:</li>
+</ul>
+<p>It does not do much at the moment, but it will be essential in future releases to allow you to easily tweak the visuals of your game. </p>
+<ul>
+<li>Setting the proper OpenGL Context + forcing the offboard GPU to be used:</li>
+</ul>
+<p>Previously, for some unknown reason, the engine was not using the offboard GPU in some computers, meaning that, in some cases (just as an example) if you had an intel CPU and an RTX 3090 installed, it will attempt to use Intel Graphics instead. Now fixed. </p>
+<ul>
+<li>Improved the Shadow Bias and Peter Panning:</li>
+</ul>
+<p>Cascade shadow mapping is still planned for future releases. But for now, at least the shadows are way better then before!</p>
+<ul>
+<li>Fixed the previously Sketchy font rendering (in game)...(now it works)</li>
+</ul>
+<h2 id="mesh-component-tint">Mesh Component Tint</h2>
+<p><img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975809378416476190/unknown.png?width=740&amp;height=401" /></p>
+<p>Now every mesh component have a "Tint" variable that allows you to tint the material color as you want. </p>
+<p>The default color is white but you can use it to do a lot of cool stuff, such as a red color animation when a character takes damage, for example. It also allows the particle system to have a custom tint over life.</p>
+<h2 id="particle-system">Particle System</h2>
+<p><img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975810060972335124/unknown.png?width=911&amp;height=427" /></p>
+<ul>
+<li>Added an "Use Parenting" option:</li>
+</ul>
+<p>If enabled, the particles will move with the Entity.</p>
+<ul>
+<li>Improved the Particle Component's UI</li>
+<li>Particle life tint <strong>(as a curve!)</strong></li>
+</ul>
+<h1 id="logic-and-python-api">Logic and Python API</h1>
+<p>Writting your game logic using Cave ws never so easy and versatile as it is right now! Check all the new features and improvements made to this:</p>
+<ul>
+<li>Added a python properties dict to the Scenes:</li>
+</ul>
+<p>You can now store anything you want at a scene level by using the <code>scene.properties</code> python dictionary. </p>
+<ul>
+<li>
+<p>Entity now have a "properties" field (python dict) as well (just like the scenes)</p>
+</li>
+<li>
+<p>CharacterComponent can now dettect collision</p>
+</li>
+</ul>
+<p>You can use the methods <code>getCollisions</code> and <code>collidedWith</code> in order to get collisions from the CharacterComponent.</p>
+<ul>
+<li>Entity's children options added to the API</li>
+</ul>
+<p>Now you can find the following classmethods in the Entity:</p>
+<pre><code class="language-py">entity.add(...)
+entity.get(...) # Returns a given component
+entity.getScene(...)
+entity.getAll(...) # Returns a list of all components
+entity.getParent(...)
+entity.getChild(...)
+entity.getChildren(...)
+entity.getChildrenRecursive(...)
+entity.getTransform(...)
+</code></pre>
+<ul>
+<li>Added an "isAlive()" method to the Entities</li>
+</ul>
+<p>After you attempt to kill an entity (<code>entity.kill()</code>), while it is still there, the method isAlive() will no longer return true. Remember that when calling <code>kill()</code>, the action will only be performed by the engine by the end of the frame. That's why the <code>isAlive()</code> is useful.</p>
+<ul>
+<li>Added some Smooth PlayerComponent Movement options</li>
+<li>Now you can <strong>Schedule to Kill an Entity</strong>. Awesome!</li>
+</ul>
+<p>If you want to add an entity to the scene (or any given entity) and kill them after some time, you can do it so by typing:</p>
+<pre><code class="language-py">entity.scheduleKill(5) # The entity will be killed within 5 seconds.
+</code></pre>
+<ul>
+<li>Improved the Scene::AddFromTemplate(...) API</li>
+</ul>
+<p>When creating a new entity from a template (<code>scene.addFromTemplate("TemplateName")</code>), you can now pass three optional parameters: <code>position</code>, <code>rotation</code> and <code>scale</code>.</p>
+<ul>
+<li>New Transform's <code>LookAtSmooth</code> method + fixed the <code>LookAt</code></li>
+<li>UIElement: quadAlpha added to the Python API</li>
+<li>Character::IsFalling + more Python APIs</li>
+</ul>
+<p>The <strong>Character Component</strong> received even more love with all those new methods: <code>isMoving()</code>, <code>isFalling()</code> and <code>onGround()</code>. The <strong>Mesh Component</strong> also received:<code>getArmature()</code> and <code>getAnimation()</code>.</p>
+<ul>
+<li>Cave.ui backends refactored</li>
+</ul>
+<p>Previously it was <code>caveui</code> and now it's <code>cave.ui</code>. Meaning that:</p>
+<pre><code class="language-py"># This:
+import caveui as ui
+
+# Is now this:
+import cave.ui as ui
+</code></pre>
+<p>The math functions also received an upgrade, with its own cave submodule as well: <code>cave.math</code>.</p>
+<ul>
+<li>Added mouselook limits to the Mouselook Component</li>
+<li>Added some new math utility functions</li>
+</ul>
+<p>Some math functions are really useful when creating games. Such as:</p>
+<pre><code class="language-py"># Lerp a to b, it works with floats, vectors and quaternions:
+out = cave.math.lerp(a, b, value)
+
+# We also now have an slerp variant, for quaternions only:
+out = cave.math.slerp(a, b, value)
+
+# Clamping floats:
+out = cave.math.clamp(x, 1.0, 3.0)
+
+# Mapping ranges, from [0,1] to [35,60], in this example:
+out = cave.math.mapRange(value, 0.0, 1.0, 35.0, 60.0)
+
+# It's worth mentioning that it also works if the range is backwards, such as:
+out = cave.math.mapRange(value, 0.0, 1.0, 60.0, 35.0)
+</code></pre>
+<h2 id="the-new-python-code-component">The New Python Code Component</h2>
+<p>Some times you want to write some Python code, but it's not as important or big to justify creating an entire new Python Component...</p>
+<p><img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975812120807608380/unknown.png?width=306&amp;height=220" /></p>
+<p>Well, now that's no longer a concern: you can simply create a Python Code Component an inline all that code directly into the component's UI. It's a very handy feature to make small python procedures. </p>
+<h1 id="uiux">UI/UX:</h1>
+<p>I'll not gonna lie: the engine is looking good now. Check this screenshot:
+<img alt="" src="https://media.discordapp.net/attachments/873191999988183110/975811314842746910/unknown.png?width=716&amp;height=428" /></p>
+<p>And that also reflects to the usability! I've made a lot of quality of life improvements on it:</p>
+<ul>
+<li>Better Search bars to the engine!</li>
+</ul>
+<p>Now the search bars are no longer case sensitive (so if you're looking for an asset called "TestingAsset" and type "test", it will appear in the results). Lots of smaller tweaks were made as well.</p>
+<ul>
+<li>Improved the Asset Browser Thumbnails</li>
+<li>Increased the Editor's font resolution</li>
+<li>New Asset Picking (by clicking in the Viewport)</li>
+</ul>
+<p>Now it uses a pixel perfect approach, so it's no longer annoying to point and click to select an asset.</p>
+<ul>
+<li>Selected entity highlight in the Viewport:</li>
+</ul>
+<p>Now it's also easier to see the selected entities, since they'll be highlighted.</p>
+<ul>
+<li>Drag and Drop to Viewport: EntityTemplates, Textures and Materials are now possible!</li>
+</ul>
+<p>If you drop a template, it will automatically build it into the world for you. For the materials, you can drop it to a mesh to instantly apply. Last but not least, if you drop a texture directly to a mesh, it will automatically create a material for you (and apply to that mesh). Awesome!</p>
+<ul>
+<li>Material UI Refactored</li>
+<li>New "Curve" editor property type</li>
+<li>Asset Browser: added an "Empty Folder" text when, well, there is nothing in the folder (lol)</li>
+<li>Refactored the New Entity's names and settings</li>
+</ul>
+<p>If you drop a template to the viewport, the entity created will have the template name. I've also fixed the new "Rigid Body Mesh" option that was not making any sense...</p>
+<ul>
+<li>Entity's tree nodes are now open by default (in the scene graph)</li>
+<li>Better Scene thumbnail generator</li>
+</ul>
+<p>Previously the scene's thumbnails in the editor were mostly all the time blank or wrong. Now fixed.</p>
+<ul>
+<li>Editor: Allow TAB Key on multiline UI text</li>
+<li>Improved the Entity's UI a bit more</li>
+<li>Asset Importer UI: Option to batch [de]select assets to import</li>
+<li>Changed the drag and drop message to a more informative one.</li>
+<li>MeshComponent: Option to build a RigidBody based on the mesh used</li>
+</ul>
+<p>Previously it was annoying to create a blank rigid body and then selecting the same mesh as the one in the mesh component from a dropdown. Now there is a <code>...</code> icon in the MeshComponent that allows you to automatically build the rigid body from it.</p>
+<ul>
+<li>
+<p>Changed some RenderGraph UI icons</p>
+</li>
+<li>
+<p>Scene Graph: new Entity Right Click Menu!</p>
+</li>
+</ul>
+<p>Now you have a lot of useful options when right clicking an entity in the Scene Graph. Awesome!</p>
+<ul>
+<li>Main Menu Bar improved + Play/Stop Button</li>
+<li>Removed that ugly "Add" Button (bottom right of entity's UI)</li>
+</ul>
+<p>There was a button in the entity menu and project browser that was supposed to serve as a way to add new components/projects. But it never worked as good as expected so I've removed it.</p>
+<ul>
+<li>The Editor's thumbnail system received a complete rewrite as well to allow all those cool new features.</li>
+</ul>
+<h2 id="viewport-ui-and-editing-enhancements">Viewport UI and Editing Enhancements</h2>
+<ul>
+<li>Hold CTRL to toggle snapping</li>
+<li>Hold ALT before moving an Entity to duplicate it</li>
+<li>Controls gets disabled when you play the game. You can toggle them on/off using F3 (during the play mode)</li>
+<li>Shortcut: Alt+W/E/R to reset pos, rot, scl</li>
+<li>Now it Displays the current Scene's name in the Viewport (bottom left)</li>
+<li>Improved the CameraCmp Gizmo (Viewport)</li>
+</ul>
+<p>Now it also indicated the "up" direction of the camera view, making it easier to not place the cameras upside down.</p>
+<hr />
+<h1 id="general-features">General Features:</h1>
+<h2 id="animation">Animation:</h2>
+<p>There is not a lot "visible" in terms of new features, but the Animation (skeletal) system received a lot of internal work, including fixes and improvements. I'm making it versatile enough to support multiple types of custom animations in the future, such as blend spaces and automatic character controllers.</p>
+<h2 id="physics">Physics:</h2>
+<ul>
+<li>Rigid Bodies can how be in "Ghost mode"</li>
+<li>More Draw Debug Physics Backends</li>
+</ul>
+<h2 id="exported-game-standalone">Exported Game (Standalone):</h2>
+<ul>
+<li>Option to use the Desktop Resolution on Standalone</li>
+</ul>
+<h2 id="created-the-stats-for-nerds-tab">Created the Stats For Nerds Tab!</h2>
+<p>Now the engine saves the time you spent on your projects + some other cool information about it. It's so cool! :)</p>
+<h2 id="added-a-loading-screen">Added a Loading Screen:</h2>
+<p>Now both the editor and the standalone game does have a pulsing loading screen before it starts up, while all the game resources are being loaded. It also means that the window will not appear as "not responding". </p>
+<hr />
+<h1 id="fixes">Fixes:</h1>
+<ul>
+<li>Fix: Python Script being edited was being closed when you quit game</li>
+<li>Fix: Broken Material Editor UI</li>
+<li>Fix: Text Editor Zoom was not working</li>
+<li>Fix: RigidBodyComponent was crashing with no shape</li>
+<li>Fix: Project Sorting by date in the Project Manager was wrong</li>
+<li>Fix: Crash when closing the Editor/Game</li>
+<li>Fix: Crash when creating an empty mesh + disabled grid in thumbnail</li>
+<li>Fix: First rendered mesh outline (when selected) was wrong</li>
+<li>Fix: Alpha not working after drawing texts in the UI</li>
+<li>Fix: Particle was not working when selecting the Entity</li>
+<li>Fix: Crash when creating a new project</li>
+<li>Fix: Ghost point lamp</li>
+</ul>
+<p>This one was almost a classic bug in Cave by now. If you notice, until v0.9.7, there was always a ghost point lamp casting light into the world. Now gone (sorry, ghost!).</p>
+<ul>
+<li>Fix: Inactive PlayerComponent was not resetting the walk</li>
+<li>Fix: Viewport was not drawing gizmos</li>
+<li>Fix: Crash when Killing the same Entity multiple times</li>
+<li>Fix: Crash Closing the engine with no Scene Opened</li>
+<li>Fix: UIButton was working while disabled (that was not supposed to happen)</li>
+<li>Fix: disabled Button wrongly receiving input</li>
+<li>Fix: Transform::lookAt method was doing some weird stuff in some corner cases</li>
+<li>Fix: UIElement layer was not being copied</li>
+<li>Fix: GetCollisions(obj) was returning ALL collisions</li>
+</ul>
+<p>No way I let that pass for so many time... but, well, now it's fixed. :)</p>
+<ul>
+<li>Fix: It was possible to select invisible UI elements</li>
+<li>Fix: Particle reload was incorrect in the Editor</li>
+<li>Fix: Py setAnimation was not working</li>
+<li>Fix: Sketchy font rendering...</li>
+<li>Fix: AudioTrackInst was not stopping on stop()</li>
+<li>Fix: FaceCulling not working in standalone</li>
+</ul>
+<p>I'll tell you a small story on how I figure out this bug... As you may know, I've made a game in 72 hours using cave for the <strong>Ludum Dare 50</strong>. In the final hour before submitting the game, I exported it as runtime and tested... And I was only able to see a black screen. I freaked out thinking that I messed up the engine really bad during the jam (I've changed a lot or things during it). It ended up being an one line fix. :P</p>
+<ul>
+<li>Fix: Wrong RenderToTexture Aspect</li>
+<li>Fix: Scene Thumbnails was sometimes Empty</li>
+<li>Fix: deleting some assets was not working 100%</li>
+</ul>
+<p>It was removing the asset from the Asset Browser, but not deleting it from the project itself. That bug was happening with inherinted assets (such as ImageTexture, that inherits from Texture). Now fixed.</p>
+<ul>
+<li>Fix: Misaligned UI Icons (all of them)</li>
+<li>Fix Proj Manager thumbnail sizes</li>
+<li>Fix: Dropping stuff in the viewport was not working</li>
+<li>Fix: Possible template duplication issue</li>
+<li>Fix: Crash when loading a Project</li>
+</ul>
+<hr />
+<h1 id="still-work-in-progress">Still Work in Progress</h1>
+<p>I was also working in some exciting new features that unfortunately didn't make to the 0.9.8 release.</p>
+<h2 id="initial-network-layer-not-available-yet">Initial Network layer (not available yet)</h2>
+<p>In the future, Cave will have native methods to make online games. </p>
+<h2 id="logic-bricks-visual-scripting-not-available-yet">Logic Bricks: Visual Scripting (not available yet)</h2>
+<p>It already allows me to create new nodes, logic bricks, attach them to a component, run and so on. Serialization is also 100% working as well. What's left is to write the front end (the node UIs) so the use will be able to create their own logic bricks trees as they want to. I'm almost there! :)</p>
+<h2 id="animation-system-not-available-yet">Animation System (not available yet)</h2>
+<p>As I said, I'm working on a versatile animation system for the engine to make your life way easier. I'm still not sure how it will be released, since I'm also working on <strong>Cave Engine PRO</strong> (paid, for the ones who want to support the engine and also use some extra features). Here is the plan so far:</p>
+<ul>
+<li>Animation inherits (from IAnimation):<ul>
+<li>The animation types can use the Entity's properties to gather the necessary variables</li>
+<li>Character animation: <ul>
+<li>With slots for: <ul>
+<li>idle</li>
+<li>walk</li>
+<li>run </li>
+<li>jump (up, idle, landing)</li>
+<li>die  (dying, dead idle)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4-directional animation (plus idle in the middle)</li>
+<li>8-directional anumation (plus idle in the middle)</li>
+<li>Animation Blender (to blend anims):<ul>
+<li>Allows you to have a base IAnimation and multiple layers on top.</li>
+<li>For each layer:<ul>
+<li>An IAnimation + blend weight</li>
+<li>A list will all the bones to select/unselect the ones you want to influence</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The way I'm writting this system will also allow you to nest animations. For example, you can use a Character Animation for your player, but instead of a simple walk animation, you can use a 4 or 8-directional animation.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

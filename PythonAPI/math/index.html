@@ -58,7 +58,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8 (latest)</a>
+    <a href="../../Docs/Releases/v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+                                    
+<li>
+    <a href="../../Docs/Releases/v0972/" class="dropdown-item">Cave 0.9.7.2</a>
 </li>
                                     
 <li>
@@ -71,33 +75,116 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../cave_module/" class="dropdown-item">Cave Module</a>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../components/" class="dropdown-item">Components</a>
+    <a href="../Core/scene/" class="dropdown-item">Scene</a>
 </li>
+            
+<li>
+    <a href="../Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
                                     
 <li>
     <a href="./" class="dropdown-item active">Math</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../eventNames/" class="dropdown-item">Event Names</a>
+    <a href="../engineUtils/" class="dropdown-item">Utilities</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+            
+<li>
+    <a href="../engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/python/" class="dropdown-item">Python Scripting</a>
+    <a href="../Assets/materials/" class="dropdown-item">Material Manipulation</a>
 </li>
+            
+<li>
+    <a href="../Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../Examples/tooling/" class="dropdown-item">Writting your own Tools</a>
+    <a href="../Events/events/" class="dropdown-item">Handling Events</a>
 </li>
+            
+<li>
+    <a href="../Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -118,12 +205,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../components/" class="nav-link">
+                                <a rel="prev" href="../Components/interface/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../eventNames/" class="nav-link">
+                                <a rel="next" href="../engineUtils/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -147,7 +234,7 @@
             
             <li class="nav-item" data-level="1"><a href="#math" class="nav-link">Math</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cave" class="nav-link">cave</a>
+            <li class="nav-item" data-level="2"><a href="#cavemath" class="nav-link">cave.math</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -171,6 +258,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#cavematrix4" class="nav-link">cave.Matrix4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#caveuivector" class="nav-link">cave.UIVector</a>
               <ul class="nav flex-column">
               </ul>
@@ -183,11 +274,30 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="math">Math</h1>
-<h2 id="cave">cave</h2>
+<p>The following functions and classes are related to Math operations. Cave engine does have a <code>cave.math</code> submodule, but in order to simplify and speedup your code writting, the classes belongs to the main <code>cave.</code> module. Only the functions belongs to the submodule.</p>
+<h2 id="cavemath">cave.math</h2>
 <h5 id="functions">Functions</h5>
-<pre><code class="language-python">normalized(vec : cave.Vector3) -&gt; cave.Vector3
+<pre><code class="language-python">cave.math.normalized(vec : cave.Vector3) -&gt; cave.Vector3
 </code></pre>
-<pre><code class="language-python">length(vec : cave.Vector3) -&gt; float
+<pre><code class="language-python">cave.math.length(vec : cave.Vector3) -&gt; float
+</code></pre>
+<pre><code class="language-python">cave.math.clamp(x : float, minValue : float, maxValue: float) -&gt; float
+</code></pre>
+<p>You can also <strong>lerp</strong> two values by a factor (value) using <code>cave.math.lerp</code>. The supported types are: float, Vector2, Vector3, Vector4 and Quaternion. Reference:</p>
+<pre><code class="language-python">cave.math.lerp(a: TYPE, b: TYPE, value: float) -&gt; TYPE
+</code></pre>
+<p>If you're using <strong>Quaternions</strong>, slerp is also supported. See <a href="https://en.wikipedia.org/wiki/Slerp">this link</a> to understand slerp. Reference:</p>
+<pre><code class="language-python">cave.math.slerp(a: cave.Quaternion, b: cave.Quaternion, value: float) -&gt; cave.Quaternion
+</code></pre>
+<p><strong>Map Range</strong> is also an useful function that allows you to map a value from one range to other. For example, if you have a health variable that is represented in percentage (0 to 100) and you want to make a mesh becomes invisible as the health decreases, you can map the health value <strong>from the range [0, 100] to the range [1.0, 0.0]</strong> and apply that as the alpha tint of the mesh, since alpha 1.0 (when health is 100%) means completely opaque and alpha 0.0 (when health is 0%) means completely transparent. Reference:</p>
+<pre><code class="language-python">cave.math.mapRange(value: float, fromMin: float, fromMax: float, toMin: float, toMax: float) -&gt; float
+</code></pre>
+<p>A common vector operator is the <strong>dot product</strong>. Supported in cave with the <code>cave.math.dot(...)</code> function and works with Vector2, Vector3 and Vector4. See <a href="https://en.wikipedia.org/wiki/Dot_product">this link</a> to understand how dot product works. Reference:</p>
+<pre><code class="language-python">cave.math.dot(a: VectorX, b: VectorX) -&gt; VectorX
+</code></pre>
+<p>Cave also supports the <code>inverse</code> function to invert a Quaternion or Matrix4:</p>
+<pre><code class="language-python">cave.math.inverse(quat: cave.Quaternion) -&gt; cave.Quaternion
+cave.math.inverse(quat: cave.Matrix4) -&gt; cave.Matrix4
 </code></pre>
 <hr />
 <h2 id="vector-classes">Vector Classes</h2>
@@ -306,6 +416,9 @@ y : float
 z : float
 w : float
 </code></pre>
+<hr />
+<h2 id="cavematrix4">cave.Matrix4</h2>
+<p>This class is declared for the Cave API, but not yet implemented, so right now there is no way to directly manipulate the Matrix4 using Python.</p>
 <hr />
 <h2 id="caveuivector">cave.UIVector</h2>
 <p>The <strong>cave.UIVector</strong> is a different vector, used specifically for the in Game User Interface (Game UI). It needs to be a different type of vector because it also takes into account the anchoring and if the element is relative (or not) to it's parent.</p>
