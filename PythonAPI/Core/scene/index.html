@@ -262,6 +262,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#cavespherecastout" class="nav-link">cave.SphereCastOut</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#cavecollisioninfo" class="nav-link">cave.CollisionInfo</a>
               <ul class="nav flex-column">
               </ul>
@@ -348,7 +352,15 @@ addFromTemplate(
 <pre><code class="language-python">rayCast(origin : cave.Vector3, target : cave.Vector3) -&gt; cave.RayCastOut
 rayCastAll(origin : cave.Vector3, target : cave.Vector3) -&gt; list of cave.RayCastOut
 </code></pre>
-<p>Ray casts are good, but sometimes they are not enough for what you want. That's why Cave Engine lets you check for collision within certain bounds. For now, you can use a Box or a Sphere shape for this and the usage is very simple as you can see below. Check the <code>cave.CollisionInfo</code> for additional details.</p>
+<p>Sometimes you may want even more control than a simple RayCast. They may be a good fit to shoot bullets, for example, but let's think a little bit out of box: Let's think about <a href="https://en.wikipedia.org/wiki/Goku"><strong>Goku</strong></a> and his famous attack: <a href="https://dragonball.fandom.com/wiki/Kamehameha"><strong>The Kamehameha</strong></a>. </p>
+<p>In this attack, Goku first creates an energy ball into his hands, then throws the energy against his target, in a form of a giant energy wave. If we wanted to recreate this effect in <strong>Cave</strong>, in order to apply the attack's damage, we could cast a Ray using the <code>RayCast</code> and check for the hits. But this solution have a problem: The Kamehameha is a thick evergy wave and the RayCast will consider it as if it was just a thin line. If Goku decided to attack a wall with it and the wall has a small hole, like a bullet hole, the kamehameha would go through if we user the RayCast and that's not what we want.</p>
+<p>So what to do instead? It would be great if we could add a radius to the RayCast, that way we could make it as thick as we want, right? Exactly! And that's the purpose of the <strong>SphereCast</strong>. It's basically a RayCast, but with a radius. This alternative is very useful in many other use cases, not only the Kamehameha. As another example, <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV"><strong>GTA IV</strong></a> is a game that seems to use this technique to handle its camera collision.</p>
+<p><em>(If you want to be technical here and understand how it works behind the scenes: it does a convex sweep test with a sphere of a given radius from and to a position in the physics world).</em></p>
+<p>The <strong>Sphere Cast</strong>, just like the <strong>Ray Cast</strong>, have two methods related to it: <code>sphereCast(...)</code> and <code>sphereCastAll(...)</code> and they behave in the exact same way as their ray cast equivalents, except that they return <code>cave.SphereCastOut</code> class instances instead of the <code>cave.RayCastOut</code>. You can find its documentation in this page for reference. Here is the <strong>Sphere Cast</strong> API reference:</p>
+<pre><code class="language-python">sphereCast(origin : cave.Vector3, target : cave.Vector3, radius: float) -&gt; cave.SphereCastOut
+sphereCastAll(origin : cave.Vector3, target : cave.Vector3, radius: float) -&gt; list of cave.SphereCastOut
+</code></pre>
+<p>Ray and Sphere casts are good, but sometimes they are not enough for what you want. That's why Cave Engine lets you check for collision within certain bounds. For now, you can use a Box or a Sphere shape for this and the usage is very simple as you can see below. Check the <code>cave.CollisionInfo</code> for additional details.</p>
 <pre><code class="language-python"># Box Shape checks:
 checkContactBox(boxTransform: cave.Transform) -&gt; list of cave.CollisionInfo
 checkContactBox(
@@ -421,6 +433,31 @@ position : cave.Vector3
 normal   : cave.Vector3
 entity   : cave.Entity
 </code></pre>
+<h2 id="cavespherecastout">cave.SphereCastOut</h2>
+<p>This class inherits from <code>cave.RayCastOut</code> (meaning that it have all its parent class methods and variables) but add two extra variables: <code>penetration</code> and <code>recoveryPosition</code>. It serves as the output for the <strong>Scene's SphereCast methods</strong>.</p>
+<h5 id="variables_2">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">penetration</td>
+<td>Ranges from <code>[0.0 to 1.0]</code> and specifies how deep into the shape the collision is. If it's near zero, it means that the collision was close to the SphereCast's border and if it's near to one it means that it was close to the spherecast's center ray.</td>
+</tr>
+<tr>
+<td align="left">recoveryPosition</td>
+<td>This represents the maximum position that the sphere could be at before hitting an obstacle.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">penetration      : float
+recoveryPosition : cave.Vector3
+</code></pre>
 <h2 id="cavecollisioninfo">cave.CollisionInfo</h2>
 <p>This class is used as a data storage to return collision hit information. This class is returned by the Scene when you call methods like <code>scene.checkContactBox(...)</code> or <code>scene.checkContactSphere(...)</code>, but it is also used anywhere else where collision information is necessary, for example when you check if a <code>Rigid Body</code> or <code>Character Component</code> collided with something.</p>
 <p>There are two important things you need to know about Collisions and the <code>CollisionInfo</code>: </p>
@@ -453,7 +490,7 @@ for hit in scene.checkContactSphere(playerPos, 3.0):
     print(&quot;New Entity hit:&quot;, hit.entity.name)
 </code></pre>
 <p>The explanation above will help you to handle collisions in most of the situations where the engine outputs to you a list of <code>cave.CollisionInfo</code> instances.</p>
-<h5 id="variables_2">Variables</h5>
+<h5 id="variables_3">Variables</h5>
 <table>
 <thead>
 <tr>
@@ -484,7 +521,7 @@ entity   : cave.Entity
 <hr />
 <h2 id="cavesun">cave.Sun</h2>
 <p>As already explained in this page, every Scene in Cave have its own Sun light. You can get it by calling <code>scene.getSun()</code> and it will return an instance of this class. You can use it to adjust the look of it, as you can see below.</p>
-<h5 id="variables_3">Variables</h5>
+<h5 id="variables_4">Variables</h5>
 <table>
 <thead>
 <tr>

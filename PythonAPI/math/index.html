@@ -248,6 +248,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="1"><a href="#intersection-checks" class="nav-link">Intersection Checks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="1"><a href="#vector-classes" class="nav-link">Vector Classes</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#cavevector2" class="nav-link">cave.Vector2</a>
@@ -312,6 +317,25 @@
 <pre><code class="language-python">cave.math.inverse(quat: cave.Quaternion) -&gt; cave.Quaternion
 cave.math.inverse(quat: cave.Matrix4) -&gt; cave.Matrix4
 </code></pre>
+<p>If you want to <strong>Project</strong> a vector into another, you can use the <code>cave.math.project(...)</code> function, that takes the vector that you want to project as the first argument and the target vector (the "other") as the second. It will return the final projected vector. The function works with Vector2, Vector3 and Vector4. If you don't know what is a vector projection, <a href="https://en.wikipedia.org/wiki/Vector_projection">consider reading this article</a>. Reference:</p>
+<pre><code class="language-python">cave.math.project(vec: cave.VectorX, other: cave.VectorX) -&gt; cave.VectorX
+</code></pre>
+<h1 id="intersection-checks">Intersection Checks</h1>
+<p>When creating games, you ofter want to check for some geometric intersections, such as a point and sphere intersection. Cave Engine provides some builtin functions for you to do it so.</p>
+<p>If you want to get the intersection points and normals between a line and a sphere, you can use the following function:</p>
+<pre><code class="language-python">cave.math.intersectLineSphere(
+    lineP1 : cave.Vector3, lineP2 : cave.Vector3, 
+    sphereCenter : cave.Vector3, sphereRadius : float
+) -&gt; list of tuples
+</code></pre>
+<p>This function takes two point coordinates as arguments to define the line (<code>lineP1</code> and <code>lineP2</code>) and a position and radius to define the sphere. It returns a list of tuples containing the <code>(position, normal)</code> for each intersection point. If the shapes don't collide, the list will be empty.</p>
+<p>You can do a similar check between a line and a geometry triangle. In this case, here is the API:</p>
+<pre><code class="language-python">cave.math.intersectLineTriangle(
+    lineP1 : cave.Vector3, lineP2 : cave.Vector3, 
+    p1 : cave.Vector3, p2 : cave.Vector3, p3 : cave.Vector3
+) -&gt; cave.Vector3 or None
+</code></pre>
+<p>It takes two point coordinates as arguments to define the line (<code>lineP1</code> and <code>lineP2</code>) and three coordinates (<code>p1, p2, p3</code>) to specify the triangle. Returns the intersection point (as a <code>cave.Vector3</code>) fi it hits or <code>None</code>, otherwise.</p>
 <hr />
 <h1 id="vector-classes">Vector Classes</h1>
 <p><strong>Cave Engine</strong> provides wrappers to low level C++ vector classes and operations. </p>
