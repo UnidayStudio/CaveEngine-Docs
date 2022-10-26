@@ -276,6 +276,15 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="1"><a href="#scenes-graphic-settings" class="nav-link">Scene's Graphic Settings</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cavegraphconfig" class="nav-link">cave.GraphConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -340,6 +349,9 @@ addFromTemplate(
 <hr />
 <p>This method will return the elapsed time, in second, since the Scene creation. This value does <strong>not</strong> include the time paused (and yes, it's the number user by the <code>SceneTimer</code> to count time).</p>
 <pre><code class="language-python">getElapsedSceneTime() -&gt; float
+</code></pre>
+<p>You may also want to adjust every scene setting that you see in the Scene's editor, such as the <code>atmosphere, mist, sky, etc</code>. For that, you need to get the Scene's <strong>GraphConfig</strong> class instance. You can check their API reference later in this page. Here is how you can get it:</p>
+<pre><code class="language-python">getGraphConfig() -&gt; GraphConfig
 </code></pre>
 <p>In Cave Engine, every Scene have its own Sun light and you can get it by calling this scene method:</p>
 <pre><code class="language-python">getSun() -&gt; cave.Sun
@@ -558,6 +570,57 @@ angle     : float
 color     : cave.Vector3
 mask      : cave.BitMask
 intensity : float
+</code></pre>
+<hr />
+<h1 id="scenes-graphic-settings">Scene's Graphic Settings</h1>
+<p>As discussed already, most of the scene's graphic settings (such as mist, atmosphere and so on) can be adjusted by getting the <strong>cave.GraphConfig</strong> class from the Scene (by calling the scene's <code>getGraphConfig()</code> method). Since this class is configuration only, I'll simplify this API to make it easier for you to use. All the settings have the same purpose as they do in the Scene's Editor UI in the Editor. Here is the full API for reference.</p>
+<h2 id="cavegraphconfig">cave.GraphConfig</h2>
+<h5 id="variables_5">Variables</h5>
+<pre><code class="language-python">applyShading      : bool
+
+# Ambient Related...
+ambient         : GraphConfigAmbient
+ambient.use     : bool
+ambient.factor  : float
+ambient.color   : ColorSampler
+
+# Mist Related...
+mist          : GraphConfigMist
+mist.use      : bool
+mist.start    : float
+mist.distance : float
+mist.falloff  : float
+mist.color    : ColorSampler
+
+# Sky Related...
+sky           : GraphConfigSky
+sky.blur      : float
+sky.intensity : float
+sky.angle     : float
+sky.color     : ColorSampler
+
+# Bloom Related...
+bloom      : GraphConfigBloom
+bloom.use  : bool
+bloom:size : float
+
+# DOF Related...
+dof          : GraphConfigDOF
+dof.use      : bool
+dof.size     : float
+dof.start    : float
+dof.distance : float
+
+# Atmosphere Related...
+atmosphere              : GraphConfigAtmosphere
+atmosphere.planetRadius : float
+atmosphere.atmHeight    : float
+atmosphere.sunIntensity : float
+
+# Misc...
+background       : cave.Vector3
+ambientCol       : cave.Vector3
+ambientIntensity : float
 </code></pre></div>
             </div>
         </div>
