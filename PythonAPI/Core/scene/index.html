@@ -361,28 +361,30 @@ addFromTemplate(
 <p>If you need to do some "in place" Collision dettection like a ray cast or check if there are objects at certain place, you can use one of those methods below. Keep in mind that all of them will rely on the physics engine to return the correct values, so make sure that the Entities that you're trying to detect have a proper Physics shape (like a Rigid Body or a Character Component). </p>
 <p>It's also good to know that the result is calculated immediately when you call those functions, so you don't need to worry about the output being delayed by a frame like some engines. It will be up to date with the current scene status. </p>
 <p>The first and most common method in this list is the <code>rayCast</code> and <code>rayCastAll</code>. The difference between them is that the first one will stop and return in the first ray hit and the second one will return a python list with all the hits. It's a good option if you want to make a gun that can shoot through walls, for example.</p>
-<pre><code class="language-python">rayCast(origin : cave.Vector3, target : cave.Vector3) -&gt; cave.RayCastOut
-rayCastAll(origin : cave.Vector3, target : cave.Vector3) -&gt; list of cave.RayCastOut
+<pre><code class="language-python">rayCast(origin : cave.Vector3, target : cave.Vector3, mask=cave.BitMask()) -&gt; cave.RayCastOut
+rayCastAll(origin : cave.Vector3, target : cave.Vector3, mask=cave.BitMask()) -&gt; list of cave.RayCastOut
 </code></pre>
+<p>Notice that it does have an optional <strong>mask</strong> parameters (<code>cave.BitMask</code>) that allows you to filter your results.</p>
 <p>Sometimes you may want even more control than a simple RayCast. They may be a good fit to shoot bullets, for example, but let's think a little bit out of box: Let's think about <a href="https://en.wikipedia.org/wiki/Goku"><strong>Goku</strong></a> and his famous attack: <a href="https://dragonball.fandom.com/wiki/Kamehameha"><strong>The Kamehameha</strong></a>. </p>
 <p>In this attack, Goku first creates an energy ball into his hands, then throws the energy against his target, in a form of a giant energy wave. If we wanted to recreate this effect in <strong>Cave</strong>, in order to apply the attack's damage, we could cast a Ray using the <code>RayCast</code> and check for the hits. But this solution have a problem: The Kamehameha is a thick evergy wave and the RayCast will consider it as if it was just a thin line. If Goku decided to attack a wall with it and the wall has a small hole, like a bullet hole, the kamehameha would go through if we user the RayCast and that's not what we want.</p>
 <p>So what to do instead? It would be great if we could add a radius to the RayCast, that way we could make it as thick as we want, right? Exactly! And that's the purpose of the <strong>SphereCast</strong>. It's basically a RayCast, but with a radius. This alternative is very useful in many other use cases, not only the Kamehameha. As another example, <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV"><strong>GTA IV</strong></a> is a game that seems to use this technique to handle its camera collision.</p>
 <p><em>(If you want to be technical here and understand how it works behind the scenes: it does a convex sweep test with a sphere of a given radius from and to a position in the physics world).</em></p>
 <p>The <strong>Sphere Cast</strong>, just like the <strong>Ray Cast</strong>, have two methods related to it: <code>sphereCast(...)</code> and <code>sphereCastAll(...)</code> and they behave in the exact same way as their ray cast equivalents, except that they return <code>cave.SphereCastOut</code> class instances instead of the <code>cave.RayCastOut</code>. You can find its documentation in this page for reference. Here is the <strong>Sphere Cast</strong> API reference:</p>
-<pre><code class="language-python">sphereCast(origin : cave.Vector3, target : cave.Vector3, radius: float) -&gt; cave.SphereCastOut
-sphereCastAll(origin : cave.Vector3, target : cave.Vector3, radius: float) -&gt; list of cave.SphereCastOut
+<pre><code class="language-python">sphereCast(origin : cave.Vector3, target : cave.Vector3, radius: float, mask=cave.BitMask()) -&gt; cave.SphereCastOut
+sphereCastAll(origin : cave.Vector3, target : cave.Vector3, radius: float, mask=cave.BitMask()) -&gt; list of cave.SphereCastOut
 </code></pre>
 <p>Ray and Sphere casts are good, but sometimes they are not enough for what you want. That's why Cave Engine lets you check for collision within certain bounds. For now, you can use a Box or a Sphere shape for this and the usage is very simple as you can see below. Check the <code>cave.CollisionInfo</code> for additional details.</p>
 <pre><code class="language-python"># Box Shape checks:
-checkContactBox(boxTransform: cave.Transform) -&gt; list of cave.CollisionInfo
+checkContactBox(boxTransform: cave.Transform, mask=cave.BitMask()) -&gt; list of cave.CollisionInfo
 checkContactBox(
     boxPosition : cave.Vector3,
     boxRotation : cave.Vector3,
-    boxScale    : cave.Vector3
+    boxScale    : cave.Vector3, 
+    mask=cave.BitMask()
 ) -&gt; list of cave.CollisionInfo
 
 # Sphere Shape checks:
-checkContactSphere(position: cave.Vector3, radius: float)-&gt; list of cave.CollisionInfo
+checkContactSphere(position: cave.Vector3, radius: float, mask=cave.BitMask())-&gt; list of cave.CollisionInfo
 </code></pre>
 <hr />
 <h2 id="-scene-queries">- Scene Queries</h2>
