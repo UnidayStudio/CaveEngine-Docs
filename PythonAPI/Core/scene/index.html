@@ -601,17 +601,11 @@ sky.intensity : float
 sky.angle     : float
 sky.color     : ColorSampler
 
-# Bloom Related...
-bloom      : GraphConfigBloom
-bloom.use  : bool
-bloom:size : float
-
-# DOF Related...
-dof          : GraphConfigDOF
-dof.use      : bool
-dof.size     : float
-dof.start    : float
-dof.distance : float
+# Ambient Occlusion Related...
+ao            : AmbientOcclusion
+ao.use        : bool
+ao.texelScale : float
+ao.distance   : float
 
 # Atmosphere Related...
 atmosphere              : GraphConfigAtmosphere

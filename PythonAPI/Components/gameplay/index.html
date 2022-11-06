@@ -241,7 +241,7 @@
             
             <li class="nav-item" data-level="1"><a href="#gameplay-related-components" class="nav-link">Gameplay Related Components</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#caveplayercomponent" class="nav-link">cave.PlayerComponent</a>
+            <li class="nav-item" data-level="2"><a href="#caveplayercontrollercomponent" class="nav-link">cave.PlayerControllerComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -262,8 +262,8 @@
 
 <h1 id="gameplay-related-components">Gameplay Related Components</h1>
 <p>Cave Engine prodives some builtin Gameplay Related components for you to use out of the box in your games. You'll find their documentation here.</p>
-<h2 id="caveplayercomponent">cave.PlayerComponent</h2>
-<p>The <code>PlayerComponent</code> is a builtin component that you can use to add player controls to a Character. It will allow the user to move your entity around with <code>W, A, S, D</code> , jump with <code>Space</code> and run with <code>Left Shift</code>.</p>
+<h2 id="caveplayercontrollercomponent">cave.PlayerControllerComponent</h2>
+<p>The <code>PlayerControllerComponent</code> is a builtin component that you can use to add player controls to a Character. It will allow the user to move your entity around with <code>W, A, S, D</code> , jump with <code>Space</code> and run with <code>Left Shift</code>.</p>
 <p><em>(Note that the Player Component will only work if its Entity also have a <code>CharacterComponent</code>).</em></p>
 <h5 id="variables">Variables</h5>
 <table>
@@ -276,7 +276,7 @@
 <tbody>
 <tr>
 <td align="left">active</td>
-<td>The <code>PlayerComponent</code> will only run if this is set to <code>True</code> (as it is by default). You can use this do temporarely disable the Player's movement.</td>
+<td>The <code>PlayerControllerComponent</code> will only run if this is set to <code>True</code> (as it is by default). You can use this do temporarely disable the Player's movement.</td>
 </tr>
 <tr>
 <td align="left">walkSpeed</td>
