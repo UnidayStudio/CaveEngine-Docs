@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Cave 0.9.9 - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
+</li>
+                                    
+<li>
+    <a href="../../eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Release Notes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Cave 0.9.9</a>
+</li>
+            
+<li>
+    <a href="../v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+            
+<li>
+    <a href="../v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+            
+<li>
+    <a href="../v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PythonAPI/introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../PythonAPI/math/" class="dropdown-item">Math</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../getCave/" class="nav-link">Get Cave!</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Our Patreon</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../roadmap/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../v098/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#cave-engine-099-release-notes" class="nav-link">Cave Engine 0.9.9 Release Notes!</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#a-personal-note-from-the-dev" class="nav-link">A Personal note from the Dev</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#main-highlights" class="nav-link">Main Highlights:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#cave-is-way-more-stable-usable-and-runs-better" class="nav-link">Cave is way more Stable, Usable and Runs better:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#improved-asset-importer" class="nav-link">Improved Asset Importer:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pick-the-project-location" class="nav-link">Pick the Project Location:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enhanced-lighting-effects" class="nav-link">Enhanced Lighting Effects:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#smoother-camera-control-high-dpi-editor" class="nav-link">Smoother Camera Control + High DPI Editor:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#third-person-camera-component" class="nav-link">Third-Person Camera Component:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#top-down-camera-component" class="nav-link">Top-Down Camera Component:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#full-commit-log" class="nav-link">Full Commit Log:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#features-and-improvements" class="nav-link">Features and Improvements:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fixes" class="nav-link">Fixes:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#internal-stuff" class="nav-link">Internal Stuff:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cave-engine-099-release-notes">Cave Engine 0.9.9 Release Notes!</h1>
+<p>Welcome to <strong>the "Production Ready" Cave Release!</strong></p>
+<h2 id="a-personal-note-from-the-dev">A Personal note from the Dev</h2>
+<p><strong>Dev Note 1:</strong> First of all, I apologize the lack of "BADASS" well-written Release Notes. But I usually spend 2-3 full time days crawling the commits to create a compilation of new features and explaining them for every new release, and since Cave is NOT my full time job at the moment (but you can help it to be by donating, btw), it's very hard to me to keep that pace. </p>
+<p>So I'm trying to figure out a faster and better way to do the new Releases, since this part is exactly what delays the new versions more. I hope that y'all comprehend. :)</p>
+<p><strong>Dev Note 2:</strong> But the TLDR is: This new release is pretty much focused in one thing: Stability and being "Production Ready". Because I myself can't wait to start actively using Cave in new, badass, complete and complicated Video Games (and watch y'all do the same), so I came to a conclusion this year that if I wanted to see that becoming a thing, I had to stop desperately adding new "bleeding edge" features on every release and to focus on making the current feature-set production-proof. And that's what I've been doing so far. </p>
+<p>The plan is to take some time now to start making some good games in Cave. I had to sacrifice some cool features such as Visual Scripting and Backward/Forward project saves compatibility for now, but I believe that releasing Cave 1.0.0 with a lot of cool games made with it is far more important and cooler than that, so let's hope for the best and do it!</p>
+<p>So get ready to <strong>Start Making Games with Cave</strong> right NOW! :)</p>
+<p>Oh...</p>
+<p>And who is ready to the world's first <strong>Cave Engine Game Jam</strong>?</p>
+<ul>
+<li><a href="http://bit.ly/discord-uniday-us">Our Discord - <strong>In English</strong></a></li>
+<li><a href="http://bit.ly/discord-uniday">Our Discord - <strong>In Portuguese (Brazil)</strong></a></li>
+</ul>
+<p>Join our discord servers to get notified when the Jam finally happens!</p>
+<p>Best Regards,
+<strong>Guilherme Teres</strong> (<em>the dev behind Cave</em>).</p>
+<hr />
+<h1 id="main-highlights">Main Highlights:</h1>
+<h2 id="cave-is-way-more-stable-usable-and-runs-better">Cave is way more Stable, Usable and Runs better:</h2>
+<p>There is not a lot of "new features" in this release, most of them, are for usability, stability and portability. Meaning that you'll now have a better UX experence, with less issues and a smoother development time in general. We did tons of fixes to ensure that the engine will work just fine in as many computers possible (including AMD cards!).</p>
+<h2 id="improved-asset-importer">Improved Asset Importer:</h2>
+<p>Asset importing in cave was previously sort of bad and that's why I've been working hard to fix it. Now it's considerably better and <strong>FBX Animations</strong> are finally a thing! :)</p>
+<h2 id="pick-the-project-location">Pick the Project Location:</h2>
+<p>On every new Cave Release, people where always mad at me in our discord server because there was no way to select the project save location. Well, now that's possible, so enjoy it!</p>
+<h2 id="enhanced-lighting-effects">Enhanced Lighting Effects:</h2>
+<p>The ambient occlusion and many other rendering features in Cave Engine has been improved, resulting in better lighting effects in your scenes. This creates more realistic and immersive visuals.</p>
+<h2 id="smoother-camera-control-high-dpi-editor">Smoother Camera Control + High DPI Editor:</h2>
+<p>The mouselook functionality in the viewport has been fixed, ensuring smoother camera control. The high DPI monitor users will not have a better experience using cave as well. It's still work in progress, but way clear to see and read the texts now.</p>
+<h2 id="third-person-camera-component">Third-Person Camera Component:</h2>
+<p>A new third-person camera component has been added, offering more flexibility in camera options. This allows you to achieve different perspectives and camera behaviors in your games or simulations.</p>
+<h2 id="top-down-camera-component">Top-Down Camera Component:</h2>
+<p>Another new camera component, the top-down camera, has been introduced. This allows you to create top-down views of your scenes, perfect for strategy games or overhead views.</p>
+<hr />
+<h1 id="full-commit-log">Full Commit Log:</h1>
+<p>Cave Engine 0.9.8 was released on <strong>Oct 1, 2022</strong> and since them (<em>today is Jul, 12, 2023</em>), the engine received <strong>137 new commits</strong>. So you might imagine that there is a lot to talk about and it will be impossible to highlight and talk about everything. So I'll share the entire commit log here, so y'all will be able to at least have a glance on everything I've worked for 0.9.9 (and the Work in Progress new features).</p>
+<h2 id="features-and-improvements">Features and Improvements:</h2>
+<ul>
+<li>Updated Cave Engine Version to 0.9.9!</li>
+<li>Improved the Asset Importer Layout</li>
+<li>Improved Cave's Ambient Occlusion </li>
+<li>Increased the Project Manager Window size</li>
+<li>PM: Option to pick Project Folder Location </li>
+<li>Updated SDL2 and statically linked it instead</li>
+<li>Moved the graph.ini inside the data folder</li>
+<li>Added more useful links to the engine info/help </li>
+<li>Changed imgui.ini location</li>
+<li>Replaced SDL_Mixer with cmixer</li>
+<li>Removed more unused DLLs </li>
+<li>Dropped glew and glut (replaced with glad) </li>
+<li>Droppped CubeTexture support (<em>this was not used at all</em>)</li>
+<li>New Merge options to Mesh's Vertices</li>
+<li>Improved Animation Debugging (and MeshComponent)</li>
+<li>Serialization no longer relies on typeid (<em>This will allow the engine, in the future,</em> <strong>to export to multiple platforms</strong>)</li>
+<li>Improved FBX Anim importer + Armature Properties</li>
+<li>Allow High DPI for high res monitors</li>
+<li>Added Ambient Occlusion</li>
+<li>Restored Blur!</li>
+<li>Option to Disable Mist when editing the Scene</li>
+<li>Option to Sort Assets by Name</li>
+<li>Disabled: Standalone Play when editing template </li>
+<li>Renamed the player component </li>
+<li>Replaced all backslashes from include paths </li>
+<li>Better "New Assets" options to right menu</li>
+<li>Update Cave Demo##1666799984.cavePkg (<em>this is the Goblin Demo</em>)</li>
+<li>Improved Mouselook: Use F3 to toggle mouse relative</li>
+<li>Added some Default Cave Packages</li>
+<li>New Third Person Cam Component</li>
+<li>BitMask: new [Enable|Disable]All method</li>
+<li>New BitMask option to Physics Scene queries</li>
+<li>New First Person Camera Component</li>
+<li>PythonAPI: Exposed the RenderGraph Config</li>
+<li>WIP: Logic Bricks Codegen</li>
+<li>New API: Scene's SphereCast!</li>
+<li>Python API + Docs: New useful Math functions</li>
+<li>Docs: Updated the roadmap Tasks</li>
+<li>Docs: removed free question from FAQ</li>
+<li>Docs: Added the Patreon links</li>
+<li>Added Discord and Doc links in the engine's UI</li>
+<li>Small Fixes in the Cave Docs</li>
+<li>Updating the Python API Docs (Finished)</li>
+<li>Updating the Python API Docs (WIP)</li>
+<li>Cave now uses AppData dir to store Projects</li>
+<li>New: Cave Engine PRO Configurations</li>
+<li>Disabled Debug Grid by default</li>
+<li>Added the missing locale file</li>
+<li>Asset Browser: Header + Zoom</li>
+<li>Show ProfilerTab by clicking in the FPS counter</li>
+<li>Better Thumbnail Generator + Bounding Box</li>
+<li>Changed the Default Material Rough value</li>
+<li>Profiler Improvements</li>
+<li>ImGuizmo: Do not flip the arrows... </li>
+<li>Copy/Paste Entity or Component to Clipboard </li>
+<li>Bring Viewport to focus when Playing + more </li>
+<li>SceneGraph: Double Click Templated Ent to edit it</li>
+<li>Drop Meshes to Viewport now also adds the RigidBody</li>
+<li>Editor: Show FPS count in a better place </li>
+<li>Exposed the ParticleCmp to the Python API</li>
+<li>New SceneTimer + Timer refactor </li>
+<li>New Scene's CheckContact and RayCast methods!</li>
+<li>Exposed the AnimationHandler to Python!</li>
+<li>New TopDown Camera Component!</li>
+<li>Viewport: button go back to scene (when editing a template)</li>
+<li>Created a bunch of Scene queries APIs</li>
+<li>Exposed the UIElement Default Quad Color to Python</li>
+<li>Some Text Editor visual tweaks</li>
+<li>Save/Load and Edit Scene Properties in the UI</li>
+<li>Small PythonCmp UI fix</li>
+<li>Template properties can now be overwritten by ent</li>
+</ul>
+<h2 id="fixes">Fixes:</h2>
+<ul>
+<li>Fix: Compilation errors</li>
+<li>Fix: Wrong Armature Animation Interpolations!</li>
+<li>Fix: Project Settings Crash</li>
+<li>Fix: Viewport's Mouselook was Bad </li>
+<li>Fix: Do not duplicate removed DLLs when exporting</li>
+<li>Fix: FrameBuffer Error checking was wrong</li>
+<li>Fix: Import Package Window Height was too smal</li>
+<li>Fix: AMD issues with cave Shaders </li>
+<li>Fix: Some uninitialized fields</li>
+<li>Fix: Add Player Cmp crash</li>
+<li>Fix: UICanvas using wrong Window Size...</li>
+<li>Fix: Some CameraCmp crashes</li>
+<li>Fix: AMD card bugs... again... </li>
+<li>Fix: Asset loading crash</li>
+<li>Fix: Wheel with wrong startup axleAxis value</li>
+<li>Fix: VehicleCmp's apply offset to wheel</li>
+<li>Fix: Typo in the doc</li>
+<li>Fix: Roll and Yaw were inverted!</li>
+<li>Fix: Selected Entity can't Reload while in game!</li>
+<li>Fixing Compilation + disabled bricks for now...</li>
+<li>Fix: Wrong VersionStr (always showing PRO)</li>
+<li>Fix: Some stuff for the python API </li>
+<li>Fix: Project load crash when asset file is missing</li>
+<li>Fix: SceneGraph's right click was not working</li>
+<li>Fix: That Ancient Montserrat folder bug </li>
+<li>Fix: AudioComponent + Preview in the Editor </li>
+<li>Fix: Bug: Adding infinite animations in the stack! </li>
+<li>Fix: GetForwardVec was actually facing backwards.</li>
+<li>Fix: Crash when creating a new project</li>
+<li>Fix: Duplicate Asset was not working (editor)</li>
+<li>Fix: TopDownCam not working as a child Entity...</li>
+<li>Fix: CharAnimator looking on Y...(not supposed to) </li>
+<li>Fix: CharAnimator with local lookAt (wrong) </li>
+<li>Fix: ui::PropRange with floats (was not working)</li>
+<li>Fix: It was not possible to select Python Cmps</li>
+<li>Fix: MeshCmp copy ctor was missing the Tint</li>
+<li>Fix: Text Editor: Wrong Mouse X pos picking</li>
+</ul>
+<h2 id="internal-stuff">Internal Stuff:</h2>
+<p>If you're a nerd, there is a lot of internal stuff in the commit log and I decided to keep them here just for fun. It means that the end user (aka everyone using the engine) will not be able to directly see this in action, since they are internal stuff (as the name suggests), but it's still cool to see them. So enjoy it (if you want):</p>
+<ul>
+<li>WIP: DCC Bridge (disabled for now)</li>
+<li>Update BasicRenderer.cpp</li>
+<li>Added nlohmann's json lib to the project</li>
+<li>New ui::TextInfo(...) function</li>
+<li>New dialogs::SelectFolder(...) function</li>
+<li>Small VS Project organization</li>
+<li>Update AudioTrackInstance.cpp </li>
+<li>Update Game.vcxproj</li>
+<li>Changed Intermediate directories to avoid issues </li>
+<li>Added a Bone::GetChildren() method</li>
+<li>Editor ui: Option to set TreeNode as leaf</li>
+<li>Some serialization improvements</li>
+<li>Scene: Don't create the entity if the given template don't exist</li>
+<li>Update .gitignore</li>
+<li>Visual Studio doing his thing (<em>LOL</em>)</li>
+<li>Attempt to build it for Linux (Spoiler: Failed :P ) </li>
+<li>Making the code NOT Windows/MSVC specific (<em>This will allow the engine, in the future,</em> <strong>to export to multiple platforms</strong>)</li>
+<li>New: utils:OpenWebLink(url) function</li>
+<li>Added more Python API macros</li>
+<li>WIP: CodeGen Pre Build step (to gen PythonAPI)</li>
+<li>Added the proper CodeGen macros</li>
+<li>PyAPI: Component::SetEntity... changed</li>
+<li>Refactor: Changed the Event registry (Py) location</li>
+<li>WIP: Python Bricks (disabled for now) </li>
+<li>New ui::PyProp(...) method</li>
+<li>Restored my custom ImGui Slider </li>
+<li>Upgraded to: ImGui v1.89 + Freetype </li>
+<li>New Scene::AddDebugArrow method</li>
+<li>Method: Transform::SetScale(float scalar)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
