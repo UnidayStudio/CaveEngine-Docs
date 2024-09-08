@@ -249,6 +249,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#-submitting-the-transform-to-the-world" class="nav-link">- Submitting the Transform to the World</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#-working-with-components" class="nav-link">- Working with Components</a>
               <ul class="nav flex-column">
               </ul>
@@ -320,6 +324,10 @@ hasProperty(property: str) -&gt; bool
 <p>It's a good idea to store the entity ID if you constantly wants to query the scene to retrieve the entity back, since it's faster to get the entity by its ID than it is by its name. <strong>And why not storing the Entity directly?</strong> Because if the entity gets deleted, you may cause a big problem if you still have it in your code. During a single frame, it's not a problem to store entities in a variable because as you already saw, the Engine will not immediately delete any entity while there is still code being running for the frame.</p>
 <p>If you want to get the Entity's scene, use this:</p>
 <pre><code class="language-python">getScene() -&gt; cave.Scene
+</code></pre>
+<h2 id="-submitting-the-transform-to-the-world">- Submitting the Transform to the World</h2>
+<p><strong>THIS IS VERY IMPORTANT:</strong> If you change an entity's transform during the game, like moving, rotating or scaling it, you'll have to submit the new transform to the world, otherwise the physics and potentially the rendering will look wrong (it will remain using the old transform). This is not performed automatically due to Engine optimizations. So whenever you change a transform, call the method bellow. You don't need to call it after EVERY transform operation, calling it once in the end of the frame is enough.</p>
+<pre><code class="language-python">SubmitTransformToWorld()
 </code></pre>
 <h2 id="-working-with-components">- Working with Components</h2>
 <p>As you already know, Cave Engine lets you customize your Entities by adding and manipulating components in it. When working with components using the <strong>Python API</strong>, you'll always refer to them by typing their names as strings. Adding the "Component" sufix is not mandatory, meaning that if you want to get the Entity's <code>RigidBodyComponent</code> for example, you can call it: <code>"RigidBodyComponent"</code> or just <code>"RigidBody"</code>. </p>

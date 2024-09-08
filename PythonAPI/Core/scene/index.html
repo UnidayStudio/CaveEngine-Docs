@@ -274,6 +274,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#cavecamera" class="nav-link">cave.Camera</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#cavesun" class="nav-link">cave.Sun</a>
               <ul class="nav flex-column">
               </ul>
@@ -359,6 +363,9 @@ addFromTemplate(
 </code></pre>
 <p>In Cave Engine, every Scene have its own Sun light and you can get it by calling this scene method:</p>
 <pre><code class="language-python">getSun() -&gt; cave.Sun
+</code></pre>
+<p>You can also get the Scene's active Camera. It's importat to know that the scene stores its own camera instance (type cave.Camera) and it has nothing to do with the CameraComponent or the entity that have it. Check the camera operations later in this page.</p>
+<pre><code class="language-python">getCamera() -&gt; cave.Camera
 </code></pre>
 <hr />
 <h2 id="-scene-collision-checks">- Scene Collision Checks</h2>
@@ -537,9 +544,63 @@ normal   : cave.Vector3
 entity   : cave.Entity
 </code></pre>
 <hr />
+<h2 id="cavecamera">cave.Camera</h2>
+<p>The actual camera used by the Scene to do the rendering. You can get it by calling <code>scene.getCamera()</code>.
+This class inherits from Cave's Transform, so you can also expect to be able to do all sorts of Transform manipulation with it, such as moving, rotating and/or scaling it.</p>
+<h5 id="variables_4">Variables</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">aperture</td>
+<td>Camera's aperture</td>
+</tr>
+<tr>
+<td align="left">nearPlane</td>
+<td>The minimum distance from the camera that gets drawn to screen.</td>
+</tr>
+<tr>
+<td align="left">farPlane</td>
+<td>The maximum distance from the camera that gets drawn to screen.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the Python API for Reference:</p>
+<pre><code class="language-python">aperture  : float
+nearPlane : float
+farPlane  : float
+</code></pre>
+<h5 id="methods_1">Methods</h5>
+<p>The Camera have a lot of useful methods as well:</p>
+<pre><code class="language-python">getViewProjection() -&gt; cave.Matrix4
+
+# Returns a Vector representing a Ray that could be casted from the camera to the screen coordinates specified in the arguments.
+getScreenRay(float x, float y) -&gt; cave.Vector3
+
+# This one does the opposite of getScreenRay: Given a world position, returns its projected position in the camera's screen view.
+getScreenPos(worldPos : cave.Vector3) -&gt; cave.Vector2
+</code></pre>
+<p>You can use the methods bellow to set the camera to Perspective or Ortographic mode:</p>
+<pre><code class="language-python">setPerspective(fieldOfView : float)
+setOrthographic(orthoArea : float)
+</code></pre>
+<p>And, of course, you can also get the field of view (or orthographic area) back by calling those method bellow. Keep that in mind that if you have a Orthographic camera dn tries to get the perspective field of view (or vice-versa), you may get wrong numbers or undefined behaviour.</p>
+<pre><code class="language-python">getPerspectiveFov() -&gt; float
+getOrthographicArea() -&gt; float
+</code></pre>
+<p>If you want to check if a camera is either perspective or orthographic, you can use those methods:</p>
+<pre><code class="language-python">isPerspective() -&gt; bool
+isOrthographic() -&gt; bool
+</code></pre>
+<hr />
 <h2 id="cavesun">cave.Sun</h2>
 <p>As already explained in this page, every Scene in Cave have its own Sun light. You can get it by calling <code>scene.getSun()</code> and it will return an instance of this class. You can use it to adjust the look of it, as you can see below.</p>
-<h5 id="variables_4">Variables</h5>
+<h5 id="variables_5">Variables</h5>
 <table>
 <thead>
 <tr>
@@ -581,7 +642,7 @@ intensity : float
 <h1 id="scenes-graphic-settings">Scene's Graphic Settings</h1>
 <p>As discussed already, most of the scene's graphic settings (such as mist, atmosphere and so on) can be adjusted by getting the <strong>cave.GraphConfig</strong> class from the Scene (by calling the scene's <code>getGraphConfig()</code> method). Since this class is configuration only, I'll simplify this API to make it easier for you to use. All the settings have the same purpose as they do in the Scene's Editor UI in the Editor. Here is the full API for reference.</p>
 <h2 id="cavegraphconfig">cave.GraphConfig</h2>
-<h5 id="variables_5">Variables</h5>
+<h5 id="variables_6">Variables</h5>
 <pre><code class="language-python">applyShading      : bool
 
 # Ambient Related...
