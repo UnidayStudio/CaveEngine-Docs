@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Miscellaneous - Cave Engine Docs</title>
+        <title>Cave Engine 1.0 - Cave Engine Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -144,7 +144,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Miscellaneous</a>
+    <a href="../engineMisc/" class="dropdown-item">Miscellaneous</a>
 </li>
     </ul>
   </li>
@@ -198,7 +198,7 @@
   </li>
                                     
 <li>
-    <a href="../cave1/" class="dropdown-item">Cave Engine 1.0</a>
+    <a href="./" class="dropdown-item active">Cave Engine 1.0</a>
 </li>
                                 </ul>
                             </li>
@@ -226,12 +226,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../engineUtils/" class="nav-link">
+                                <a rel="prev" href="../EditorAPI/uiModule/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Assets/materials/" class="nav-link">
+                                <a rel="next" href="../../Showcase/games/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -253,30 +253,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#engine-miscellaneous" class="nav-link">Engine Miscellaneous</a>
+            <li class="nav-item" data-level="1"><a href="#cave-engine-10-python-api" class="nav-link">Cave Engine 1.0 - Python API</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#counting-time" class="nav-link">Counting Time</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavetimer" class="nav-link">cave.Timer</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavescenetimer" class="nav-link">cave.SceneTimer</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#others" class="nav-link">Others</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavebitmask" class="nav-link">cave.BitMask</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -284,73 +262,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="engine-miscellaneous">Engine Miscellaneous</h1>
-<p>Here you'll find various engine classes.</p>
-<h1 id="counting-time">Counting Time</h1>
-<p>Cave Engine provides two useful classes for you to count Time: <code>Timer</code> and <code>SceneTimer</code>. They have the exact same API and the only different between them is that the latter will use the scene's elapsed time (when not paused) and the regular <code>Timer</code> will use the system time. </p>
-<p>In practice, this means that <strong>if you pause the scene</strong>, the <code>SceneTimer</code> will also pause and the <code>Timer</code> will keep counting. Most of the times, what you're looking for will be the <code>SceneTimer</code>. :)</p>
-<h2 id="cavetimer">cave.Timer</h2>
-<p>You can Initialize it in two ways:</p>
-<pre><code class="language-python"># This way it will start counting time at zero:
-timer = Timer()
-
-# And this way it will start at 10 seconds (for example):
-timer = Timer(10.0)
-</code></pre>
-<h5 id="methods">Methods</h5>
-<pre><code class="language-python"># Returns the elapsed time (in seconds):
-get() -&gt; float
-
-# Sets the counter to some initial value (in seconds):
-set(value: float)
-
-# Resets the counter to 0:
-reset()
-</code></pre>
-<h2 id="cavescenetimer">cave.SceneTimer</h2>
-<p>You can Initialize it in two ways:</p>
-<pre><code class="language-python"># This way it will start counting time at zero:
-timer = SceneTimer()
-
-# And this way it will start at 10 seconds (for example):
-timer = SceneTimer(10.0)
-</code></pre>
-<h5 id="methods_1">Methods</h5>
-<pre><code class="language-python"># Returns the elapsed time (in seconds):
-get() -&gt; float
-
-# Sets the counter to some initial value (in seconds):
-set(value: float)
-
-# Resets the counter to 0:
-reset()
-</code></pre>
-<hr />
-<h1 id="others">Others</h1>
-<h2 id="cavebitmask">cave.BitMask</h2>
-<p>The BitMask is used by cave as Masks to filter various things, such as Rendering related components or even Physics. A bitmask consists in 32 bits, mapped from <strong>[0 to 31]</strong>. Keep in mind that if you attempt to manipulate a bit that's outside this range, it may lead to undefined behaviour. </p>
-<p>A BitMask class can be instantiated by you just fine if you want:</p>
-<pre><code class="language-python">myBitMask = cave.BitMask()
-myBitMask.enable(1)
-myBitMask.disable(2)
-</code></pre>
-<h5 id="methods_2">Methods</h5>
-<p>If you have two BitMasks and want to check if them intersect, meaning if they have some enabled bits in common, you can use this method:</p>
-<pre><code class="language-python">intersect(other: BitMask) -&gt; bool
-</code></pre>
-<p>Both functions bellow serves to check if a specific bit is enabled (True) or disabled (False).</p>
-<pre><code class="language-python">isEnabled(bit: int) -&gt; bool
-get(bit: int) -&gt; bool
-</code></pre>
-<p>To change a bit (enabling or disabling it), you can either use the <code>set(...)</code> method or the equivalent enable/disable ones:</p>
-<pre><code class="language-python">set(bit: int, value: bool)
-enable(bit: int)
-disable(bit: int)
-</code></pre>
-<p>If you want, you can also enable or disable all bits at once:</p>
-<pre><code class="language-python">enableAll()
-disableAll()
-</code></pre></div>
+<h1 id="cave-engine-10-python-api">Cave Engine 1.0 - Python API</h1>
+<p>Please notice that this website only contains the old 0.9.x API, so if you're using the latest Cave Engine version (1.x), it may be outdated. You can still browse the old API in this website and learn from it if you want, but it's not recommended to take it for granted.</p>
+<p><strong>The Python API for Cave 1.0 now comes with the engine itself as stubs for your reference and intellisense.</strong></p>
+<p>If you have any questions, please contact Uniday Studio.</p></div>
             </div>
         </div>
 
