@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,15 @@
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Physics Components - Cave Engine Docs</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -25,7 +26,7 @@
             <div class="container">
                 <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -33,16 +34,12 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">About</a>
                                 <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
-</li>
                                     
 <li>
     <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
@@ -54,6 +51,14 @@
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Release Notes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Docs/ReleaseNotes/v120/" class="dropdown-item">Cave 1.2.0</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Older Versions</a>
     <ul class="dropdown-menu">
             
 <li>
@@ -73,11 +78,21 @@
 </li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">FAQ</a>
+</li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python API</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cave1/" class="dropdown-item">Cave Engine 1.x</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Cave Engine 0.9</a>
@@ -122,7 +137,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Physics Components</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Physics Components</a>
 </li>
             
 <li>
@@ -196,14 +211,10 @@
   </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="../../cave1/" class="dropdown-item">Cave Engine 1.0</a>
-</li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Showcase</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -211,17 +222,17 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../../../getCave/" class="nav-link">Get Cave!</a>
+                            <li class="nav-item">
+                                <a href="https://unidaystudio.itch.io/cave-engine" class="nav-link">Get Cave</a>
                             </li>
-                            <li class="navitem">
-                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Our Patreon</a>
+                            <li class="nav-item">
+                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Patreon</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -242,77 +253,77 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#physics-related-components" class="nav-link">Physics Related Components</a>
+            <li class="nav-item" data-bs-level="1"><a href="#physics-related-components" class="nav-link">Physics Related Components</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#character-physics" class="nav-link">Character Physics</a>
+            <li class="nav-item" data-bs-level="1"><a href="#character-physics" class="nav-link">Character Physics</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavecharactercomponent" class="nav-link">cave.CharacterComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#rigid-body-physics" class="nav-link">Rigid Body Physics</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#caverigidbodycomponent" class="nav-link">cave.RigidBodyComponent</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cavecharactercomponent" class="nav-link">cave.CharacterComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#vehicle-physics" class="nav-link">Vehicle Physics</a>
+            <li class="nav-item" data-bs-level="1"><a href="#rigid-body-physics" class="nav-link">Rigid Body Physics</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavevehiclecomponent" class="nav-link">cave.VehicleComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavevehicleengineconfig" class="nav-link">cave.VehicleEngineConfig</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavevehiclesteeringconfig" class="nav-link">cave.VehicleSteeringConfig</a>
+            <li class="nav-item" data-bs-level="2"><a href="#caverigidbodycomponent" class="nav-link">cave.RigidBodyComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#wheel-physics" class="nav-link">Wheel Physics</a>
+            <li class="nav-item" data-bs-level="1"><a href="#vehicle-physics" class="nav-link">Vehicle Physics</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavewheelcomponent" class="nav-link">cave.WheelComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cavewheeltuningconfig" class="nav-link">cave.WheelTuningConfig</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cavevehiclecomponent" class="nav-link">cave.VehicleComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#cavewheelcontrolsconfig" class="nav-link">cave.WheelControlsConfig</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cavevehicleengineconfig" class="nav-link">cave.VehicleEngineConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cavevehiclesteeringconfig" class="nav-link">cave.VehicleSteeringConfig</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#vehicle-controller" class="nav-link">Vehicle Controller</a>
+            <li class="nav-item" data-bs-level="1"><a href="#wheel-physics" class="nav-link">Wheel Physics</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavevehiclecontrollercomponent" class="nav-link">cave.VehicleControllerComponent</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cavewheelcomponent" class="nav-link">cave.WheelComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cavewheeltuningconfig" class="nav-link">cave.WheelTuningConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cavewheelcontrolsconfig" class="nav-link">cave.WheelControlsConfig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#vehicle-controller" class="nav-link">Vehicle Controller</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#cavevehiclecontrollercomponent" class="nav-link">cave.VehicleControllerComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -332,25 +343,25 @@
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">fallSpeed</td>
+<td style="text-align: left;">fallSpeed</td>
 <td>The max fall speed of the character.</td>
 </tr>
 <tr>
-<td align="left">gravity</td>
+<td style="text-align: left;">gravity</td>
 <td>The gravity that will be applied to the character. It is different from the physics world's gravity because you may want to control this separately for your characters.</td>
 </tr>
 <tr>
-<td align="left">jumpSpeed</td>
+<td style="text-align: left;">jumpSpeed</td>
 <td>As the name suggests, the jump speed. The higher this number is, the higher the character will jump.</td>
 </tr>
 <tr>
-<td align="left">maxSlope</td>
+<td style="text-align: left;">maxSlope</td>
 <td>The max slope angle that the character can climb.</td>
 </tr>
 </tbody>
@@ -392,25 +403,25 @@ onGround()  -&gt; bool
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">alwaysActive</td>
+<td style="text-align: left;">alwaysActive</td>
 <td>If <code>True</code>, the Physics Engine will never let this body sleep, meaning that it will always calculate its physics condition. Having the physics shape to sleep is an optimization that you might want to have, but in some cases, like an object that really needs to be taken into account in your game like the ball of a soccer game or a flying bullet, the <code>alwaysActive</code> option could be a good option to have enabled.</td>
 </tr>
 <tr>
-<td align="left">linearVelocity</td>
+<td style="text-align: left;">linearVelocity</td>
 <td>The Entity's linear Velocity.</td>
 </tr>
 <tr>
-<td align="left">angularVelocity</td>
+<td style="text-align: left;">angularVelocity</td>
 <td>The Entity's angular Velocity.</td>
 </tr>
 <tr>
-<td align="left">angularFactor</td>
+<td style="text-align: left;">angularFactor</td>
 <td>The Entity's angular Factor.</td>
 </tr>
 </tbody>
@@ -481,17 +492,17 @@ brake        : float
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">clamp</td>
+<td style="text-align: left;">clamp</td>
 <td>Set the clamp to the max angle that you'll allow this wheel to turn.</td>
 </tr>
 <tr>
-<td align="left">increment</td>
+<td style="text-align: left;">increment</td>
 <td>A higher increment mean that the wheel will turn faster.</td>
 </tr>
 </tbody>
@@ -544,17 +555,17 @@ frictionSlip          : float
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">hasTraction</td>
+<td style="text-align: left;">hasTraction</td>
 <td>If <code>True</code>, the wheel will rotate when the <code>VehicleComponent</code> applies some forces (such as accelerating or reversing).</td>
 </tr>
 <tr>
-<td align="left">hasBrake</td>
+<td style="text-align: left;">hasBrake</td>
 <td>If <code>True</code>, the wheel will brake when the <code>VehicleComponent</code> requests.</td>
 </tr>
 </tbody>
@@ -572,13 +583,13 @@ hasBrake    : bool
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">active</td>
+<td style="text-align: left;">active</td>
 <td>The <code>VehicleControllerComponent</code> will only run if this is set to <code>True</code> (as it is by default). You can use this do temporarely disable the Vehicle Controller.</td>
 </tr>
 </tbody>
@@ -593,19 +604,20 @@ hasBrake    : bool
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -625,7 +637,7 @@ hasBrake    : bool
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,15 @@
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Cave 0.9.7.2 - Cave Engine Docs</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -25,7 +26,7 @@
             <div class="container">
                 <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -33,16 +34,12 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">About</a>
                                 <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
-</li>
                                     
 <li>
     <a href="../../eula/" class="dropdown-item">License (EULA)</a>
@@ -57,6 +54,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../v120/" class="dropdown-item">Cave 1.2.0</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Older Versions</a>
+    <ul class="dropdown-menu">
+            
+<li>
     <a href="../v099/" class="dropdown-item">Cave 0.9.9</a>
 </li>
             
@@ -65,7 +70,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Cave 0.9.7.2</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Cave 0.9.7.2</a>
 </li>
             
 <li>
@@ -73,11 +78,21 @@
 </li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">FAQ</a>
+</li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python API</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PythonAPI/cave1/" class="dropdown-item">Cave Engine 1.x</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Cave Engine 0.9</a>
@@ -196,14 +211,10 @@
   </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="../../../PythonAPI/cave1/" class="dropdown-item">Cave Engine 1.0</a>
-</li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Showcase</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -211,17 +222,17 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../../../getCave/" class="nav-link">Get Cave!</a>
+                            <li class="nav-item">
+                                <a href="https://unidaystudio.itch.io/cave-engine" class="nav-link">Get Cave</a>
                             </li>
-                            <li class="navitem">
-                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Our Patreon</a>
+                            <li class="nav-item">
+                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Patreon</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -242,109 +253,109 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#cave-engine-098-release-notes" class="nav-link">Cave Engine 0.9.8 Release Notes!</a>
+            <li class="nav-item" data-bs-level="1"><a href="#cave-engine-098-release-notes" class="nav-link">Cave Engine 0.9.8 Release Notes!</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#a-personal-note-from-the-dev" class="nav-link">A Personal note from the Dev</a>
+            <li class="nav-item" data-bs-level="1"><a href="#a-personal-note-from-the-dev" class="nav-link">A Personal note from the Dev</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#new-project-manager-ui" class="nav-link">New Project Manager UI</a>
+            <li class="nav-item" data-bs-level="1"><a href="#new-project-manager-ui" class="nav-link">New Project Manager UI</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#new-way-to-edit-entity-templates" class="nav-link">New way to Edit Entity Templates!</a>
+            <li class="nav-item" data-bs-level="1"><a href="#new-way-to-edit-entity-templates" class="nav-link">New way to Edit Entity Templates!</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#rendering-features" class="nav-link">Rendering Features:</a>
+            <li class="nav-item" data-bs-level="1"><a href="#rendering-features" class="nav-link">Rendering Features:</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#mesh-component-tint" class="nav-link">Mesh Component Tint</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#particle-system" class="nav-link">Particle System</a>
+            <li class="nav-item" data-bs-level="2"><a href="#mesh-component-tint" class="nav-link">Mesh Component Tint</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#logic-and-python-api" class="nav-link">Logic and Python API</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#the-new-python-code-component" class="nav-link">The New Python Code Component</a>
+            <li class="nav-item" data-bs-level="2"><a href="#particle-system" class="nav-link">Particle System</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#uiux" class="nav-link">UI/UX:</a>
+            <li class="nav-item" data-bs-level="1"><a href="#logic-and-python-api" class="nav-link">Logic and Python API</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#viewport-ui-and-editing-enhancements" class="nav-link">Viewport UI and Editing Enhancements</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#general-features" class="nav-link">General Features:</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#animation" class="nav-link">Animation:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#physics" class="nav-link">Physics:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#exported-game-standalone" class="nav-link">Exported Game (Standalone):</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#created-the-stats-for-nerds-tab" class="nav-link">Created the Stats For Nerds Tab!</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#added-a-loading-screen" class="nav-link">Added a Loading Screen:</a>
+            <li class="nav-item" data-bs-level="2"><a href="#the-new-python-code-component" class="nav-link">The New Python Code Component</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#fixes" class="nav-link">Fixes:</a>
+            <li class="nav-item" data-bs-level="1"><a href="#uiux" class="nav-link">UI/UX:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#viewport-ui-and-editing-enhancements" class="nav-link">Viewport UI and Editing Enhancements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#general-features" class="nav-link">General Features:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#animation" class="nav-link">Animation:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#physics" class="nav-link">Physics:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#exported-game-standalone" class="nav-link">Exported Game (Standalone):</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#created-the-stats-for-nerds-tab" class="nav-link">Created the Stats For Nerds Tab!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#added-a-loading-screen" class="nav-link">Added a Loading Screen:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#fixes" class="nav-link">Fixes:</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#still-work-in-progress" class="nav-link">Still Work in Progress</a>
+            <li class="nav-item" data-bs-level="1"><a href="#still-work-in-progress" class="nav-link">Still Work in Progress</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#initial-network-layer-not-available-yet" class="nav-link">Initial Network layer (not available yet)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#logic-bricks-visual-scripting-not-available-yet" class="nav-link">Logic Bricks: Visual Scripting (not available yet)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#initial-network-layer-not-available-yet" class="nav-link">Initial Network layer (not available yet)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#animation-system-not-available-yet" class="nav-link">Animation System (not available yet)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#logic-bricks-visual-scripting-not-available-yet" class="nav-link">Logic Bricks: Visual Scripting (not available yet)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animation-system-not-available-yet" class="nav-link">Animation System (not available yet)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -700,19 +711,20 @@ out = cave.math.mapRange(value, 0.0, 1.0, 60.0, 35.0)
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -732,7 +744,7 @@ out = cave.math.mapRange(value, 0.0, 1.0, 60.0, 35.0)
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">

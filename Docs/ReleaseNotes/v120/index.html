@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Cave 1.2.0 - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">About</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../eula/" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../roadmap/" class="dropdown-item">Roadmap</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Release Notes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Cave 1.2.0</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Older Versions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../v099/" class="dropdown-item">Cave 0.9.9</a>
+</li>
+            
+<li>
+    <a href="../v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+            
+<li>
+    <a href="../v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+            
+<li>
+    <a href="../v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python API</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PythonAPI/cave1/" class="dropdown-item">Cave Engine 1.x</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cave Engine 0.9</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/introduction/" class="dropdown-item">Introduction</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Core</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Core/scene/" class="dropdown-item">Scene</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Core/entity/" class="dropdown-item">Entity</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Core/component/" class="dropdown-item">Component</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Components/transform/" class="dropdown-item">Transform Component</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/gameplay/" class="dropdown-item">Gameplay Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/graphics/" class="dropdown-item">Graphics Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/physics/" class="dropdown-item">Physics Components</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Components/interface/" class="dropdown-item">Game UI</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../PythonAPI/math/" class="dropdown-item">Math</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Engine</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/engineUtils/" class="dropdown-item">Utilities</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/engineMisc/" class="dropdown-item">Miscellaneous</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Assets/materials/" class="dropdown-item">Material Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Assets/meshes/" class="dropdown-item">Mesh Manipulation</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Assets/audio/" class="dropdown-item">Audio Playing</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Events</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/Events/events/" class="dropdown-item">Handling Events</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/Events/keycodes/" class="dropdown-item">Keycodes</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Editor Only API</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../PythonAPI/EditorAPI/tooling/" class="dropdown-item">Writting your own Tools</a>
+</li>
+            
+<li>
+    <a href="../../../PythonAPI/EditorAPI/uiModule/" class="dropdown-item">UI Submodule API</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Showcase</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://unidaystudio.itch.io/cave-engine" class="nav-link">Get Cave</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Patreon</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../roadmap/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../v099/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cave-engine-12-release-notes" class="nav-link">Cave Engine 1.2 - Release Notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#get-cave-engine" class="nav-link">Get Cave Engine</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#main-highlights" class="nav-link">Main Highlights</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#the-cave-engine-bible-documentation" class="nav-link">The Cave Engine Bible (Documentation)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#terrain-system" class="nav-link">Terrain System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#viewport-tools" class="nav-link">Viewport Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#inverse-kinematics-ik" class="nav-link">Inverse Kinematics (IK)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#multi-select-entities-in-the-3d-view" class="nav-link">Multi-Select Entities in the 3D View</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#undo-system-ctrl-z" class="nav-link">Undo System (Ctrl + Z)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#rendering-improvements" class="nav-link">Rendering Improvements</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#native-high-dynamic-range-hdr-rendering" class="nav-link">Native High Dynamic Range (HDR) Rendering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#improved-pbr-rendering" class="nav-link">Improved PBR Rendering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#multi-material-animated-meshes" class="nav-link">Multi Material Animated Meshes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#improved-project-manager" class="nav-link">Improved Project Manager</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#profiler-rewrite-faster-and-better" class="nav-link">Profiler Rewrite: Faster and Better!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#steam-api-integration" class="nav-link">Steam API Integration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#asset-importer-rewrite" class="nav-link">Asset Importer Rewrite</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ui-element-scissor-mask" class="nav-link">UI Element: Scissor Mask</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#better-thumbnail-generation" class="nav-link">Better Thumbnail Generation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cave-on-linux-os" class="nav-link">Cave on Linux (OS)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#other-improvements" class="nav-link">Other Improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#fixes" class="nav-link">Fixes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cave-engine-12-release-notes">Cave Engine 1.2 - Release Notes</h1>
+<p>Welcome to <strong>Cave Engine 1.2</strong>, one of the biggest and most exciting new versions so far. This is also a version that will set the groundwork for the future of the engine so stay tuned for all the release notes.</p>
+<p>Cave 1.2 focuses a lot on your experience, to make sure that the engine tech provides you all the necessary tools and features to create realistic and advanced games, taking advantage of modern rendering, animation and terrain features and much more.</p>
+<p><img alt="alt text" src="../image.png" /></p>
+<p>Cave Engine 1.2 brings major improvements to rendering, editor usability, performance, and Linux support. Download now and explore the new features!</p>
+<p><em><strong>Porting Note:</strong> If you're currently working on a game project using Cave 1.1, I've made a good effort to make your old project file compatible with this new version, but since there are so many new (and different) things, including a completely new rendering system, <strong>it is expected that you will have to redo some of the visuals of your game</strong>, such as adjusting lightning, the shaders and materials and also the textures. This is necessary to take advantage of all the new rendering features of Cave 1.2.</em></p>
+<hr />
+<h1 id="get-cave-engine">Get Cave Engine</h1>
+<p>You can Purchase Cave Engine on itch by clicking here:</p>
+<iframe frameborder="0" src="https://itch.io/embed/916180?fg_color=1a1a1a&amp;link_color=00aeff" width="552" height="167"><a href="https://unidaystudio.itch.io/cave-engine">Cave Engine by Uniday Studio</a></iframe>
+<hr />
+<h1 id="main-highlights">Main Highlights</h1>
+<p>We have many new features and even with all the effort I've made into this release notes, I will probably not be able to walk through them now, but I will highlight the most interesting ones here.</p>
+<h2 id="the-cave-engine-bible-documentation">The Cave Engine Bible (Documentation)</h2>
+<p>Cave Engine now have a complete documentation in a form of a Bible! A step-by-step book that you will be able to download and access completely offline anytime you want.</p>
+<p><img alt="alt text" src="../cave-bible-banner.png" /></p>
+<p>The version 1.0 of the Cave Engine Bible is finally done and it's almost a hundred pages long, containing all the basics that you need in order to get started in the most quick and efficient way possible. Understanding every corner of the engine. I plan to expand this Bible even more with examples, tutorials, etc.</p>
+<h2 id="terrain-system">Terrain System</h2>
+<p>Terrain creation and editing is finally here. You can now create simple or advanced terrains, being small or large, up to your imagination. Taking advantage of cave engine's new terrain tools to shape and create your worlds as you wish.</p>
+<p><img alt="alt text" src="../image-1.png" />
+In the image above, you see a terrain being created using a combination of many cave systems: The Terrain Component as the base and foundation for the entire landscape, custom mega scan Meshes as Entities (with mesh components) to represent the rock cliff sides and custom Shader Program to create a custom Material for the terrain itself. Allowing you to paint roads, different texture variations and so on.</p>
+<p>It includes, but not limited to:
+- New <strong>Terrain Component</strong>.
+- Introduced a <strong>Terrain Editor</strong> for you to create your terrain with various editing tools, such as sculpt, erase, smooth, flatten, set height, erosion, noise and texture paint.
+- <strong>Terrain Physics integration</strong>.</p>
+<p>You can also use an existing/external HeightMap as a starting point to your Terrains.</p>
+<h2 id="viewport-tools">Viewport Tools</h2>
+<p>With the introduction of the Terrain Systems and also the multi-select and undo (ctrl+z), we had to change the way you interact with the viewport. Now everything is done through the viewport tools. For now we have the manipulation tool, for the regular entity manipulation that you already know, and the terrain tool. More tools coming in the future, such as the Geometry Paint Tool.</p>
+<h2 id="inverse-kinematics-ik">Inverse Kinematics (IK)</h2>
+<p><strong>Cave engine's Animation System</strong> is already very robust, supporting blended animation, multiple layers of animations being played at the same time with blending between them and even per bone layer blending. The Animation can also have python callbacks to give you a lot of flexibility. You can run custom code after the animation is evaluated for each character and manually modify the final poses. </p>
+<p>Great, but nothing is this is "new" to Cave 1.2: they're all existing Cave features, including version 1.1 and previous ones.</p>
+<p>What is new is that now, making inverse kinematics is very easy, thanks tohandy methods inside the armature and bone classes.</p>
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p>You can learn more about this by watching this video:
+https://youtu.be/S1yExoDovY4</p>
+<h2 id="multi-select-entities-in-the-3d-view">Multi-Select Entities in the 3D View</h2>
+<p>Now you can hold Shift to select Multiple Entities and manipulate them in Batch in the 3D View.</p>
+<p><img alt="alt text" src="../image-5.png" /></p>
+<p>All the operations involving entries in the 3D view are now handled by the newly created Manipulation Tool. More about it:
+- Added support for <strong>multi-selection</strong> in the 3D viewport.
+- Improved entity manipulation tool UI and controls.
+- SceneGraph now supports <strong>drag and drop for multi-selected entities</strong>.</p>
+<h2 id="undo-system-ctrl-z">Undo System (Ctrl + Z)</h2>
+<p>Having an option to undo an action is one of the most frequently requested features for a Cave and it's now here. </p>
+<p>All the movements and transformations you make in the 3D view are now stored and you can press <strong>Ctrl + Z</strong> to undo them. At the moment there is some limitations and it does not support undoing modifications you do outside the 3D view, such as manually changing a field in the Properties Tab, but having it in the 3D view is already a great advance and very useful for level design.</p>
+<ul>
+<li>Implemented an <strong>Undo System</strong> for entity transformations in the 3D View.</li>
+<li>Allows reverting position, rotation, and scale changes and also Entity Duplications.</li>
+</ul>
+<h1 id="rendering-improvements">Rendering Improvements</h1>
+<p><img alt="alt text" src="../image-6.png" /></p>
+<p>Cave 1.2 Rendering System <strong>is very different from all the previous ones</strong>. That's because I worked hard to address many technical issues in the engines to make sure that it looks as good as possible, while still giving you all the flexibility you need and expect to create either realistic or unrealistic/stylized visuals.</p>
+<p>If you're coming from 1.1, you can expect pretty much an entirely new way of thinking about the visuals, specially because now, with HDR, the light values can be much higher and very different from what you're used to in 1.1. Here is a comparison: </p>
+<p><img alt="alt text" src="../cave-11-vs-12-vs-ue55.png" /></p>
+<p>On the left you see Cave 1.1, in the middle, the new version (1.2) and on the right, Unreal Engine 5.5, as an external reference. You can see that Cave 1.2 have a much closer resemblance to Unreal Engine 5, given the exact same character, textures and material. That because both Cave and Unreal implements a Physically Based Rendering (PBR), so it is expected for them to have similar looks under the same circumstances.</p>
+<p>Notice how the image on the left <strong>have visual artifacts</strong> because the eyes of the characters are a different material and that was not supported in cave 1.1. This is now <strong>addressed and works in Cave 1.2</strong>, as you will see in a moment. It's important to mention also that to create this side by side comparison between Cave, the Scene Lightning and Shadow Settings are different, since they are now much different from the older version of the engine.</p>
+<p>Here is what's new when it comes to the Rendering:</p>
+<h2 id="native-high-dynamic-range-hdr-rendering">Native High Dynamic Range (HDR) Rendering</h2>
+<p>One of the key features that were necessary in order to improve our Physically Based Rendering (PBR) System is HDR (High Dynamic Range). This is now implemented and used by all the rendering proccesses of the Engine.</p>
+<p>It renders the world in HDR, <strong>allowing you to have much more realistic light intensities and values</strong> and then performs an exposure, eye adaptation and tone mapping passes, to bring the range down to LDR (Low Dynamic Range), which is required to support all monitors.</p>
+<p>You can know more about it in this video:
+https://youtu.be/fEYHIgoEayY</p>
+<p>Changes:
+- Added <strong>HDR rendering support</strong> with automatic <strong>exposure adjustment</strong> and <strong>tone mapping</strong>.
+- Camera now have Exposure and Eye Adaptation Settings
+- Improved <strong>color correction pipeline</strong>.
+- Textures can now be either in Linear or Gamma Space</p>
+<p><strong>Porting Note</strong>: Starting from Cave 1.2, newly imported Textures are automatically detected as Normal Maps or regular textures and set to Linear or Gamma Space accordingly, so for new users or projects, this note isn't relevant. But if you're porting a Project from 1.1, you will need to manually change the old textures from Linear to Gamma (except the Normal Maps).</p>
+<h2 id="improved-pbr-rendering">Improved PBR Rendering</h2>
+<p>As I said, Cave's PBR Rendering is now much more accurate, but that's not the only thing that got improvements:</p>
+<ul>
+<li>Fixed PBR Math calculations to give a much more accurate result.</li>
+<li><strong>Parallax Displacement Mapping</strong> (Experimental) added for better depth representation in materials.</li>
+<li>Improved <strong>Material Shader System</strong> with much more organized and intuitive GLSL Shaders and Uniforms.</li>
+<li>Fixed issues with Normal Maps (inversion and flipping corrections).</li>
+<li>Improved <strong>Shadow Quality</strong> with better PCF filtering.</li>
+</ul>
+<h2 id="multi-material-animated-meshes">Multi Material Animated Meshes</h2>
+<p>Previously, if you had an animated model such as a character, there was a known limitation that you could not have multiple materials in the model. Animated Mashes only supported a single material. This is now no longer a true: Cave 1.2 now supports multiple material animated meshes.</p>
+<hr />
+<h2 id="improved-project-manager">Improved Project Manager</h2>
+<p>Now the thumbnails (finally) fit the entire screen. Splash Screen is more properly placed AND the invalid (or incompatible) projects are placed separately, bellow the regular (valid) projects.</p>
+<p>I've also implemented Lazy Loading for the project Thumbnails, since if you have A LOT of projects, it was impacting negatively the time it takes to open the Project Manager and as y'all know, we like stuff to load immediately here in Cave!</p>
+<h2 id="profiler-rewrite-faster-and-better">Profiler Rewrite: Faster and Better!</h2>
+<p>I've rewritten the frame profiler (that measures CPU time). Since it is deeply attached to every corner of the engine, it's very important that it is fast, because this impacts the performance of your game. Now it's much faster and more efficient. I also took the opportunity to overhaul the Profiler Tab UI to make it more concise, easier to understand, navigate and find the information you need.</p>
+<ul>
+<li>Captured frames (that you can open with <code>chrome://tracing</code> - in Google Chrome) are now stored at <code>Logs/Profiler Captures/</code> inside your project dir and are more precise as well.</li>
+<li>Now it's possible to pause the frame capture in order to properly analyse frame by frame inside the engine itself, without having to rely solely on the Captured frames.</li>
+<li>It's now possible to force <strong>GPU Sync</strong>, which gives a better CPU overview, allowing you to make sure that is CPU bound and what is GPU bound. <em><strong>Note</strong>: This affects performance and may reduce framerate A LOT. It's a tool for debugging only.</em></li>
+</ul>
+<p>I'm still working on ways to better debug the memory and GPU side.</p>
+<ul>
+<li><strong>Profiler overhaul</strong> with new UI improvements.</li>
+<li>Added a <strong>GPU sync option</strong> for performance tracking.</li>
+<li>Show Memory Usage</li>
+</ul>
+<h2 id="steam-api-integration">Steam API Integration</h2>
+<p>Do you want to Release your game on Steam? Then you will probably want to includpe Steam Achievements and other useful things. So Cave 1.2 now got you covered! </p>
+<p>Usage example:</p>
+<pre><code class="language-py">cave.steam.init()
+
+user = cave.steam.getPersonaName()
+print(&quot;Steam User:&quot;, user)
+</code></pre>
+<p>The goal is to provide you a very simple API to easily access the main Steamworks SDK functionalities such as achievement and username. I'm looking forward to expand this API as cave users needs it. So if you're working on a Steam game using cave, let me know your custom needs in our Discord server.</p>
+<p>Current API:</p>
+<pre><code class="language-py">def restartAppIfNecessary(appID: int) -&gt; bool: ... 
+def init() -&gt; int: ... 
+def shutdown() -&gt; None: ... 
+def isInitialized() -&gt; bool: ... 
+def getPersonaName() -&gt; str: ... 
+def unlockAchievement(achievementID: str) -&gt; None: ... 
+def hasAchievement(achievementID: str) -&gt; bool: ... 
+def clearAchievement(achievementID: str) -&gt; None: ... 
+def getNumAchievements() -&gt; int: ... 
+def getAchievementName(id: int) -&gt; str: ... 
+def isOverlayActive() -&gt; bool: ... 
+</code></pre>
+<p>Note: Due to Steam's EULA (licensing), we can't redistribute the Steamworks SDL with cave. So by default, this integration won't work. To enable it, you must be a Steam Partner, download the SDK yourself and paste the DLL under Cave Folder.</p>
+<h2 id="asset-importer-rewrite">Asset Importer Rewrite</h2>
+<p>I've completely rewritten the Asset Importer System for Cave 1.2, allowing a much more accurate result, possibilitating, for example, the Multi Material Animated Mesh, but also bringing other improvements, such as a cleaner Entity Template:</p>
+<p><img alt="alt text" src="../cave-11-vs-12-importing.png" /></p>
+<p>The Asset Importing pop up now allows you to batch filter out Asset Types and other options, useful when importing a lot of files at once.</p>
+<h3 id="faster-project-loads">Faster Project Loads!</h3>
+<p>I've cached the Image Textures, since loading raw png was taking around 60-70% of the load time (depending on the project). I was able to reduce load times in up to 3x. A test on a project we have that weights 1.6gb:</p>
+<p>🔴 Before: 33 seconds
+🟢 After: 11 seconds</p>
+<p>This does not affect the loading time of the exported project, since once exported, it does not save images in png but in the optimal format of the cave (meaning that it is already faster). Png is only used during editing, to facilitate git.</p>
+<ul>
+<li>Optimized <strong>texture caching</strong>, leading to <strong>up to 3x faster game loading times</strong>.</li>
+<li>Rewrote the <strong>Asset Importer</strong>, now supporting multi-material animations and meshes.</li>
+</ul>
+<hr />
+<h2 id="ui-element-scissor-mask">UI Element: Scissor Mask</h2>
+<p>Now it's possible to use an UI Element's bounding area as a Scissor to mask out rendering its child elements. This is useful for creating more advanced UIs such as dropdowns or scrollable menus.</p>
+<p><img alt="alt text" src="../image-2.png" /></p>
+<h2 id="better-thumbnail-generation">Better Thumbnail Generation</h2>
+<p>Before, most of the times the Entity Templates would have no thumbnail at all... now it's much more clear:</p>
+<p><img alt="alt text" src="../image-3.png" /></p>
+<h2 id="cave-on-linux-os">Cave on Linux (OS)</h2>
+<p>I'm working to improve Linux support, not only for you to be able to have a good experience using the engine, but also to be able to easily export the game for others to have a smooth experience with your project as well. As of Cave 1.1, it only worked with X11 systems, not Wayland. I've improved this to hopefully work on most Wayland machine as well. </p>
+<p>Cave 1.2, may still require you to manually install or tweak some third-party libraries using apt or equivalent for your system, but I'm working to completely eliminate or at least automate this installation process in future pathes for the engine (Cave 1.2.x). Please communicate with me on Discord if you have any questions about it or need help.</p>
+<ul>
+<li>Improved Linux compatibility with *better OpenGL and SDL error handling.</li>
+<li>Added <strong>Linux requirement scripts</strong> for easier setup.</li>
+</ul>
+<h2 id="other-improvements">Other Improvements</h2>
+<ul>
+<li><strong>Python API Enhancements</strong>: New list operators for vector classes, improved Python error messages, and new <strong>random.shuffle()</strong> and <strong>random.choice()</strong> functions.</li>
+<li><strong>Editor UI Enhancements</strong>: Improved entity highlighting, added tooltips for material uniforms, and better float formatting.</li>
+<li><strong>New Mesh Functions</strong>: Added new shape creation methods and improved LOD distance scaling options.</li>
+<li><strong>New Memory Monitor</strong>: Tracks memory usage in real-time.</li>
+<li>Improved AABB/BoundingBox generation Algorithm</li>
+<li>New <code>CharacterComponent</code> gravity direction option.</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>Fixed <strong>shader compilation errors</strong> on some GPUs.</li>
+<li>Improved shader error messages with <strong>better filename reporting</strong>.</li>
+<li>Fixed <strong>shadow artifacts</strong> in PBR rendering.</li>
+<li>Fixed <strong>crashes</strong> related to the memory monitor, audio tracks, asset importer, and real-time component removal.</li>
+<li>Fixed <strong>animation root motion issues</strong>.</li>
+<li>Fixed <strong>GLSL syntax errors</strong> and optimized multiple shaders.</li>
+<li>Fixed <strong>incorrect normal map interpretations</strong>.</li>
+<li>Fixed <strong>2D Audio Component not playing</strong>.</li>
+<li>Fixed <strong>various crashes</strong> when importing textures, deleting templates, and handling missing assets.</li>
+<li>Fixed <strong>Entity Highlighting Bug</strong> after exiting play mode.</li>
+<li>Fixed <strong>Particle Component crashes with negative particles</strong>.</li>
+<li>Fixed <strong>incorrect scene copy operation leading to crashes</strong>.</li>
+<li>Fixed <strong>fullscreen mode glitches</strong>.</li>
+<li>Fixed <strong>VSYNC toggle and FPS limiter issues</strong>.</li>
+<li>Fixed various <strong>crashes in the Profiler tab</strong>.</li>
+<li>Fixed crash after deleting asset and going back to it (using Properties Tab's back button)</li>
+<li>Fixed TAB that was working during playmode (not supposed to)</li>
+<li>Fixed crash when trying to remove <code>None</code> entity from scene.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

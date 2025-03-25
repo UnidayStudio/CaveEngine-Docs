@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,15 @@
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Graphics Components - Cave Engine Docs</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -25,7 +26,7 @@
             <div class="container">
                 <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -33,16 +34,12 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">About</a>
                                 <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../Docs/faq/" class="dropdown-item">Frequently Asked Questions (FAQ)</a>
-</li>
                                     
 <li>
     <a href="../../../Docs/eula/" class="dropdown-item">License (EULA)</a>
@@ -54,6 +51,14 @@
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Release Notes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Docs/ReleaseNotes/v120/" class="dropdown-item">Cave 1.2.0</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Older Versions</a>
     <ul class="dropdown-menu">
             
 <li>
@@ -73,11 +78,21 @@
 </li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../Docs/faq/" class="dropdown-item">FAQ</a>
+</li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python API</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cave1/" class="dropdown-item">Cave Engine 1.x</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Cave Engine 0.9</a>
@@ -118,7 +133,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Graphics Components</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Graphics Components</a>
 </li>
             
 <li>
@@ -196,14 +211,10 @@
   </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="../../cave1/" class="dropdown-item">Cave Engine 1.0</a>
-</li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Showcase</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -211,17 +222,17 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../../../getCave/" class="nav-link">Get Cave!</a>
+                            <li class="nav-item">
+                                <a href="https://unidaystudio.itch.io/cave-engine" class="nav-link">Get Cave</a>
                             </li>
-                            <li class="navitem">
-                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Our Patreon</a>
+                            <li class="nav-item">
+                                <a href="https://bit.ly/patreon-uniday" class="nav-link">Patreon</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -242,59 +253,59 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#graphics-related-components" class="nav-link">Graphics Related Components</a>
+            <li class="nav-item" data-bs-level="1"><a href="#graphics-related-components" class="nav-link">Graphics Related Components</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#meshes" class="nav-link">Meshes</a>
+            <li class="nav-item" data-bs-level="1"><a href="#meshes" class="nav-link">Meshes</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavemeshcomponent" class="nav-link">cave.MeshComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#-working-with-animations" class="nav-link">- Working with Animations</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cavemeshcomponent" class="nav-link">cave.MeshComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#caveanimationhandler" class="nav-link">cave.AnimationHandler</a>
+            <li class="nav-item" data-bs-level="2"><a href="#-working-with-animations" class="nav-link">- Working with Animations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#particles" class="nav-link">Particles</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#caveparticlecomponent" class="nav-link">cave.ParticleComponent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#caveparticleinstancedescriptor" class="nav-link">cave.ParticleInstanceDescriptor</a>
+            <li class="nav-item" data-bs-level="2"><a href="#caveanimationhandler" class="nav-link">cave.AnimationHandler</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#others" class="nav-link">Others</a>
+            <li class="nav-item" data-bs-level="1"><a href="#particles" class="nav-link">Particles</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cavedecalcomponent" class="nav-link">cave.DecalComponent</a>
+            <li class="nav-item" data-bs-level="2"><a href="#caveparticlecomponent" class="nav-link">cave.ParticleComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#cavelightcomponent" class="nav-link">cave.LightComponent</a>
+            <li class="nav-item" data-bs-level="2"><a href="#caveparticleinstancedescriptor" class="nav-link">cave.ParticleInstanceDescriptor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#others" class="nav-link">Others</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#cavedecalcomponent" class="nav-link">cave.DecalComponent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cavelightcomponent" class="nav-link">cave.LightComponent</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -362,21 +373,21 @@ getAnimationProgress() -&gt; float
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">frame</td>
+<td style="text-align: left;">frame</td>
 <td>The scurrent Animation Frame.</td>
 </tr>
 <tr>
-<td align="left">speed</td>
+<td style="text-align: left;">speed</td>
 <td>The animation execution Speed. <code>1.0</code> means normal speed.</td>
 </tr>
 <tr>
-<td align="left">influence</td>
+<td style="text-align: left;">influence</td>
 <td>Influence ranges from <code>[0.0 to 1.0]</code> and determines how much this animation will influence the final Armature Pose. If the animation stack have multiple animations, this will also determine the blend between them (and it is used by the engine to blend in/out animations). <strong>Note:</strong> If you <strong>set</strong> the influence, it will also cancel any existing blend.</td>
 </tr>
 </tbody>
@@ -432,17 +443,17 @@ blendOut(durationInSeconds= 1.0)
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">instance</td>
+<td style="text-align: left;">instance</td>
 <td>Stores all the details on how the Particles will behave. See <code>cave.ParticleInstanceDescriptor</code>'s documentation below for more details on it.</td>
 </tr>
 <tr>
-<td align="left">duration</td>
+<td style="text-align: left;">duration</td>
 <td>The current duration time of the particle. Used to determine its behavior.</td>
 </tr>
 </tbody>
@@ -457,17 +468,17 @@ duration : cave.SceneTimer
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">count</td>
+<td style="text-align: left;">count</td>
 <td>The amount of particles spawned by the component. Keep in mind that a lot of particles costs performance.</td>
 </tr>
 <tr>
-<td align="left">spawnArea</td>
+<td style="text-align: left;">spawnArea</td>
 <td>The boxed area that the particles should spawn at.</td>
 </tr>
 </tbody>
@@ -476,25 +487,25 @@ duration : cave.SceneTimer
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">isDynamic</td>
+<td style="text-align: left;">isDynamic</td>
 <td>Dynamic particles basically means that they will be updated every frame. You want this to be True for all the Particle Systems that <strong>moves</strong> in your scene. If you're using the Particle System to add static elements such as Stars or Trees, <strong>then they should not be Dynamic</strong>. Dynamic particles are slower.</td>
 </tr>
 <tr>
-<td align="left">useParent</td>
+<td style="text-align: left;">useParent</td>
 <td>If tru<code>True</code>, the particles will be parented to the Entity and move with it.</td>
 </tr>
 <tr>
-<td align="left">life</td>
+<td style="text-align: left;">life</td>
 <td>The particle's Lifetime (in seconds). ZERO means it will life forever.</td>
 </tr>
 <tr>
-<td align="left">respawn</td>
+<td style="text-align: left;">respawn</td>
 <td>Respawn window of the particles. In other words, for for many time (in seconds) should the ParticleComponent keep respawning particles. ZERO means forever.</td>
 </tr>
 </tbody>
@@ -531,25 +542,25 @@ angularFriction : cave.Vector3
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
+<th style="text-align: left;">Variable</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">material</td>
+<td style="text-align: left;">material</td>
 <td>The <code>cave.Material</code> used by the Decal.</td>
 </tr>
 <tr>
-<td align="left">opacity</td>
+<td style="text-align: left;">opacity</td>
 <td>Decal opacity, ranging from <code>[0 to 1]</code>.</td>
 </tr>
 <tr>
-<td align="left">layer</td>
+<td style="text-align: left;">layer</td>
 <td>Used to sort the decals.</td>
 </tr>
 <tr>
-<td align="left">angleFade</td>
+<td style="text-align: left;">angleFade</td>
 <td>If <code>True</code>, it will fade out according to the angle.</td>
 </tr>
 </tbody>
@@ -608,19 +619,20 @@ intensity : float
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -640,7 +652,7 @@ intensity : float
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">
