@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Cave 1.3 - Cave Engine Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Cave Engine Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">About</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="https://uniday.studio/" class="dropdown-item">Our Website</a>
+</li>
+                                    
+<li>
+    <a href="../../../Showcase/games/" class="dropdown-item">Games Made with Cave</a>
+</li>
+                                    
+<li>
+    <a href="https://uniday.studio/legal#cave-eula" class="dropdown-item">License (EULA)</a>
+</li>
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Release Notes</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="https://uniday.studio/blog/10-cave-engine-141-release-notes" class="dropdown-item">Cave 1.4.1</a>
+</li>
+                                    
+<li>
+    <a href="https://uniday.studio/blog/6-cave-engine-140-release-notes" class="dropdown-item">Cave 1.4.0</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Older Versions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Cave 1.3</a>
+</li>
+            
+<li>
+    <a href="../v120/" class="dropdown-item">Cave 1.2.0</a>
+</li>
+            
+<li>
+    <a href="../v099/" class="dropdown-item">Cave 0.9.9</a>
+</li>
+            
+<li>
+    <a href="../v098/" class="dropdown-item">Cave 0.9.8</a>
+</li>
+            
+<li>
+    <a href="../v0972/" class="dropdown-item">Cave 0.9.7.2</a>
+</li>
+            
+<li>
+    <a href="../v097/" class="dropdown-item">Cave 0.9.7</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://uniday.studio/cave" class="nav-link">Get Cave</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.patreon.com/guilhermeteres" class="nav-link">Patreon</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../faq/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../v120/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cave-engine-13-highlights" class="nav-link">Cave Engine 1.3 – Highlights</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#ambient-occlusion" class="nav-link">Ambient Occlusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#procedural-textures" class="nav-link">Procedural Textures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-templates" class="nav-link">Project Templates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cave-is-much-better-on-linux" class="nav-link">Cave is much better on Linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#learn-cave-is-now-easier" class="nav-link">Learn Cave is now Easier</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#new-code-editor-built-in" class="nav-link">New Code Editor (built in)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#state-machine-system-experimental" class="nav-link">State Machine System (Experimental)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#geometry-paint-tool" class="nav-link">Geometry Paint Tool</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#path-component-and-system-experimental" class="nav-link">Path Component and System (Experimental)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#terrain-system-improvements" class="nav-link">Terrain System Improvements:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#rendering-improvements" class="nav-link">Rendering Improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#error-handling" class="nav-link">✅ Error Handling:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#whats-new-for-users" class="nav-link">🆕 What’s New for Users</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#new-render-hardware-interface-rhi-abstraction-layer" class="nav-link">⚙️ New Render Hardware Interface (RHI) abstraction layer.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cave-for-web-update-building" class="nav-link">⚙️ Cave for Web Update: Building!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animation-retargeting-very-experimental" class="nav-link">⚙️ Animation Retargeting (Very Experimental):</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#internal-under-the-hood" class="nav-link">⚙️ Internal / Under the Hood</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fixed-bugs" class="nav-link">🔴 Fixed Bugs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cave-engine-13-highlights">Cave Engine 1.3 – Highlights</h1>
+<p>If you curious, since the last version (1.2 that was out in March, 2025), we had 173 commits, 378 files changed, 144.765 insertions(+), 3.856 deletions(-).</p>
+<h2 id="ambient-occlusion">Ambient Occlusion</h2>
+<p><img alt="AO - Before and After" src="ambient-occlusion-1.png" />
+<strong>Ambient Occlusion:</strong> New built-in <strong>HBAO+ system</strong> for higher quality AO.
+<img alt="AO - Preview" src="ambient-occlusion-2.png" />
+<img alt="AO - Options" src="ambient-occlusion-3.png" /></p>
+<h2 id="procedural-textures">Procedural Textures</h2>
+<p><img alt="New Code Editor" src="proc-textures.png" /></p>
+<p><strong>Procedural Sky:</strong> Brand-new <strong>default procedural sky shader</strong>.</p>
+<p><img alt="New Code Editor" src="proc-sky.png" /></p>
+<p><strong>Procedural Textures:</strong> Added procedural texture system.</p>
+<h2 id="project-templates">Project Templates</h2>
+<p><img alt="New Code Editor" src="new-proj-1.png" />
+<strong>New Project Template:</strong> Improved default settings and assets when creating a new project.
+<img alt="New Code Editor" src="new-proj-2.png" /></p>
+<h2 id="cave-is-much-better-on-linux">Cave is much better on Linux</h2>
+<p>Now it no longer depends or requires installing a bunch of dependencies. I've also implemented the Progress Bar popup (that was missing for Linux). Now the Linux X Windows feature parity should be pretty much 1:1.</p>
+<h2 id="learn-cave-is-now-easier">Learn Cave is now Easier</h2>
+<ul>
+<li><strong>Tutorial Popups:</strong> Interactive tutorials for editor tabs (with screen grey-out).</li>
+</ul>
+<h2 id="new-code-editor-built-in">New Code Editor (built in)</h2>
+<p><img alt="New Code Editor" src="code-editor.png" /></p>
+<h2 id="state-machine-system-experimental">State Machine System (Experimental)</h2>
+<p><img alt="New Code Editor" src="state-machine.png" /></p>
+<p><strong>State Machines:</strong> Major improvements, fixes, debug tools, and icons.</p>
+<h2 id="geometry-paint-tool">Geometry Paint Tool</h2>
+<p><img alt="New Code Editor" src="geom-paint.png" />
+Geometry Paint tool.</p>
+<p>Talking about viewport Tools, we now have shortcuts to quickly swap tools.
+<img alt="New Code Editor" src="tools.png" /></p>
+<h2 id="path-component-and-system-experimental">Path Component and System (Experimental)</h2>
+<p><img alt="New Code Editor" src="path-tool.png" /></p>
+<h2 id="terrain-system-improvements">Terrain System Improvements:</h2>
+<ul>
+<li>New <strong>paint color mode</strong>.</li>
+<li>Better creation UX and initial settings.</li>
+<li>
+<p>New <strong>Random::Terrain(...)</strong> function for procedural terrain.</p>
+</li>
+<li>
+<p><strong>UI System:</strong></p>
+</li>
+<li>New UI elements: <code>HeaderCheckbox</code>, improved dropdowns, file/folder path pickers.</li>
+<li>
+<p>Better 9-Slice editor, new defaults, and scale adjustments.</p>
+</li>
+<li>
+<p><strong>Python API:</strong></p>
+</li>
+<li>New <code>cave.getFilesAt(path)</code></li>
+<li>New <code>cave.math.distance(...)</code></li>
+<li>New Scene::GetDataOver... methods</li>
+<li>PythonCmp: option to set component through code.</li>
+</ul>
+<h2 id="rendering-improvements">Rendering Improvements</h2>
+<p><img alt="New Code Editor" src="retarget-2.png" /></p>
+<ul>
+<li>New shadow culling techniques for cascaded shadow maps.</li>
+<li>Exposed FXAA parameters.</li>
+<li>Added MSAA (experimental, off by default).</li>
+<li>Eye Adaptation moved to GPU.</li>
+</ul>
+<h2 id="error-handling">✅ Error Handling:</h2>
+<ul>
+<li>Better crash reporting.</li>
+<li>Now there is a button to <strong>Copy the Console messages to Clipboard</strong>.</li>
+<li>Improved error messages and warnings (ex. terrain, physics, shaders).</li>
+</ul>
+<hr />
+<h2 id="whats-new-for-users">🆕 What’s New for Users</h2>
+<ul>
+<li>Built-in <strong>HBAO+ AO</strong>.</li>
+<li>New <strong>Procedural Sky</strong> and improved sky visuals.</li>
+<li><strong>Procedural Textures</strong> system.</li>
+<li><strong>Tutorial Popups</strong> in editor tabs.</li>
+<li>New <strong>default project setup</strong>.</li>
+<li><strong>Terrain paint color mode</strong>, creation UX improvements.</li>
+<li><strong>Improved state machines</strong> with debug view.</li>
+<li><strong>Animation retargeting</strong> for meshes (early stage).</li>
+<li><strong>UI upgrades</strong>: checkboxes, dropdowns, better styles.</li>
+<li><strong>Python API extensions</strong> for files, math, scene data.</li>
+<li><strong>Viewport Geometry Paint Tool</strong>.</li>
+<li><strong>Shadow rendering optimizations</strong>.</li>
+<li><strong>MSAA + FXAA improvements</strong>.</li>
+<li><strong>More stable Eye Adaptation</strong>.</li>
+<li><strong>Better crash/error reporting</strong>.</li>
+</ul>
+<hr />
+<h2 id="new-render-hardware-interface-rhi-abstraction-layer">⚙️ New <strong>Render Hardware Interface (RHI)</strong> abstraction layer.</h2>
+<ul>
+<li>Initial <strong>DirectX 12 backend</strong> groundwork (disabled for now).</li>
+</ul>
+<h2 id="cave-for-web-update-building">⚙️ Cave for Web Update: Building!</h2>
+<h2 id="animation-retargeting-very-experimental">⚙️ Animation Retargeting (Very Experimental):</h2>
+<p>First implementation of armature retargeting (WIP).</p>
+<h2 id="internal-under-the-hood">⚙️ Internal / Under the Hood</h2>
+<ul>
+<li>New <strong>CheckInstallPath()</strong> function (detects OneDrive/Dropbox/special char issues).</li>
+<li>New <strong>Render Hardware Interface (RHI)</strong> abstraction layer.</li>
+<li>Initial <strong>DirectX 12 backend</strong> groundwork (disabled for now).</li>
+<li>Early work on <strong>Bindless Textures</strong> (disabled for now).</li>
+<li>Web (Emscripten) build progress.</li>
+<li>Linux build and static linking improvements.</li>
+<li>Refactored post-processing and renderer internals.</li>
+<li>New path utilities, regex helpers, and ID hashing.</li>
+<li>Improved DPI and font scaling handling.</li>
+<li>OGL state caching, instancing updates, new RenderGraph defaults.</li>
+<li>Improved OpenGL support across varying PC hardware.</li>
+<li>Many bug fixes: crashes, wrong warnings, physics collisions, terrain issues, undo/redo, etc.</li>
+</ul>
+<hr />
+<h2 id="fixed-bugs">🔴 Fixed Bugs</h2>
+<ul>
+<li>Fix: Material Alpha Blend was missing</li>
+<li>Fix: Viewport Undo Crash</li>
+<li>Fix: Terrain Tool Crash</li>
+<li>Fix: Terrain still showing after removing Heightmap</li>
+<li>Fix: Crash dropping Mat to Terrain (Viewport)</li>
+<li>Fix: Terrain not being added with Transform </li>
+<li>Fix: <strong>Game UI:</strong> Font Spacing was wrong</li>
+<li>Fix: UIElement not updating on Font Change (UI)</li>
+<li>Fix: Cascade shadows not Loading on Runtime</li>
+<li>Fix: Timeline failing to add new Keyframes</li>
+<li>Fix: Shader Uniforms not appearing on Linux</li>
+<li>Fix: Linux: Exporting was missing Draco</li>
+<li>Fix: Linux: Python Error (missing pathes)</li>
+<li>Fix: Alpha Clip</li>
+<li>Fix: Allow unlimited HDR Exposure</li>
+<li>Fix: Deprecated GLSL function was being called (texture2D), making it not work on some GPUs</li>
+<li>Fix: Eye Adaptation too high on slow fps</li>
+<li>Fix: <strong>UIStyle</strong> UI + new default Values. Now the preview, in the Editor UI, of the nince slice cut actually makes sense and is properly calculated.</li>
+<li>Fix: ImageTexture crash while saving texture: If the image was null, it would crash.</li>
+<li>Fix: [Internal] IAssetHandler::Load(...) undefined behavior: Sometimes it would fail to load correctly if it had an asset attached to it and no asset after loading it. It will keep the previous asset.</li>
+<li>Fix: The Exposure was too high on first Frame</li>
+<li>Fix: Minor PhysicsConstraintComponent fixes</li>
+<li>Fix: Editor's UI Header Checkbox was problematic</li>
+<li>Fix: Removed "Visible" flag from the MeshComponent's UI. This is an internal/local only variable that doesn't get serialized and it was causing confusion among the users. You can still access it through Python</li>
+<li>Fix: Wrong Editor's UI Props and Dropdown width</li>
+<li>Fix: Renderer Camera Crash</li>
+<li>Fix: MeshComponent wrong warning on opaque materials (the warning was misleading)</li>
+<li>Fix: Physics Collision Checks were a bit off</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
